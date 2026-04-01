@@ -1,6 +1,6 @@
 body{
 
-    background: linear-gradient(to top, rgba(0, 255, 191, 0.897), blue);
+    background: linear-gradient(to bottom,#021827, #1D6C9D);
 }
 
 
@@ -17,30 +17,16 @@ header{
     gap: 10px;
 }
 
-.Logo{
-    width: 120px;
+.logo{
+    width: 180px;
 }
 
-.Perfil{
+.perfil{
     width: 40px;
     border-radius: 50%;
 }
 
-button{
-    padding:6px 14px;
-    border-radius:20px;
 
-    background: rgba(255,255,255,0.2);
-    backdrop-filter: blur(10px);
-
-    border:1px solid rgba(255,255,255,0.4);
-    color:#fff;
-    font-weight:500;
-}
-
-button:hover{
-    background: rgba(255,255,255,0.35);
-}
 
 .pesquisa{
     display: flex;
@@ -62,82 +48,7 @@ button:hover{
     outline: none;
 }
 
-
-
-
 .pesquisa input::placeholder{
     color: rgba(255,255,255,0.7);
 }
 
-
-
-
-footer{
-    margin-top:120px;
-    padding:40px;
-
-    background: rgba(255,255,255,0.08);
-    backdrop-filter: blur(10px);
-
-    border-top:1px solid rgba(255,255,255,0.2);
-    color:white;
-}
-
-
-footer{
-    display:grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap:40px;
-}
-
-
-
-footer img{
-    width:120px;
-}
-
-
-footer h2{
-    font-size:18px;
-    margin-bottom:10px;
-}
-
-
-footer ul{
-    list-style:none;
-}
-
-footer li{
-    margin-bottom:6px;
-}
-
-
-
-
-
-footer a{
-    text-decoration:none;
-    color:rgba(255,255,255,0.8);
-    transition:0.3s;
-}
-
-footer a:hover{
-    color:#ffffff;
-}
-
-
-
-footer hr{
-    grid-column:1 / -1;
-    margin:20px 0;
-    border:1px solid rgba(255,255,255,0.2);
-}
-
-
-
-footer p{
-    grid-column:1 / -1;
-    text-align:center;
-    font-size:14px;
-    opacity:0.8;
-}
