@@ -1,11 +1,7 @@
 body{
 
-    background-color: rgba(0, 161, 224, 0.685);
-
-
-
+    background: linear-gradient(to top, rgba(0, 255, 191, 0.897), blue);
 }
-
 
 
 
@@ -13,36 +9,21 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-
-
-
 }
 
 .direita{
     display: flex;
     align-items: center;
     gap: 10px;
-
-
-
-
 }
 
 .Logo{
     width: 120px;
-
-
-
-
 }
 
 .Perfil{
     width: 40px;
     border-radius: 50%;
-
-
-
 }
 
 button{
@@ -55,26 +36,16 @@ button{
     border:1px solid rgba(255,255,255,0.4);
     color:#fff;
     font-weight:500;
-
-    
-
-
-
 }
 
 button:hover{
     background: rgba(255,255,255,0.35);
-
-
-
 }
 
 .pesquisa{
     display: flex;
     justify-content: center;
     margin-top: 150px;
-
-
 }
 
 .pesquisa input{
@@ -89,9 +60,6 @@ button:hover{
 
     color: white;
     outline: none;
-
-
-
 }
 
 
@@ -99,9 +67,6 @@ button:hover{
 
 .pesquisa input::placeholder{
     color: rgba(255,255,255,0.7);
-
-
-
 }
 
 
@@ -116,9 +81,6 @@ footer{
 
     border-top:1px solid rgba(255,255,255,0.2);
     color:white;
-
-
-
 }
 
 
@@ -126,46 +88,27 @@ footer{
     display:grid;
     grid-template-columns: repeat(4, 1fr);
     gap:40px;
-
-
-
-
 }
 
 
 
 footer img{
     width:120px;
-
-
-
 }
 
 
 footer h2{
     font-size:18px;
     margin-bottom:10px;
-
-
-
-
-
 }
 
 
 footer ul{
     list-style:none;
-
-
-
 }
 
 footer li{
     margin-bottom:6px;
-
-
-
-
 }
 
 
@@ -176,16 +119,10 @@ footer a{
     text-decoration:none;
     color:rgba(255,255,255,0.8);
     transition:0.3s;
-
-
-
 }
 
 footer a:hover{
     color:#ffffff;
-
-
-
 }
 
 
@@ -194,9 +131,6 @@ footer hr{
     grid-column:1 / -1;
     margin:20px 0;
     border:1px solid rgba(255,255,255,0.2);
-
-
-
 }
 
 
@@ -206,9 +140,4 @@ footer p{
     text-align:center;
     font-size:14px;
     opacity:0.8;
-
-
-
-
-
 }
