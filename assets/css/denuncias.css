@@ -79,5 +79,15 @@ main h2{
     font-family: 'Inter', sans-serif;
 
 }
-  
 
+.footer-geral img {
+    display: block;
+    width: 100px; 
+    margin: 0 auto; 
+    padding: 20px 0;
+    
+}
+
+.footer-geral p { 
+    border-top: 1px solid #AEAEAE;
+}
