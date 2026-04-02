@@ -1,54 +1,59 @@
-body{
-
+.container{
     background: linear-gradient(to bottom,#021827, #1D6C9D);
 }
 
-
-
-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+main{
+   background-image: 
+    linear-gradient(to bottom, transparent, #0B344E),
+    url("../images/background.png");
+    
 }
-
-.direita{
-    display: flex;
-    align-items: center;
-    gap: 10px;
+section h1{
+    color: #ffffff;
+    font-size: 40px;
+    margin-bottom: 80px;
+    font-family: 'Radio Canada Big', sans-serif;
+    text-align: center;
+    font-weight: 400;
 }
-
-.logo{
-    width: 180px;
+section h2{
+    color: #AEAEAE;
+    font-size: 18px;
+    margin-bottom: 40px;
+    font-family: 'Radio Canada', sans-serif;
+    text-align: center;
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-weight: 400;
 }
-
-.perfil{
-    width: 40px;
-    border-radius: 50%;
-}
-
-
 
 .pesquisa{
     display: flex;
     justify-content: center;
-    margin-top: 150px;
+    margin-top: 50px;
 }
 
 .pesquisa input{
-    width: 400px;
+    width: 100%;
+    max-width: 670px;
+    height: 55px;
     padding: 12px 20px;
-
     border-radius: 30px;
     border: 1px solid rgba(255,255,255,0.3);
-
     background: rgba(255,255,255,0.1);
     backdrop-filter: blur(10px);
-
     color: white;
     outline: none;
+    background: url("../css/icones/icone-pesquisar.svg") no-repeat;
+    background-position: 23px center;
+    padding-left: 55px;
+    background-size: 20px;
+    margin-bottom: 40px;
+    
 }
 
 .pesquisa input::placeholder{
     color: rgba(255,255,255,0.7);
+    font-size: 16px;
 }
 
