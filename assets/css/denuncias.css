@@ -3,66 +3,7 @@ body {
 }
 
 /* todo codigo do header é provisorio */
-.header-geral{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    padding: 0 55px;
-    background-color: #0A2846;
-    height: 100px;
-}
 
-.secure-search{
-    display:flex;
-    font-size: 24px;
-    color: #ffffff;
-    align-items: center;
-    gap: 10px;
-}
-
-.secure-search h2{
-font-family: 'Text Me One', sans-serif;
-
-}
-
-.secure-search img{
-    width: 90px;
-}
-
-nav {
-    position: absolute;
-    top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-nav a{
-   font-family: 'Inter', sans-serif;
-   font-size: 20px;
-   text-decoration: none;
-   color: #ffffff;
-}
-
-nav a:first-of-type{
-    margin-right:70px;
-}
-
-.header-perfil img{
-    width: 40px;
-}
-
-.header-perfil{
-    display: flex;
-    align-items: center;
-    gap: 40px;
-}
-
-.header-perfil button {
-    font-size: 20px;
-    cursor: pointer;
-    font-family: 'Inter', sans-serif;
-}
 
 /*O Header acabou e o Main começou  */
 main h1{
@@ -80,14 +21,4 @@ main h2{
 
 }
 
-.footer-geral img {
-    display: block;
-    width: 100px; 
-    margin: 0 auto; 
-    padding: 20px 0;
-    
-}
 
-.footer-geral p { 
-    border-top: 1px solid #AEAEAE;
-}
