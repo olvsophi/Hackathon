@@ -41,10 +41,39 @@ display=swap" rel="stylesheet">
     </header>
 
     <main>
-       <h1>Faça sua denúncia</h1>
-       <h2>Nos conte sua experiência</h2>
+        <h1 class="titulo-principal">Faça sua denúncia</h1>
+        <h2 class="subtitulo">Nos conte sua experiência</h2>
 
-    </main> 
+        <form>
+            <h3>Preencha o formulário com o ocorrido </h3>
+            <div class="campos-formulario">
+                <div>
+                    <div>
+                        <label for="servico">Serviço</label>
+                        <input id="servico" type="text">
+                    </div>
+                    <div>
+                        <label for="fornecedor">Fornecedor</label>
+                        <input id="fornecedor" type="text">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="topico">Tópico</label>
+                    <input id="topico" type="text">
+                </div>
+                <div>
+                    <label for="problema">Nos conte o seu problema </label>
+                    <textarea id="problema"></textarea>
+                </div>
+
+                <div>
+                    <p>O fornecedor resolveu seu problema?</p>
+                </div>
+            </div>
+        </form>
+
+    </main>
 
     <footer class="footer-geral">
         <img src="../assets/images/logo.png" alt="Logo">

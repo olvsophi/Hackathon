@@ -1,24 +1,26 @@
 body {
-    background: linear-gradient(to bottom,#032F5E, #215A7E);
+    background: linear-gradient(to bottom, #032F5E, #215A7E);
 }
 
 /* todo codigo do header é provisorio */
 
 
 /*O Header acabou e o Main começou  */
-main h1{
-    font-size: 28px;
+main h1 {
+    font-size: 34px;
     text-align: center;
     font-family: 'Inter', sans-serif;
     margin-top: 80px;
     margin-bottom: 20px;
+    color: white;
 }
 
-main h2{
-    font-size: 14px;
+main h2 {
+    font-size: 16px;
     text-align: center;
     font-family: 'Inter', sans-serif;
+    color: white;
+    font-weight: 400;
+    letter-spacing: 1px;
 
 }
-
-
