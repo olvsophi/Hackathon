@@ -12,13 +12,16 @@ main{
 header{
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 0 55px;
+    padding: 30px 55px;
+}
+
+.perfil-principal{
+    width: 35px;
 }
 
 .direita{
     display: flex;
-    align-items: center;
+  
 }
  
 .bt-header{
@@ -27,7 +30,7 @@ header{
     background: none;
     border: 0;
     color: #ffffff;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 section h1{
