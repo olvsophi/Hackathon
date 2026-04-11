@@ -1,23 +1,77 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-header{
-    padding: 0 55px;
+.header-geral {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 0 55px;
+    background-color: #0A2846;
+    height: 100px;
 }
 
-header button {
+.header-geral button {
     border: none;
     background: none;
     color: #ffffff;
 }
 
-.perfil{
+.secure-search {
+    display: flex;
+    font-size: 24px;
+    color: #ffffff;
+    align-items: center;
+    gap: 10px;
+}
+
+.secure-search h2 {
+    font-family: 'Text Me One', sans-serif;
+
+}
+
+.secure-search img {
+    width: 90px;
+}
+
+nav {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+nav a {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+nav a:first-of-type {
+    margin-right: 70px;
+}
+
+.header-perfil img {
+    width: 40px;
+}
+
+.header-perfil {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.header-perfil button {
+    font-size: 20px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+}
+
+.perfil {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,9 +79,7 @@ header button {
     width: 48px;
 }
 
-footer{
-background-color: #032F5E ;
-}
+
 
 .conteiner-superior {
     display: grid;
@@ -40,55 +92,39 @@ background-color: #032F5E ;
     max-width: 150px;
 }
 
-.conteiner-superior > div{
+.conteiner-superior>div {
     display: flex;
     width: 100%;
     justify-content: space-around;
 }
 
-
-footer img{
-    width:40px;
+.footer-geral {
+    background-color: #032F5E;
 }
 
-footer h3{
-    color: #b8b8b8;
-    font-size:18px;
-    margin-bottom:10px;
-    font-family: 'Inter', sans-serif;
+.footer-geral img {
+    display: block;
+    width: 100px;
+    margin: 0 auto;
+    padding: 20px 0;
+
 }
 
-footer ul{
-    list-style:none;
-}
-
-footer li{
-    margin-bottom:6px;
-}
-
-footer a{
-    text-decoration:none;
-    color:#b8b8b8;
-    transition:0.3s;
-    font-family: 'Montserrat', sans-serif;
-}
-
-footer a:hover{
-    color:#ffffff;
-}
-
-footer p{
-    text-align:center;
-    font-size:14px;
-    opacity:0.8;
+.footer-geral p {
+    text-align: center;
+    font-size: 14px;
+    opacity: 0.8;
     color: #e7e7e7;
     font-family: 'Montserrat', sans-serif;
     padding: 10px;
     border-top: 1px solid white;
 }
+
+
+
+
 /* font-family: 'Inter', sans-serif;
 font-family: 'Montserrat', sans-serif;
 font-family: 'Text Me One', sans-serif;
 font-family: 'Radio Canada', sans-serif;
 font-family: 'Radio Canada Big', sans-serif; */
-
