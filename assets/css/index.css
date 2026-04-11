@@ -8,6 +8,31 @@ main{
     url("../images/background.png");
     
 }
+
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 55px;
+}
+
+.perfil-principal{
+    width: 35px;
+}
+
+.direita{
+    display: flex;
+  
+}
+ 
+.bt-header{
+    width: 100px;
+    height: 20px;
+    background: none;
+    border: 0;
+    color: #ffffff;
+    font-size: 14px;
+}
+
 section h1{
     color: #ffffff;
     font-size: 40px;
