@@ -96,3 +96,20 @@ section h2{
     font-size: 16px;
 }
 
+#footer-principal{
+    background-color: #032F5E;
+    color: #e7e7e7;
+    padding: 55px;
+}
+
+.conteiner-superior img{
+   width: 20px;
+}
+
+#footer-principal p{
+    color: #b8b8b8;
+    font-family: "montserrat";
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}

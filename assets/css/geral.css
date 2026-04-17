@@ -4,6 +4,14 @@
     box-sizing: border-box;
 }
 
+a{
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+
 .header-geral {
     display: flex;
     align-items: center;
