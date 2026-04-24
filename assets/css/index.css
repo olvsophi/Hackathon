@@ -8,6 +8,45 @@ main{
     url("../images/background.png");
     
 }
+
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 55px;
+    position: relative;
+}
+
+.link-central{
+    position: absolute;
+    top: 50px;
+}
+
+.perfil-principal{
+    width: 35px;
+}
+
+.direita {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    height: 35px;
+}
+
+.direita a{
+    text-decoration: none;
+    color: #ffffff;
+    font-family: "inter";
+}
+ 
+.bt-header{
+    width: 100px;
+    height: 20px;
+    background: none;
+    border: 0;
+    color: #ffffff;
+    font-size: 14px;
+}
+
 section h1{
     color: #ffffff;
     font-size: 40px;
@@ -44,16 +83,33 @@ section h2{
     backdrop-filter: blur(10px);
     color: white;
     outline: none;
-    background: url("../css/icones/icone-pesquisar.svg") no-repeat;
+    background: url("../icones/icone-pesquisar.svg") no-repeat;
     background-position: 23px center;
     padding-left: 55px;
     background-size: 20px;
     margin-bottom: 40px;
-    
+    background-color: #c4c4c4;
 }
 
 .pesquisa input::placeholder{
-    color: rgba(255,255,255,0.7);
+    color: rgba(0, 0, 0, 0.7);
     font-size: 16px;
 }
 
+#footer-principal{
+    background-color: #032F5E;
+    color: #e7e7e7;
+    padding: 55px;
+}
+
+.conteiner-superior img{
+   width: 20px;
+}
+
+#footer-principal p{
+    color: #b8b8b8;
+    font-family: "montserrat";
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
