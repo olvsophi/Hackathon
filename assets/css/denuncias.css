@@ -80,13 +80,53 @@ main h2{
 
 }
 
-.footer-geral img {
-    display: block;
-    width: 100px; 
-    margin: 0 auto; 
-    padding: 20px 0;
-    
+main .container {
+    display: flex;
+    flex-direction: column;
+    text-align: center; 
+    margin-top: 50px; 
+    justify-content: center; 
+    width: 400px; 
+    text-align: center;
+
 }
+main .main-servico { 
+    margin: 20px; 
+    gap: 5px; 
+    color: #FEFEFF;
+    text-align: left;
+} 
+main .main-fornecedor {
+    margin: 20px; 
+    gap: 5px; 
+    color: #FEFEFF;
+    text-align: left;
+}
+
+main .main-topicos {
+    margin: 20px; 
+    gap: 5px; 
+    color: #FEFEFF;
+    text-align: left;
+
+}
+
+main .main-mensagem {
+    padding: 20px 0;
+    margin: 20px; 
+    gap: 5px; 
+    color: #FEFEFF;
+    text-align: left;
+
+}
+
+input {
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
 
 .footer-geral p { 
     border-top: 1px solid #AEAEAE;
