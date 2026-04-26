@@ -1,12 +1,45 @@
-
 header{
 
     text-align: center;
+    padding: 10px;
 }
 
 
 body{
+    margin: 0;
+    height: 100vh;
+    
     background: url("../images/fundo-gradiente-azul.png");
 
+    background-size: cover;
 
+
+}
+
+.cadastro{
+    width: 200px;
+    padding: 30px;
+    border-radius: 20px;
+    
+    background: rgba(153, 152, 152, 0.4);
+    border: 0.2px solid rgba(30, 30, 30, 0.4);
+    backdrop-filter: blur(40px);
+    box-shadow: 0 16px 20px rgba(0, 0, 0, 0.10);
+    box-shadow: inset 0 0 60px rgba(122, 146, 217, 0.4);
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    position: relative;
+}
+
+main{
+    height: calc(100vh - 120px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
