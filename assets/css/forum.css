@@ -29,15 +29,38 @@ main h2 {
     color: white;
     font-weight: 400;
     letter-spacing: 1px;
+
 }
 
 .comentarios{
     width: 100%;
     max-width: 1000px;
     margin: 0 auto;
+    display: flex;
+
     
 }
 
 article{
-    background-color: aquamarine;
+    background: rgba(153, 152, 152, 0.4);
+    border: 0.2px solid rgba(30, 30, 30, 0.4);
+    backdrop-filter: blur(40px);
+    box-shadow: 0 16px 20px rgba(0, 0, 0, 0.6);
+    box-shadow: inset 0 0 60px rgba(122, 146, 217, 0.4);
+    border-radius: 10px;    
+    padding: 30px;
+    width: 100%;
+}
+
+.comentario{
+    width: 100%;
+    background-color: #7575758a;
+    height: 100px;  
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.botoes{
+    display: flex;
+    justify-content: space-between;
 }
