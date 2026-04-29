@@ -5,16 +5,27 @@ main{
 .textos-main{
     color: #ffffff;
     font-family: "Inter";
+    text-align: center;
 }
 
 .informacoes-do-perfil {
+    display: flex;
+    flex-direction: column;
     height: 630px;
     width: 450px;
     background: rgba(153, 152, 152, 0.4);
     border: 0.2px solid rgba(30, 30, 30, 0.4);
     backdrop-filter: blur(40px);
     box-shadow: 0 16px 20px rgba(0, 0, 0, 0.6);
-    box-shadow: inset 0 0 60px rgba(122, 146, 217, 0.4);
+    box-shadow: inset 0 0 60px rgrba(122, 146, 217, 0.4);
     border-radius: 50px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.informacoes-do-perfil img{
+    width: 120px;
+    margin: 0 auto;
+    
 }
 
