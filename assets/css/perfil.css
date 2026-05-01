@@ -1,10 +1,10 @@
 main{
     background: linear-gradient(rgba(3, 47, 94, 1), rgba(33, 90, 126, 1));
+    font-family: "Inter";
 }
 
 .textos-main{
     color: #ffffff;
-    font-family: "Inter";
     text-align: center;
 }
 
@@ -17,15 +17,39 @@ main{
     border: 0.2px solid rgba(30, 30, 30, 0.4);
     backdrop-filter: blur(40px);
     box-shadow: 0 16px 20px rgba(0, 0, 0, 0.6);
-    box-shadow: inset 0 0 60px rgrba(122, 146, 217, 0.4);
+    box-shadow: inset 0 0 60px rgba(122, 146, 217, 0.4);
     border-radius: 50px;
     margin: 0 auto;
     padding: 40px;
+    color: #FEFEFF;
 }
 
 .informacoes-do-perfil img{
     width: 120px;
     margin: 0 auto;
-    
+}
+
+.informacoes-do-perfil input{
+    height: 40px;
+    width: 215px;
+    margin: 0 auto;
+    background: rgba(153, 152, 152, 0.4);
+    border: 0.2px solid rgba(30, 30, 30, 0.4);
+    backdrop-filter: blur(40px);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.6);
+    box-shadow: inset 0 0 60px rgba(122, 146, 217, 0.4);
+    border-radius: 12px;
+    color: #ffffff;
+    padding: 10px;
+}
+
+.informacoes-do-perfil p {
+    color: rgba(254, 254, 255, 0.5);
+    padding: 0 80px;
+}
+
+.zero {
+    color: #ffffff;
+    border: 15px solid color(srgb red green blue);
 }
 
