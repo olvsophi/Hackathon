@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Liquid Glass Slider — Em alta!</title>
+  <link rel="stylesheet" href="Slider.css" />
+</head>
+
+<body>
+  <div class="lg-stage">
+    <div class="lg-glow" aria-hidden="true"></div>
+
+    <div class="lg-wrap">
+      <h1 class="lg-heading">Em alta!</h1>
+
+      <section class="lg-container" aria-roledescription="carousel">
+        <button type="button" class="nav-btn nav-prev" id="prevBtn" aria-label="Slide anterior">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+            <path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </button>
+
+        <div class="slides-window">
+          <div class="slides-track" id="slidesTrack">
+          </div>
+        </div>
+
+        <button type="button" class="nav-btn nav-next" id="nextBtn" aria-label="Próximo slide">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+            <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </button>
+      </section>
+    </div>
+  </div>
+
+  <script src="Slider.js"></script>
+</body>
+
+</html>
