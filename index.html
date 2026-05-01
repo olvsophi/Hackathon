@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./assets/css/geral.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="Slider/Slider.css">
     <link href="https://fonts.googleapis.com/css2?
 family=Inter:ital,wght@0,100..900;1,100..900&
 family=Montserrat:ital,wght@0,100..900;1,100..900&
@@ -24,9 +25,9 @@ display=swap" rel="stylesheet">
     <main>
         <header id="principal">
             <img class="logo" src="./assets/images/logo.png" alt="Logo da Secure Search">
-              <nav class="link-central">
-               <a href="#">Fórum</a>
-               <a href="#">Denúncias</a>
+            <nav class="link-central">
+                <a href="#">Fórum</a>
+                <a href="#">Denúncias</a>
             </nav>
 
             <div class="direita">
@@ -40,24 +41,48 @@ display=swap" rel="stylesheet">
             </div>
         </header>
 
-            <section>
-                <h1>Navegue com confiança, <br>
-                    denuncie com precisão.</h1>
-                <h2>Por trás de um clique fácil, pode haver um golpe difícil. <br>
-                    Na dúvida? Não clique, pesquise aqui primeiro.</h2>
-                <div class="Logo-pesquisa">
-                    <form class="pesquisa">
-                        <input type="search" placeholder="Pesquisar">
-                    </form>
+        <section>
+            <h1>Navegue com confiança, <br>
+                denuncie com precisão.</h1>
+            <h2>Por trás de um clique fácil, pode haver um golpe difícil. <br>
+                Na dúvida? Não clique, pesquise aqui primeiro.</h2>
+            <div class="Logo-pesquisa">
+                <form class="pesquisa">
+                    <input type="search" placeholder="Pesquisar">
+                </form>
 
-                </div>
-            </section>
-            
+            </div>
+        </section>
+
         <div class="container">
 
-            <div>
-                <h2>Titulo da noticia</h2>
-                <p>lorem ipsum</p>
+            <div class="lg-stage">
+                <div class="lg-glow" aria-hidden="true"></div>
+
+                <div class="lg-wrap">
+                    <h1 class="lg-heading">Em alta!</h1>
+
+                    <section class="lg-container" aria-roledescription="carousel">
+                        <button type="button" class="nav-btn nav-prev" id="prevBtn" aria-label="Slide anterior">
+                            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                                <path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+
+                        <div class="slides-window">
+                            <div class="slides-track" id="slidesTrack">
+                            </div>
+                        </div>
+
+                        <button type="button" class="nav-btn nav-next" id="nextBtn" aria-label="Próximo slide">
+                            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                                <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                    </section>
+                </div>
             </div>
 
         </div>
@@ -98,6 +123,9 @@ display=swap" rel="stylesheet">
         <hr>
         <p>Secure Search &copy; Todos os direitos reservados</p>
     </footer>
+
+    <script src="Slider/Slider.js"></script>
+
 </body>
 
 </html>
