@@ -19,7 +19,7 @@ main h2 {
     color: white;
     font-weight: 400;
     letter-spacing: 1px;
-
+    margin-bottom: 40px;
 }
 
 .comentario{
@@ -37,9 +37,10 @@ main h2 {
     max-width: 1000px;
     margin: 0 auto;
     display: flex;
-
+    margin-bottom: 20px;
     
 }
+
 
 article{
     background: rgba(153, 152, 152, 0.4);
@@ -47,7 +48,7 @@ article{
     backdrop-filter: blur(40px);
     box-shadow: 0 16px 20px rgba(0, 0, 0, 0.6);
     box-shadow: inset 0 0 60px rgba(122, 146, 217, 0.4);
-    border-radius: 10px;    
+    border-radius: 50px;    
     padding: 30px;
     width: 100%;
 }
