@@ -15,7 +15,9 @@
     family=Radio+Canada:ital,wght@0,300..700;1,300..700&
     family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&
     family=Text+Me+One&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 
 
 </head>
@@ -46,40 +48,50 @@
                 Aqui você pode conferir ou alterar suas informações pessoais!
             </p>
         </div>
-
-        <div class="informacoes-do-perfil">
-            <img src="../assets/icones/icone de perfil.svg" alt="Ícone de perfil">
-            <p>Email cadastrado</p>
-            <input type="email" value="email@exemplo.com">
-            <p>Número de Telefone</p>
-            <input type="tel" value="21 4002-8922">
-       
-            <div>
+        <section class="informacoes-do-perfil">
+            <div id="informacoes-do-perfil-1">
+                <img src="../assets/icones/icone de perfil.svg" alt="Ícone de perfil">
+                <p class="">
+                    Email cadastrado
+                </p>
+                <input type="email" value="email@exemplo.com">
                 <p>
-                    Denúncias feitas
+                    Número de Telefone
                 </p>
-                <p class="zero">
-                    0
-                </p>
-                <p>
-                    Posts na comunidade
-                </p>
-                <p class="zero">
-                    0
-                </p>
+                <input type="tel" value="21 4002-8922">
             </div>
-            <div>
-                <p>
-                    Clique aqui para alterar sua senha
-                </p>
-                <button>
-                    Mudar senha
-                </button>
-                <button id="button-confirmar">
-                    Confirmar alterações
-                </button>
+            <div class="informacoes-do-perfil-2">
+                <div class="div-contagem">
+                    <div>
+                        <p class="p-perfil">
+                            Denúncias feitas
+                        </p>
+                        <p class="zero">
+                            0
+                        </p>
+                    </div>
+                    <div>
+                        <p class="p-perfil">
+                            Posts na comunidade
+                        </p>
+                        <p class="zero">
+                            0
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        Clique aqui para alterar sua senha
+                    </p>
+                    <button>
+                        Mudar senha
+                    </button>
+                    <button id="button-confirmar">
+                        Confirmar alterações
+                    </button>
+                </div>
             </div>
-        </div>
+        </section>
     </main>
 
     <footer class="footer-geral">

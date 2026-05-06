@@ -22,11 +22,7 @@ main{
     margin: 0 auto;
     padding: 40px;
     color: #FEFEFF;
-}
-
-.informacoes-do-perfil img{
-    width: 120px;
-    margin: 0 auto;
+    font-size: 14px;
 }
 
 .informacoes-do-perfil input{
@@ -41,15 +37,48 @@ main{
     border-radius: 12px;
     color: #ffffff;
     padding: 10px;
+    font-size: 14px;
+    font-weight: 400;
 }
 
-.informacoes-do-perfil p {
+.informacoes-do-perfil-1{
+    display: flex;
+}
+
+.informacoes-do-perfil-1 img{
+    width: 120px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.informacoes-do-perfil-1 p{
+    padding-left: 30px;
+}
+
+.informacoes-do-perfil-2{
+    display: flex;
+    flex-direction: column;
+}
+
+.div-contagem{
+    display: flex;
+    gap: 30px;
+    margin: 0 auto;
+}
+
+.p-perfil{
     color: rgba(254, 254, 255, 0.5);
-    padding: 0 80px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 12px;
 }
 
 .zero {
-    color: #ffffff;
-    border: 15px solid color(srgb red green blue);
+    color: rgba(254, 254, 255, 0.5);
+    margin: 0 auto;
+    text-align: center;
+    border: 2px solid #ffffff;
+    border-radius: 12px;
+    padding: 20px;
 }
 
