@@ -65,3 +65,11 @@ article{
     display: flex;
     justify-content: space-between;
 }
+.container-comentarios{
+    margin-bottom: 200px;
+}
+
+.perfis{
+    color: azure;
+    margin: 5px 0;
+}
