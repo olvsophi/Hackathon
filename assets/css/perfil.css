@@ -1,6 +1,7 @@
 main{
     background: linear-gradient(rgba(3, 47, 94, 1), rgba(33, 90, 126, 1));
     font-family: "Inter";
+    padding: 100px 0;
 }
 
 .textos-main{
@@ -16,7 +17,7 @@ main{
     background: rgba(153, 152, 152, 0.4);
     border: 0.2px solid rgba(30, 30, 30, 0.4);
     backdrop-filter: blur(40px);
-    box-shadow: 0 16px 20px rgba(0, 0, 0, 0.6);
+    /* box-shadow: 0 16px 20px rgba(0, 0, 0, 0.6); */
     box-shadow: inset 0 0 60px rgba(122, 146, 217, 0.4);
     border-radius: 50px;
     margin: 0 auto;
@@ -28,31 +29,36 @@ main{
 .informacoes-do-perfil input{
     height: 40px;
     width: 215px;
-    margin: 0 auto;
+    margin: 10px auto;
     background: rgba(153, 152, 152, 0.4);
     border: 0.2px solid rgba(30, 30, 30, 0.4);
     backdrop-filter: blur(40px);
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.6);
-    box-shadow: inset 0 0 60px rgba(122, 146, 217, 0.4);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.8);
+    box-shadow: inset 0 0 60px rgba(51, 71, 131, 0.4);
     border-radius: 12px;
     color: #ffffff;
     padding: 10px;
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 200;
 }
 
-.informacoes-do-perfil-1{
+#informacoes-do-perfil-1{
     display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 215px;
 }
 
-.informacoes-do-perfil-1 img{
-    width: 120px;
+.imagem-perfil{
+    width: 100px;
     margin: 0 auto;
     text-align: center;
 }
 
-.informacoes-do-perfil-1 p{
-    padding-left: 30px;
+#informacoes-do-perfil-1 p{
+    text-align: left;
+    color:  rgba(254, 254, 255, 0.5);
+    font-weight: 200;
 }
 
 .informacoes-do-perfil-2{
@@ -68,17 +74,51 @@ main{
 
 .p-perfil{
     color: rgba(254, 254, 255, 0.5);
-    margin: 0 auto;
+    margin: 10px auto;
     text-align: center;
     font-size: 12px;
+    font-weight: 200;
+}
+
+.contador{
+    text-align: center;
 }
 
 .zero {
     color: rgba(254, 254, 255, 0.5);
-    margin: 0 auto;
-    text-align: center;
-    border: 2px solid #ffffff;
+    border: 1px solid #ffffff;
     border-radius: 12px;
-    padding: 20px;
+    display: inline-block;
+    padding: 15px 20px;
+    margin: 10px 0;
 }
 
+.buttons{
+    display: flex;
+    flex-direction: column;
+}
+
+#button-senha{
+    height: 40px;
+    width: 215px;
+    margin: 0 auto;
+    background: rgba(153, 152, 152, 0.3);
+    border: 0.2px solid rgba(30, 30, 30, 0.4);
+    backdrop-filter: blur(40px);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.7);
+    box-shadow: inset 0 0 60px rgba(122, 146, 217, 0.4);
+    border-radius: 12px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#button-confirmar{
+    height: 40px;
+    width: 215px;
+    margin: 0 auto;
+    background: rgba(153, 152, 152, 0.4);
+    border: 0.2px solid rgba(30, 30, 30, 0.4);
+    backdrop-filter: blur(40px);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.6);
+    box-shadow: inset 0 0 60px rgba(122, 146, 217, 0.4);
+    border-radius: 12px;
+}
