@@ -22,7 +22,11 @@ main h2 {
     margin-bottom: 40px;
 }
 
-.comentario{
+main h3 {
+    padding-bottom: 10px;
+}
+
+.comentario {
     font-size: 16px;
     text-align: left;
     font-family: 'Inter', sans-serif;
@@ -32,44 +36,45 @@ main h2 {
 
 }
 
-.comentarios{
+.comentarios {
     width: 100%;
     max-width: 1000px;
     margin: 0 auto;
     display: flex;
     margin-bottom: 20px;
-    
+
 }
 
 
-article{
+article {
     background: rgba(153, 152, 152, 0.4);
     border: 0.2px solid rgba(30, 30, 30, 0.4);
     backdrop-filter: blur(40px);
     box-shadow: 0 16px 20px rgba(0, 0, 0, 0.6);
     box-shadow: inset 0 0 60px rgba(122, 146, 217, 0.4);
-    border-radius: 50px;    
+    border-radius: 50px;
     padding: 30px;
     width: 100%;
 }
 
-.comentario{
+.comentario {
     width: 100%;
     background-color: #7575758a;
-    height: 100px;  
+    height: 100px;
     padding: 10px;
     border-radius: 10px;
 }
 
-.botoes{
+.botoes {
     display: flex;
     justify-content: space-between;
 }
-.container-comentarios{
+
+.container-comentarios {
     margin-bottom: 200px;
 }
 
-.perfis{
+.perfis {
     color: azure;
     margin: 5px 0;
 }
