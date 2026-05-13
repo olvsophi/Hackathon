@@ -78,3 +78,13 @@ article {
     color: azure;
     margin: 5px 0;
 }
+
+.comentarios button {
+    background-color: transparent;
+    border: none;
+    margin: 5px;
+}
+
+.botoes{
+    margin-top: 5px;
+}
