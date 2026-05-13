@@ -1,12 +1,8 @@
-.container{
-    background: linear-gradient(to bottom,#021827, #1D6C9D);
-}
-
 main{
    background-image: 
     linear-gradient(to bottom, transparent, #0B344E),
     url("../images/background.png");
-    
+    padding: 100px 0;
 }
 
 header{
