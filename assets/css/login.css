@@ -1,7 +1,7 @@
 header{
 
     text-align: center;
-    padding: 5px;
+    color: white;
 }
 
 
@@ -93,3 +93,18 @@ h3{
     font-size: 15px;
 }
 
+.linha-login{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    white-space: nowrap;
+    font-size: 12px;
+}
+
+.linha-login hr{
+    width: 75px;
+    border: none;
+    height: 1px;
+    background: white;
+}
