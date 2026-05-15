@@ -12,13 +12,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2
-family=Inter:ital,wght@0,100..900;1,100..900&
-family=Montserrat:ital,wght@0,100..900;1,100..900&
-family=Radio+Canada:ital,wght@0,300..700;1,300..700&
-family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&
-family=Text+Me+One&
-display=swap" rel="stylesheet">
-
+    family=Inter:ital,wght@0,100..900;1,100..900&
+    family=Montserrat:ital,wght@0,100..900;1,100..900&
+    family=Radio+Canada:ital,wght@0,300..700;1,300..700&
+    family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&
+    family=Text+Me+One&
+    display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -41,51 +40,43 @@ display=swap" rel="stylesheet">
     <main>
         <h1 class="titulo-principal">Faça sua denúncia</h1>
         <h2 class="subtitulo">Nos conte sua experiência</h2>
-
-        <form>
-            <h3>Preencha o formulário com o ocorrido </h3>
-            <div class="campos-formulario">
-                <div>
+        <div class="container">
+            <form>
+                <h3>Preencha o formulário com o ocorrido </h3>
+                <div class="campos-formulario">
                     <div>
                         <label for="servico">Serviço</label>
                         <input id="servico" type="text">
+                        <div>
+                            <label for="fornecedor">Fornecedor</label>
+                            <input id="fornecedor" type="text">
+                        </div>
+                        <div>
+                            <label for="topico">Tópico</label>
+                            <input id="topico" type="text">
+                        </div>
+                        <div>
+                            <label for="problema">Nos conte o seu problema </label>
+                            <textarea id="problema"></textarea>
+                        </div>
+                        <div>
+                            <p>
+                                O fornecedor resolveu seu problema?
+                            </p>
+                        </div>
+                        <div>
+                            <button class="like"><img src="../assets/icones/Checked-like-button.svg" alt=""></button>
+                            <button class="dislike"><img src="../assets/icones/Checked-deslike-button.svg" alt=""></button>
+                        </div>
                     </div>
-                    <div>
-                        <label for="fornecedor">Fornecedor</label>
-                        <input id="fornecedor" type="text">
-                    </div>
                 </div>
-
-                <div>
-                    <label for="topico">Tópico</label>
-                    <input id="topico" type="text">
-                </div>
-                <div>
-                    <label for="problema">Nos conte o seu problema </label>
-                    <textarea id="problema"></textarea>
-                </div>
-
-                <div>
-                    <p>O fornecedor resolveu seu problema?</p>
-                </div>
-                <div>
-                    <button class="like"><img src="../assets/icones/Checked-like-button.svg" alt=""></button>
-
-                    <button class="dislike"><img src="../assets/icones/Checked-deslike-button.svg" alt=""></button>
-
-                </div>
-            </div>
-        </form>
-
+            </form>
+        </div>
     </main>
-
-    
 
     <footer class="footer-geral">
         <img src="../assets/images/logo.png" alt="Logo">
-
         <p>Secure Search &copy; 2026 | Todos os direitos reservados</p>
-
     </footer>
 </body>
 

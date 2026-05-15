@@ -22,7 +22,6 @@ main{
     background: rgba(153, 152, 152, 0.4);
     border: 0.2px solid rgba(30, 30, 30, 0.4);
     backdrop-filter: blur(40px);
-    /* box-shadow: 0 16px 20px rgba(0, 0, 0, 0.6); */
     box-shadow: inset 0 0 60px rgba(122, 146, 217, 0.4);
     border-radius: 50px;
     margin: 0 auto;
@@ -132,4 +131,10 @@ main{
     border-radius: 12px;
     font-weight: 200;
     color: #ffffff;
+}
+
+@media (max-width: 1084px){
+    .secure-search h2{
+        display: none;
+    }
 }
