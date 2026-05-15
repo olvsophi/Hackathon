@@ -76,7 +76,13 @@ article {
 
 .perfis {
     color: azure;
-    margin: 5px 0;
+    margin: 10px 0 15px 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+
 }
 
 .comentarios button {
@@ -85,6 +91,10 @@ article {
     margin: 5px;
 }
 
-.botoes{
+.botoes {
     margin-top: 5px;
+}
+
+.container-comentario {
+    margin-left: 60px;
 }
