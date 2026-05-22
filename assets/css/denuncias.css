@@ -25,7 +25,7 @@ main .container {
     flex-direction: column;
     height: 700px;
     width: 100%;
-    max-width: 500px;
+    max-width: 450px;
     background: rgba(153, 152, 152, 0.4);
     border: 0.2px solid rgba(30, 30, 30, 0.4);
     backdrop-filter: blur(40px);
@@ -37,14 +37,20 @@ main .container {
     font-size: 14px;
 }
 
-h3{
+h3 {
     font-weight: 600;
+    text-align: center;
+    font-family: "Inter", sans-serif;
 }
 
-.inputs-form{
+.box {
+    color: #91A5B8;
+    font-family: "Inter", sans-serif;
+}
+
+.inputs-form {
     display: flex;
     gap: 20px;
-    color: #91A5B8;
 }
 
 input {
@@ -52,7 +58,7 @@ input {
     border-radius: 5px;
     font-size: 16px;
     height: 40px;
-    width: 215px;
+    width: 100%;
     margin: 10px auto;
     background: rgba(153, 152, 152, 0.4);
     border: 0.2px solid rgba(30, 30, 30, 0.4);
@@ -64,4 +70,39 @@ input {
     padding: 10px;
     font-size: 14px;
     font-weight: 200;
+}
+
+.topico input {
+    width: 100%;
+    max-width: 450px;
+}
+
+textarea {
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    height: 180px;
+    width: 100%;
+    max-width: 450px;
+    margin: 10px auto;
+    background: rgba(153, 152, 152, 0.4);
+    border: 0.2px solid rgba(30, 30, 30, 0.4);
+    backdrop-filter: blur(40px);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.8);
+    box-shadow: inset 0 0 60px rgba(51, 71, 131, 0.4);
+    border-radius: 12px;
+    color: #ffffff;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 200;
+    resize: none;
+}
+
+.botoes {
+    text-align: center;
+}
+
+button {
+    background-color: transparent;
+    border: none;
 }
