@@ -42,17 +42,16 @@ main h3 {
     margin: 0 auto;
     display: flex;
     margin-bottom: 20px;
-
 }
 
 
 article {
-    background: rgba(153, 152, 152, 0.4);
+    background: rgba(112, 110, 110, 0.4);
     border: 0.2px solid rgba(30, 30, 30, 0.4);
     backdrop-filter: blur(40px);
     box-shadow: 0 16px 20px rgba(0, 0, 0, 0.6);
-    box-shadow: inset 0 0 60px rgba(122, 146, 217, 0.4);
-    border-radius: 50px;
+    box-shadow: inset 0 0 60px rgba(150, 176, 255, 0.4);
+    border-radius: 40px;
     padding: 30px;
     width: 100%;
 }
@@ -60,9 +59,10 @@ article {
 .comentario {
     width: 100%;
     background-color: #7575758a;
-    height: 100px;
     padding: 10px;
     border-radius: 10px;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 .botoes {
@@ -97,4 +97,10 @@ article {
 
 .container-comentario {
     margin-left: 60px;
+}
+
+@media (max-width: 1041px){
+    .secure-search h2{
+        display: none;
+    }
 }
