@@ -20,81 +20,84 @@ display=swap" rel="stylesheet">
 
 <body>
     <main>
-        <header id="principal">
-            <img class="logo" src="./assets/images/logo.png" alt="Logo da Secure Search">
-            <nav class="link-central">
-                <a href="./pages/forum.html">Fórum</a>
-                <a href="./pages/denuncias.html">Denúncias</a>
-            </nav>
+        <div>
+            <header id="principal">
+                <img class="logo" src="./assets/images/logo.png" alt="Logo da Secure Search">
+                <nav class="link-central">
+                    <a href="./pages/forum.html">Fórum</a>
+                    <a href="./pages/denuncias.html">Denúncias</a>
+                </nav>
 
-            <div class="direita">
-                <a href="./pages/cadastro.html">
-                    Criar conta
-                </a>
-                <a href="./pages/login.html">
-                    Entrar
-                </a>
-                <a href="#"><img src="./assets/icones/icone de perfil.svg" alt="Perfil" class="perfil-principal"></a>
-            </div>
-        </header>
+                <div class="direita">
+                    <a href="./pages/cadastro.html">
+                        Criar conta
+                    </a>
+                    <a href="./pages/login.html">
+                        Entrar
+                    </a>
+                    <a href="#"><img src="./assets/icones/icone de perfil.svg" alt="Perfil"
+                            class="perfil-principal"></a>
+                </div>
+            </header>
 
+            <section>
+                <h1>Navegue com confiança, <br>
+                    denuncie com precisão.</h1>
+                <h2>Por trás de um clique fácil, pode haver um golpe difícil. <br>
+                    Na dúvida? Não clique, pesquise aqui primeiro.</h2>
+                <div class="Logo-pesquisa">
+                    <form class="pesquisa">
+                        <input type="search" placeholder="Pesquisar">
+                    </form>
+
+                </div>
+            </section>
+        </div>
         <section>
-            <h1>Navegue com confiança, <br>
-                denuncie com precisão.</h1>
-            <h2>Por trás de um clique fácil, pode haver um golpe difícil. <br>
-                Na dúvida? Não clique, pesquise aqui primeiro.</h2>
-            <div class="Logo-pesquisa">
-                <form class="pesquisa">
-                    <input type="search" placeholder="Pesquisar">
-                </form>
+            <div class="Slider">
+                <div class="Brilho-lg"></div>
 
+                <div class="Cobertura-lg">
+                    <h2 class="lg-heading">Em alta!</h2>
+
+                    <section class="lg-container">
+                        <button type="button" class="nav-btn nav-prev" id="prevBtn">
+                            <svg viewBox="0 0 24 24" width="18" height="18">
+                                <path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+
+                        <div class="slides-window">
+                            <div class="slides-track" id="slidesTrack">
+                            </div>
+                        </div>
+
+                        <button type="button" class="nav-btn nav-next" id="nextBtn">
+                            <svg viewBox="0 0 24 24" width="18" height="18">
+                                <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                    </section>
+                </div>
+            </div>
+            <div class="glass-panel">
+                <div class="tips-header">
+                    <h1>Dicas de Segurança Digital</h1>
+                    <p>Boas práticas rápidas para se proteger no dia a dia online.</p>
+                </div>
+
+                <div id="tipsGrid" class="tips-grid" aria-live="polite"></div>
+
+                <div class="tips-actions">
+                    <button id="shuffleBtn" class="shuffle-btn" type="button">
+                        Sortear novas dicas
+                    </button>
+                </div>
             </div>
         </section>
     </main>
-    <section>
-        <div class="Slider">
-            <div class="Brilho-lg"></div>
-
-            <div class="Cobertura-lg">
-                <h2 class="lg-heading">Em alta!</h2>
-
-                <section class="lg-container">
-                    <button type="button" class="nav-btn nav-prev" id="prevBtn">
-                        <svg viewBox="0 0 24 24" width="18" height="18">
-                            <path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </button>
-
-                    <div class="slides-window">
-                        <div class="slides-track" id="slidesTrack">
-                        </div>
-                    </div>
-
-                    <button type="button" class="nav-btn nav-next" id="nextBtn">
-                        <svg viewBox="0 0 24 24" width="18" height="18">
-                            <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </button>
-                </section>
-            </div>
-        </div>
-        <div class="glass-panel">
-            <div class="tips-header">
-            <h1>Dicas de Segurança Digital</h1>
-            <p>Boas práticas rápidas para se proteger no dia a dia online.</p>
-            </div>
-
-            <div id="tipsGrid" class="tips-grid" aria-live="polite"></div>
-
-            <div class="tips-actions">
-                <button id="shuffleBtn" class="shuffle-btn" type="button">
-                    Sortear novas dicas
-                </button>
-            </div>
-        </div>
-    </section>
 
     <footer id="footer-principal">
         <div class="conteiner-superior">
