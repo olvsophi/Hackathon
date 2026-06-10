@@ -3,8 +3,7 @@ body {
 }
 
 main {
-    background-image: linear-gradient(to bottom, transparent, #0B344E),
-        url("../images/background.png");
+    background-image: linear-gradient(to bottom, transparent, #0B344E), url("../images/background.png");
 
 }
 
@@ -81,7 +80,7 @@ section h2 {
     border: 1px solid rgba(255, 255, 255, 0.3);
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
-    color: white;
+    color: rgb(0, 0, 0);
     outline: none;
     background: url("../icones/icone-pesquisar.svg") no-repeat;
     background-position: 23px center;
@@ -641,6 +640,18 @@ section h2 {
     margin-bottom: 10px;
 }
 
+
+@media (max-width: 850px) {
+    .logo {
+        width: 100%;
+        max-width: 150px;
+    }
+    header{
+        padding: 20px;
+    }
+
+
+}
 
 @media (max-width: 720px) {
     .lg-container {
