@@ -129,8 +129,8 @@ button {
     color: white;
 }
 
-@media (max-width: 1016px){
-    .secure-search h2{
-        display: none;
+@media (max-width: 630px){
+    .container{
+       margin: 20px;
     }
 }

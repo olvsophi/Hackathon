@@ -156,8 +156,102 @@ main {
     transform: scale(0.95);
 }
 
+nav {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.celular {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100px;
+    right: 10px;
+    left: auto;
+    transform: none;
+    min-width: 200px;
+    padding: 15px;
+    gap: 10px;
+    background: rgba(10, 40, 70, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .3);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .25s ease;
+}
+
+.celular a,
+.celular button {
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    text-align: left;
+    padding: 10px 15px;
+    border: none;
+    background: transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.celular a:hover,
+.celular button:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.celular.ativo {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+}
+
+.celular a {
+    margin-right: 0 !important;
+}
+
+.menu {
+    width: 30px;
+    margin-left: auto;
+    padding: 0 5px;
+    display: none;
+    margin-right: 10px;
+}
+
 @media (max-width: 1084px) {
     .secure-search h2 {
         display: none;
+    }
+}
+
+@media (max-width: 630px) {
+    .computador {
+        display: none;
+    }
+
+    .sair {
+        display: none;
+    }
+
+    .header-geral {
+        padding: 0 10px !important;
+    }
+
+    .menu {
+        display: block;
+        width: 30px;
+        cursor: pointer;
+    }
+}
+
+@media(max-width: 466px) {
+    .informacoes-do-perfil {
+        border-radius: 0;
+        padding: 20px 10px;
+        margin: 0;
     }
 }
