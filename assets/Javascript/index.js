@@ -77,7 +77,7 @@ function update() {
   const slideEls = track.querySelectorAll(".slide");
   slideEls.forEach((el, i) => {
     el.classList.toggle("active", i === index);
-    el.setAttribute(i !== index);
+    el.setAttribute("aria-hidden",i !== index);
     const link = el.querySelector(".see-more-btn");
     if (link) link.tabIndex = i === index ? 0 : -1;
   });
@@ -153,7 +153,7 @@ function sortear(lista, n) {
 }
 
 function renderizar() {
-    const escolhidas = sortear(tips, 8);
+    const escolhidas = sortear(tips, 4);
     grid.innerHTML = "";
 
     escolhidas.forEach((dica, i) => {

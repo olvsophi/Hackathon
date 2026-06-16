@@ -87,25 +87,6 @@ nav a:first-of-type {
     width: 48px;
 }
 
-
-
-.conteiner-superior {
-    display: grid;
-    grid-template-columns: 30% 70%;
-    padding: 30px 55px;
-}
-
-.conteiner-superior img {
-    width: 100%;
-    max-width: 150px;
-}
-
-.conteiner-superior>div {
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
-}
-
 .footer-geral {
     background-color: #032F5E;
 }
@@ -184,6 +165,7 @@ nav a:first-of-type {
     padding: 0 5px;
     display: none;
     margin-right: 10px;
+    height: 15px;
 }
 
 @media (max-width: 1041px){
@@ -193,7 +175,7 @@ nav a:first-of-type {
 }
 
 @media (max-width: 630px){
-    .computador{
+    .computador , .link-central{
         display: none;
     }
     .sair{
