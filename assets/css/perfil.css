@@ -18,7 +18,8 @@ main {
     display: flex;
     flex-direction: column;
     height: 700px;
-    width: 450px;
+    width: 100%;
+    max-width: 450px;
     background: rgba(153, 152, 152, 0.4);
     border: 0.2px solid rgba(30, 30, 30, 0.4);
     backdrop-filter: blur(40px);
