@@ -100,10 +100,26 @@ textarea {
     text-align: center;
     margin: 10px 0 0 0;
 }
+button:hover{
+    transform: translateY(-5px);
+}
 
 button {
     background-color: transparent;
     border: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+
+.botao-envio:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 5px 10px rgb(59, 59, 59);
+}
+
+.sair:hover{
+    border-bottom: 1px solid red;
+    color: red;
 }
 
 .botao-envio{
@@ -119,8 +135,8 @@ button {
     color: white;
 }
 
-@media (max-width: 630px){
-    .container{
-       margin: 20px;
+@media (max-width: 465px){
+    main .container{
+       border-radius: 0;
     }
 }

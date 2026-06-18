@@ -6,7 +6,12 @@
 
 a{
     text-decoration: none;
+    transition: all .3s ease;
 }
+a:hover{
+    color: rgb(14, 221, 221);
+}
+
 
 li {
     list-style-type: none;
@@ -87,6 +92,15 @@ nav a:first-of-type {
     width: 48px;
 }
 
+.sair{
+    transition: all .3s ease;
+}
+
+.sair:hover{
+    border-bottom: 1px solid red;
+    color: red;
+    transform: translateY(-5px);
+}
 .footer-geral {
     background-color: #032F5E;
 }

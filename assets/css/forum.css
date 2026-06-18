@@ -98,6 +98,20 @@ article {
     display: flex;
     justify-content: space-between;
 }
+ .like,.dislike,.report,.respostas{
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+ .like:hover,.dislike:hover,.report:hover{
+    transform: translateY(-5px);
+    
+}
+
+.respostas:hover{
+    color: #0A2846;
+}
+
 
 .container-comentarios {
     margin-bottom: 200px;
