@@ -1,0 +1,142 @@
+body {
+    background: linear-gradient(to bottom, #032F5E, #215A7E);
+}
+
+main{
+    font-family: "Inter", sans-serif;
+    margin-bottom: 100px;
+}
+
+.titulo-principal {
+    font-size: 24px;
+    text-align: center;
+    margin: 80px 0 0 0;
+    color: white;
+}
+
+.subtitulo {
+    font-size: 16px;
+    font-weight: normal;
+    text-align: center;
+    color: white;
+    margin: 10px 0 60px 0;
+}
+
+main .container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 450px;
+    background: rgba(101, 101, 101, 0.4);
+    border: 0.2px solid rgba(30, 30, 30, 0.4);
+    backdrop-filter: blur(40px);
+    box-shadow: inset 0 0 60px rgba(132, 152, 212, 0.4);
+    border-radius: 50px;
+    margin: 0 auto;
+    padding: 40px;
+    color: #FEFEFF;
+    font-size: 14px;
+}
+
+h3 {
+    font-weight: 600;
+    text-align: center;
+    margin: 0 0 20px 0;
+}
+
+.topico {
+    margin: 0 0 20px 0;
+    color: #91A5B8;
+}
+
+input {
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    width: 100%;
+    margin: 10px auto;
+    background: rgba(153, 152, 152, 0.4);
+    border: 0.2px solid rgba(30, 30, 30, 0.4);
+    backdrop-filter: blur(40px);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.8);
+    box-shadow: inset 0 0 60px rgba(51, 71, 131, 0.4);
+    border-radius: 12px;
+    color: #ffffff;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 200;
+}
+
+.topico input {
+    width: 100%;
+    max-width: 450px;
+}
+
+textarea {
+    border: none;
+    border-radius: 5px;
+    height: 180px;
+    width: 100%;
+    max-width: 450px;
+    margin: 10px auto;
+    background: rgba(153, 152, 152, 0.4);
+    border: 0.2px solid rgba(30, 30, 30, 0.4);
+    backdrop-filter: blur(40px);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.8);
+    box-shadow: inset 0 0 60px rgba(51, 71, 131, 0.4);
+    border-radius: 12px;
+    color: #ffffff;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 200;
+    resize: none;
+}
+
+.box p{
+    text-align: center;
+}
+
+.botoes {
+    text-align: center;
+    margin: 10px 0 0 0;
+}
+button:hover{
+    transform: translateY(-5px);
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+
+.botao-envio:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 5px 10px rgb(59, 59, 59);
+}
+
+.sair:hover{
+    border-bottom: 1px solid red;
+    color: red;
+}
+
+.botao-envio{
+    display: flex;
+    margin: 20px auto 0 auto;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #fefeff40;
+    border-radius: 12px;
+    height: 40px;
+    width: 100%;
+    max-width: 200px;
+    color: white;
+}
+
+@media (max-width: 465px){
+    main .container{
+       border-radius: 0;
+    }
+}
