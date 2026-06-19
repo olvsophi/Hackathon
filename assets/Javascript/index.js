@@ -4,35 +4,35 @@ const slides = [
     category: "Tecnologia",
     title: "IA brasileira atinge marco inédito em redes neurais",
     description: "Pesquisadores de São Paulo apresentaram um modelo capaz de processar informações 40% mais rápido que os concorrentes globais, abrindo caminho para nova geração de assistentes.",
-    image: "assets/slide-1.jpg",
+    image: "assets/images/slide-1.jpg",
     link: "#noticia-1"
   },
   {
     category: "Ciência",
     title: "Material líquido autorreparável surpreende cientistas",
     description: "Substância desenvolvida em laboratório reconstrói sua própria estrutura em segundos após ser danificada — promessa para telas, próteses e dispositivos vestíveis.",
-    image: "assets/slide-2.jpg",
+    image: "assets/images/slide-2.jpg",
     link: "#noticia-2"
   },
   {
     category: "Inovação",
     title: "Cubo de cristal armazena 500 anos de dados",
     description: "Nova tecnologia óptica grava informações dentro de cristais de quartzo com durabilidade estimada em séculos. Empresas já correm para adotar o método.",
-    image: "assets/slide-3.jpg",
+    image: "assets/images/slide-3.jpg",
     link: "#noticia-3"
   },
   {
     category: "Design",
     title: 'Tendência "Liquid Glass" domina interfaces em 2026',
     description: "Apple, Google e startups de design adotam o estilo translúcido com profundidade. Veja por que o glassmorphism voltou com força — e desta vez fluido.",
-    image: "assets/slide-4.jpg",
+    image: "assets/images/slide-4.jpg",
     link: "#noticia-4"
   },
   {
     category: "Energia",
     title: "Anel magnético gera energia limpa sem combustível",
     description: 'Protótipo desenvolvido na Europa usa indução contínua para produzir eletricidade silenciosa. Cientistas chamam o invento de "loop infinito energético".',
-    image: "assets/slide-5.jpg",
+    image: "assets/images/slide-5.jpg",
     link: "#noticia-5"
   }
 ];
