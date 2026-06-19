@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Search | Denúncias</title>
+    <link rel="stylesheet" href="../assets/css/denuncias.css">
+    <link rel="stylesheet" href="../assets/css/geral.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2
+    family=Inter:ital,wght@0,100..900;1,100..900&
+    family=Montserrat:ital,wght@0,100..900;1,100..900&
+    family=Radio+Canada:ital,wght@0,300..700;1,300..700&
+    family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Text+Me+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header-geral">
+        <div class="secure-search">
+            <a href="../index.html">
+                <img src="../assets/images/logo-sem-nome.png" alt="Logo">
+            </a>
+            <h2>Secure Search</h2>
+        </div>
+        <nav class="celular">
+
+            <a href="../index.html">Inicio</a>
+            <a href="../pages/forum.html">Fórum</a>
+
+            <button>Sair</button>
+        </nav>
+
+        <img class="menu" src="../assets/icones/menu.png" alt="Menu">
+
+        <nav class="computador">
+            <a href="../index.html">Inicio</a>
+            <a href="../pages/forum.html">Fórum</a>
+        </nav>
+
+        <div class="header-perfil">
+            <button class="sair">Sair</button>
+            <a href="./perfil.html">
+                <img src="../assets/icones/icone de perfil.svg" alt="Foto de perfil">
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <h1 class="titulo-principal">Faça sua denúncia</h1>
+        <h2 class="subtitulo">Nos conte sua experiência</h2>
+        <div class="container">
+            <form>
+                <h3>Preencha o formulário com o ocorrido </h3>
+                        
+                    <div class="topico">
+                        <label for="topico">Tópico</label>
+                        <input id="topico" type="text">
+                    </div>
+                    <div class="topico">
+                        <label for="problema">Nos conte o seu problema </label>
+                        <textarea id="problema"></textarea>
+                    </div>
+                    <p style="text-align: center; color: darkgray;">
+                        O seu problema foi solucionado
+                    </p>
+                    <div class="botoes">
+                        <button class="like"><img src="../assets/icones/Checked-like-button.svg"
+                                alt="Botão de like">
+                        </button>
+                        <button class="dislike"><img src="../assets/icones/Checked-deslike-button.svg"
+                                alt="Botão de deslike">
+                        </button>
+                    </div>
+                    <button class="botao-envio">
+                        Enviar denúncia
+                    </button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer-geral">
+        <img src="../assets/images/logo.png" alt="Logo">
+        <p>Secure Search &copy; 2026 | Todos os direitos reservados</p>
+    </footer>
+    <script src="../assets/Javascript/menu.js"></script>
+    <script type="module" src="../assets/Javascript/firebaseconfig.js"></script>
+    <script type="module" src="../assets/Javascript/denuncias.js"></script>
+</body>
+
+</html>
