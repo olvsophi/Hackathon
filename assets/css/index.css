@@ -4,18 +4,23 @@ body {
 
 main {
     background-image: linear-gradient(to bottom, transparent, #0B344E), url("../images/background.png") no-repeat;
+    padding: 30px 55px;
 }
+
 
 header {
     display: flex;
-    justify-content: space-between;
-    padding: 30px 55px;
     position: relative;
 }
 
-.link-central {
+nav{
     position: absolute;
-    top: 50px;
+    top: 17px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.menu{
+    margin-left: auto;
 }
 
 .perfil-principal {
@@ -27,6 +32,7 @@ header {
     gap: 15px;
     align-items: center;
     height: 35px;
+    margin-left: auto;
 }
 
 .direita a {
@@ -675,11 +681,6 @@ li {
         max-width: 150px;
     }
 
-    header {
-        padding: 20px;
-    }
-
-
 }
 
 
@@ -733,19 +734,6 @@ li {
     }
 }
 
-@media (max-width: 975px) {
-    main {
-        padding: 30px;
-    }
-    header{
-        padding: 0px 0px;
-        display: flex;
-        margin: 0 auto;
-    }
-
-}
-
-
 @media (max-width: 900px) {
     .tips-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -759,7 +747,7 @@ li {
     }
 
     main {
-        padding: 10px;
+        padding: 20px 10px;
     }
 
     .conteiner-superior>div {

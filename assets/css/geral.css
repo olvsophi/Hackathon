@@ -50,7 +50,7 @@ li {
     width: 90px;
 }
 
-nav {
+.nav-geral{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -64,8 +64,8 @@ nav a {
     color: #ffffff;
 }
 
-nav a:first-of-type {
-    margin-right: 70px;
+nav a:not(:first-of-type) {
+    margin-left: 40px;
 }
 
 .header-perfil img {
