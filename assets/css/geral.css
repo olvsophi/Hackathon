@@ -203,6 +203,9 @@ nav a:first-of-type {
         width: 30px;
         cursor: pointer;
     }
+    .direita a{
+        padding: 0px 0px 0px 0px;
+    }
 }
 
 @media (max-width: 1016px){

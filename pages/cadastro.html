@@ -5,49 +5,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Secure Search | Cadastro</title>
+
     <link rel="stylesheet" href="../assets/css/login.css">
     <link rel="stylesheet" href="../assets/css/geral.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2
-    family=Inter:ital,wght@0,100..900;1,100..900&
-    family=Montserrat:ital,wght@0,100..900;1,100..900&
-    family=Radio+Canada:ital,wght@0,300..700;1,300..700&
-    family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Text+Me+One&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <header>
-        <img src="../assets/images/logo-sem-nome.png" alt="Logo">
-        <h1>Secure Search</h1>
-    </header>
 
-    <main>
-        <form class="login-cadastro">
-            <img src="../assets/icones/Profile Icon.svg" alt="Ícone de perfil">
+<header>
+    <img src="../assets/images/logo-sem-nome.png" alt="Logo">
+    <h1>Secure Search</h1>
+</header>
 
-        
-                <div class="input-box">
-                    <label>Email</label>
-                    <input class="input-glass" type="text">
-                </div>
-                <button class="continuar">Continuar</button>
+        <main>
 
-                <div class="linha-login">
-                    <hr>
-                    <span>Entrar com</span>
-                    <hr>
-                </div>
+        <form class="login-cadastro" id="formCadastro">
 
-                <div class="contas">
-                    <button><img src="../assets/icones/google-svgrepo-com.svg" alt="Ícone Google"></button>
-                    <button><img src="../assets/icones/facebook-svgrepo-com.svg" alt="Ícone Facebook"></button>
+            <img src="../assets/icones/Profile Icon.svg" alt="Perfil">
+
+
+            <div class="input-box">
+                <label id="labelCampo">Email</label>
+                <input id="email" class="input-glass" type="email" required>
             </div>
-            <a href="./login.html">Já tem uma conta?</a>    
-        </form>
-    </main>
-</body>
 
+            <div class="input-box">
+                <label>Senha</label>
+                <input id="senha" type="password" class="input-glass" required>
+            </div>
+
+            <button class="continuar" type="submit">Continuar</button>
+
+
+            <div class="linha-login">
+                <hr>
+                <span>Entrar com</span>
+                <hr>
+            </div>
+
+            <div class="contas">
+                <button type="button"><img src="../assets/icones/google-svgrepo-com.svg"></button>
+                <button type="button"><img src="../assets/icones/facebook-svgrepo-com.svg"></button>
+            </div>
+
+            <a href="./login.html">Já tem uma conta?</a>
+
+        </form>
+
+        </main>
+
+<script type="module" src="../assets/Javascript/cadastro.js"></script>
+
+</body>
 </html>

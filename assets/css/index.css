@@ -33,6 +33,7 @@ header {
     text-decoration: none;
     color: #ffffff;
     font-family: "inter";
+    padding: 0px 0px 0px 30px;
 }
 
 .bt-header {
@@ -736,6 +737,12 @@ li {
     main {
         padding: 30px;
     }
+    header{
+        padding: 0px 0px;
+        display: flex;
+        margin: 0 auto;
+    }
+
 }
 
 
