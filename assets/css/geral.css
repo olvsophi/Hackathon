@@ -64,7 +64,7 @@ nav a {
     color: #ffffff;
 }
 
-nav a:not(:first-of-type) {
+.nav-geral a:not(:first-of-type) {
     margin-left: 40px;
 }
 
@@ -188,7 +188,7 @@ nav a:not(:first-of-type) {
     }
 }
 
-@media (max-width: 830px){
+@media (max-width: 860px){
     .computador , .link-central{
         display: none;
     }

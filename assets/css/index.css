@@ -19,6 +19,10 @@ nav{
     left: 50%;
     transform: translate(-50%, -50%);
 }
+.link-central a:not(:first-of-type) {
+    margin-left: 40px;
+}
+
 .menu{
     margin-left: auto;
 }
