@@ -33,11 +33,13 @@ form.addEventListener("submit", async (e) => {
     }
 });
 
+console.log(btnGoogle)
+
 btnGoogle.addEventListener("click", async () => {
     try {
         await signInWithPopup(auth, googleProvider);
         alert("Autenticado com o Google com sucesso!");
-        window.location.href = "home.html"; // Altere para a sua página principal pós-login
+        window.location.href = "../index.html";
     } catch (error) {
         tratarErros(error);
     }
@@ -47,7 +49,7 @@ btnFacebook.addEventListener("click", async () => {
     try {
         await signInWithPopup(auth, facebookProvider);
         alert("Autenticado com o Facebook com sucesso!");
-        window.location.href = "home.html"; // Altere para a sua página principal pós-login
+        window.location.href = "../index.html"; 
     } catch (error) {
         tratarErros(error);
     }

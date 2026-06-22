@@ -10,6 +10,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    
+    <script defer type="module" src="../assets/Javascript/login.js"></script>
 
     <link href="https://fonts.googleapis.com/css2
     family=Inter:ital,wght@0,100..900;1,100..900&
@@ -28,7 +30,7 @@
     </header>
 
     <main>
-        <form class="login-cadastro">
+        <form class="login-cadastro" id="formLogin">
             <img src="../assets/icones/Profile Icon.svg" alt="">
 
             <h2>Faça login</h2>
@@ -55,12 +57,12 @@
 
             <div class="contas">
 
-                <button><img src="../assets/icones/google-svgrepo-com.svg" alt=""></button>
-                <button><img src="../assets/icones/facebook-svgrepo-com.svg" alt=""></button>
+                <button type="button" id="btnGoogle"><img src="../assets/icones/google-svgrepo-com.svg" alt=""></button>
+                <button type="button" id="btnFacebook"><img src="../assets/icones/facebook-svgrepo-com.svg" alt=""></button>
 
             </div>
         </form>
     </main>
-    <script src="../assets/Javascript/login.js"></script>
+
 </body>
 </html>
