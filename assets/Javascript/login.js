@@ -18,8 +18,7 @@ formulario.addEventListener("submit", async (e) => {
             await signInWithEmailAndPassword(auth, email.value.trim(), senha.value.trim());
             alert("Login realizado com sucesso!");
             
-
-            window.location.href = "index.html"; 
+            window.location.href = "../index.html"; 
             
         } catch (error) {
             console.error(error);
