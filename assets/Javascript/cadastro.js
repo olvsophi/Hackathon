@@ -1,4 +1,4 @@
-import { auth, googleProvider, facebookProvider } from "./firebaseconfig.js";
+import { auth, googleProvider} from "./firebaseconfig.js";
 import { createUserWithEmailAndPassword, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
 
 const form = document.getElementById("formCadastro");
@@ -6,7 +6,6 @@ const emailInput = document.getElementById("email");
 const senhaInput = document.getElementById("senha");
 
 const btnGoogle = document.getElementById("btnGoogle");
-const btnFacebook = document.getElementById("btnFacebook");
 
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -19,8 +18,8 @@ form.addEventListener("submit", async (e) => {
         return;
     }
 
-    if (senha.length < 6) {
-        alert("Senha precisa ter no mínimo 6 caracteres");
+    if (senha.length < 8) {
+        alert("Senha precisa ter no mínimo 8 caracteres");
         return;
     }
 
@@ -33,23 +32,11 @@ form.addEventListener("submit", async (e) => {
     }
 });
 
-console.log(btnGoogle)
-
 btnGoogle.addEventListener("click", async () => {
     try {
         await signInWithPopup(auth, googleProvider);
         alert("Autenticado com o Google com sucesso!");
         window.location.href = "../index.html";
-    } catch (error) {
-        tratarErros(error);
-    }
-});
-
-btnFacebook.addEventListener("click", async () => {
-    try {
-        await signInWithPopup(auth, facebookProvider);
-        alert("Autenticado com o Facebook com sucesso!");
-        window.location.href = "../index.html"; 
     } catch (error) {
         tratarErros(error);
     }
