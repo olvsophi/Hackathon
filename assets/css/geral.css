@@ -12,10 +12,17 @@
     background-color: transparent;
     border: none;
     color: white;
-    font-size: 16px;
+    font-size: 18px;
+    transition: all .3s ease;
 }
 .mostrar-botao-sair{
     display: block;
+}
+
+.sair:hover{
+    border-bottom: 1px solid red;
+    color: red;
+    transform: translateY(-5px);
 }
 
 
@@ -134,15 +141,6 @@ nav a {
     width: 48px;
 }
 
-.sair{
-    transition: all .3s ease;
-}
-
-.sair:hover{
-    border-bottom: 1px solid red;
-    color: red;
-    transform: translateY(-5px);
-}
 .footer-geral {
     background-color: #032F5E;
 }
@@ -231,7 +229,7 @@ nav a {
 }
 
 @media (max-width: 860px){
-    .computador , .link-central{
+    .computador , .link-central, .nav-geral {
         display: none;
     }
     .sair{
