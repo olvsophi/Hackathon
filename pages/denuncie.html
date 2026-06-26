@@ -29,12 +29,12 @@
 
             <a href="../index.html">Inicio</a>
             <a href="../pages/denuncias.html">Denúncias</a>
-            <a href="./pages/login.html">Entrar</a>
+            <a href="../pages/login.html">Entrar</a>
             <!-- <button>Sair</button> -->
         </nav>
 
         <img class="menu" src="../assets/icones/menu.png" alt="Menu">
-        
+
 
         <nav class="computador nav-geral">
             <a href="../index.html">Inicio</a>
@@ -48,20 +48,20 @@
             </a>
         </div>
     </header>
-    
+
     <main>
         <h1 class="titulo-principal">Faça sua denúncia</h1>
         <h2 class="subtitulo">Nos conte sua experiência</h2>
         <div class="container">
             <form id="formDenuncias">
                 <h3>Preencha o formulário com o ocorrido </h3>
-                <p style="text-align: center; color: darkgray;">
-                        Não utilizar links!
-                </p>
                 <div class="topico">
                     <label for="topico">Tópico</label>
                     <input id="topico" type="text">
                 </div>
+                <p style="text-align: center; color: darkgray; font-size: 12px; margin-bottom: 10px;">
+                    Não utilize links!
+                </p>
                 <div class="topico">
                     <label for="problema">Nos conte o seu problema </label>
                     <textarea id="problema"></textarea>
@@ -70,16 +70,16 @@
                     O seu problema foi solucionado?
                 </p>
                 <div class="botoes">
-                        <button type="button" onclick="marcarResolvido()" id="like" class="like"><img src="../assets/icones/Checked-like-button.svg"
-                                alt="Botão de like">
-                        </button>
-                        <button type="button" onclick="marcarNaoResolvido()" id="dislike" class="dislike"><img src="../assets/icones/Checked-deslike-button.svg"
-                                alt="Botão de deslike">
-                        </button>
-                    </div>
-                    <button type="button" onclick="enviarDenuncia()" class="botao-envio">
-                        Enviar denúncia
+                    <button type="button" onclick="marcarResolvido()" id="like" class="like"><img
+                            src="../assets/icones/Checked-like-button.svg" alt="Botão de like">
                     </button>
+                    <button type="button" onclick="marcarNaoResolvido()" id="dislike" class="dislike"><img
+                            src="../assets/icones/Checked-deslike-button.svg" alt="Botão de deslike">
+                    </button>
+                </div>
+                <button type="button" onclick="enviarDenuncia()" class="botao-envio">
+                    Enviar denúncia
+                </button>
             </form>
         </div>
     </main>

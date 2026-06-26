@@ -249,6 +249,7 @@ section h2 {
     border-radius: 999px;
     margin-bottom: 0.4rem;
     border: 1px solid rgba(150, 190, 255, 0.3);
+    font-family: "Inter";
 }
 
 .card-title {
@@ -265,9 +266,11 @@ section h2 {
     font-size: 0.82rem;
     line-height: 1.45;
     color: rgba(230, 240, 255, 0.85);
+    font-family: "Inter";
 }
 
 .see-more-btn {
+    font-family: "Inter";
     align-self: center;
     display: inline-flex;
     align-items: center;
@@ -689,6 +692,45 @@ li {
 
 
 @media (max-width: 720px) {
+    section h1 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    section h2 {
+        font-size: 10px;
+    }
+
+    .pesquisa input {
+        font-size: 12px;
+        height: 40px;
+        width: 300px;
+    }
+
+    .pesquisa input::placeholder {
+        font-size: 14px;
+    }
+
+    .titulo-lg{
+        margin-top: 50px;
+    }
+    
+    .card-label{
+        font-size: 10px;
+    }
+
+    .card-title {
+        font-size: 12px;
+    }
+
+    .card-desc{
+        font-size: 10px;
+    }
+
+    .see-more-btn{
+        font-size: 10px;
+    }
+
     .lg-container {
         padding: 1rem 2.75rem;
     }
@@ -703,7 +745,6 @@ li {
         margin: 0 auto 20px auto;
 
     }
-
 
     .slide {
         flex-direction: column;
