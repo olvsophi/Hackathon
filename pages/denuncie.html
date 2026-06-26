@@ -48,34 +48,36 @@
             </a>
         </div>
     </header>
-
+    
     <main>
         <h1 class="titulo-principal">Faça sua denúncia</h1>
         <h2 class="subtitulo">Nos conte sua experiência</h2>
         <div class="container">
             <form id="formDenuncias">
                 <h3>Preencha o formulário com o ocorrido </h3>
-                        
-                    <div class="topico">
-                        <label for="topico">Tópico</label>
-                        <input id="topico" type="text">
-                    </div>
-                    <div class="topico">
-                        <label for="problema">Nos conte o seu problema </label>
-                        <textarea id="problema"></textarea>
-                    </div>
-                    <p style="text-align: center; color: darkgray;">
-                        O seu problema foi solucionado?
-                    </p>
-                    <div class="botoes">
-                        <button type="button" id="like" class="like"><img src="../assets/icones/Checked-like-button.svg"
+                <p style="text-align: center; color: darkgray;">
+                        Não utilizar links!
+                </p>
+                <div class="topico">
+                    <label for="topico">Tópico</label>
+                    <input id="topico" type="text">
+                </div>
+                <div class="topico">
+                    <label for="problema">Nos conte o seu problema </label>
+                    <textarea id="problema"></textarea>
+                </div>
+                <p style="text-align: center; color: darkgray;">
+                    O seu problema foi solucionado?
+                </p>
+                <div class="botoes">
+                        <button type="button" onclick="marcarResolvido()" id="like" class="like"><img src="../assets/icones/Checked-like-button.svg"
                                 alt="Botão de like">
                         </button>
-                        <button type="button" id="dislike" class="dislike"><img src="../assets/icones/Checked-deslike-button.svg"
+                        <button type="button" onclick="marcarNaoResolvido()" id="dislike" class="dislike"><img src="../assets/icones/Checked-deslike-button.svg"
                                 alt="Botão de deslike">
                         </button>
                     </div>
-                    <button type="submit" onclick="enviarDenuncia()" class="botao-envio">
+                    <button type="button" onclick="enviarDenuncia()" class="botao-envio">
                         Enviar denúncia
                     </button>
             </form>
@@ -87,7 +89,7 @@
         <p>Secure Search &copy; 2026 | Todos os direitos reservados</p>
     </footer>
     <script src="../assets/Javascript/menu.js"></script>
-    <script src="denuncie.js"></script>
+    <script src="../assets/Javascript/denuncie.js"></script>
     <script type="module" src="../assets/Javascript/firebaseconfig.js"></script>
     <script type="module" src="../assets/Javascript/denuncias.js"></script>
 </body>
