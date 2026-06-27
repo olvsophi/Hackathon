@@ -1,4 +1,4 @@
-import { db, collection, addDoc } from './firebaseconfig.js'    
+import { db, collection, addDoc } from './firebaseconfig.js'
 
 let resolvido = true;
 let naoResolvido = false;
@@ -15,8 +15,10 @@ function marcarNaoResolvido() {
     naoResolvido = true;
     // da pra colocar animation
 }
-    async function enviarDenuncia() {
-        
+
+const btnEnviarDenuncia = document.querySelector('.botao-envio')
+
+btnEnviarDenuncia.addEventListener('click', async () => {
     const topico = document.getElementById("topico").value.trim();
     const problema = document.getElementById("problema").value.trim();
 
@@ -33,22 +35,23 @@ function marcarNaoResolvido() {
         return;
     }
 
-    console.log('tudo certo')
+    // Não mexer
+    try {
+        const denunciaRef = collection(db, "denuncias");
 
-    // Enviar pro banco de dados
+        await addDoc((denunciaRef), {
+            topico: topico,
+            problema: problema,
+            resolvido: resolvido,
+        })
 
-    // dps ele limpa os campos sem recarregar a pagina e alerta o usuario
-    
-    const denuncia = {
-        topico: topico,
-        problema: problema,
-        resolvido: resolvido,
-        naoResolvido: naoResolvido,
-    };
-    
-    document.getElementById("topico").value = "";
-    document.getElementById("problema").value = "";
-    resolvido = false;
-    naoResolvido = false;
+        document.getElementById("topico").value = "";
+        document.getElementById("problema").value = "";
+        resolvido = false;
+        naoResolvido = false;
 
-}
+        alert('Denuncia enviada')
+    } catch (e) {
+        console.error(e)
+    }
+})
