@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
-import { signOut,onAuthStateChanged,getAuth, GoogleAuthProvider} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
+import { signOut,onAuthStateChanged,getAuth, GoogleAuthProvider, collection, addDoc} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyB_iguptnlko5GuRple5QHcphqIHs95rU8",
@@ -15,4 +15,4 @@ const auth = getAuth(app);
 
 const googleProvider = new GoogleAuthProvider();
 
-export { auth, googleProvider, onAuthStateChanged, signOut};
+export { auth, googleProvider, onAuthStateChanged, signOut, collection, addDoc};
