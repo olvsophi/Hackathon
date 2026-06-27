@@ -4,19 +4,23 @@ let resolvido = true;
 let naoResolvido = false;
 const regex = /www|http|https/i;
 
-function marcarResolvido() {
-    resolvido = true;
-    NaoResolvido = false;
-    // da pra colocar animação
-}
+const btnEnviarDenuncia = document.querySelector('.botao-envio')
+const btnLike = document.querySelector('like')
+const btnDislike = document.querySelector('dislike')
 
-function marcarNaoResolvido() {
+btnLike.addEventListener('click', () => {
+    resolvido = false;
+    naoResolvido = false;
+    console.log("ta dando like")
+    // animation on pliss
+});
+
+btnDislike.addEventListener('click', () => {
     resolvido = false;
     naoResolvido = true;
-    // da pra colocar animation
-}
-
-const btnEnviarDenuncia = document.querySelector('.botao-envio')
+    console.log("ta dando dislike")
+    // Coloquem uma animação ae plis
+});
 
 btnEnviarDenuncia.addEventListener('click', async () => {
     const topico = document.getElementById("topico").value.trim();
@@ -34,7 +38,6 @@ btnEnviarDenuncia.addEventListener('click', async () => {
         alert("Marque se o problema foi resolvido ou não!")
         return;
     }
-
     // Não mexer
     try {
         const denunciaRef = collection(db, "denuncias");
