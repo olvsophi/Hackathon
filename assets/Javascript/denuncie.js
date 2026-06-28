@@ -1,6 +1,6 @@
 import { db, collection, addDoc } from './firebaseconfig.js'
 
-let resolvido = true;
+let resolvido = false;
 let naoResolvido = false;
 const regex = /www|http|https/i;
 
