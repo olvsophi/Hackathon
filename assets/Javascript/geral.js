@@ -1,3 +1,10 @@
+const menu = document.querySelector(".menu");
+const navMobile = document.querySelector(".celular");
+
+menu.addEventListener("click", () => {
+    navMobile.classList.toggle("ativo");
+});
+
 import {signOut, auth, onAuthStateChanged} from "./firebaseconfig.js";
 let estaLogado=false
 
