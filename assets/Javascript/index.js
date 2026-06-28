@@ -29,10 +29,10 @@ const slides = [
     link: "#noticia-4"
   },
   {
+    imagem: "assets/images/slide-5.jpg",
     categoria: "Energia",
     titulo: "Anel magnético gera energia limpa sem combustível",
     descricao: 'Protótipo desenvolvido na Europa usa indução contínua para produzir eletricidade silenciosa. Cientistas chamam o invento de "loop infinito energético".',
-    imagem: "assets/images/slide-5.jpg",
     link: "#noticia-5"
   }
 ]
