@@ -23,8 +23,8 @@ async function buscarDenunciaFeita(termoPesquisa){
     try {
         const resultado = await getDocs(collection(db, "denuncias"));
         
-        resultado.forEach((doc) => {
-            const dados = doc.data();
+        resultado.forEach((denuncia) => {
+            const dados = denuncia.data();
             if (dados.topico === termoPesquisa) {
                 console.log(dados);
                 // AQUI VAI ENTRAR O INNERHTML
