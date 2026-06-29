@@ -214,3 +214,22 @@ function renderizar() {
 
 btn.addEventListener("click", renderizar);
 renderizar();
+
+const formularioPesquisa = document.getElementById("pesquisa");
+const campoPesquisa = document.getElementById("pesquisaUsuario");
+
+if (formularioPesquisa) {
+    formularioPesquisa.addEventListener("submit", function (evento) {
+        evento.preventDefault();
+
+        const pesquisa = campoPesquisa.value.trim();
+
+        if (pesquisa === "") {
+            return;
+        }
+
+        localStorage.setItem("pesquisaDenuncia", pesquisa);
+
+        window.location.href = "./pages/denuncias.html";
+    });
+}
