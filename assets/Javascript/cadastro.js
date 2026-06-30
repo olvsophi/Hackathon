@@ -7,6 +7,18 @@ const senhaInput = document.getElementById("senha");
 
 const btnGoogle = document.getElementById("btnGoogle");
 
+function voltarParaPaginaAnterior() {
+    const paginaAnterior = sessionStorage.getItem("paginaAnterior");
+
+    sessionStorage.removeItem("paginaAnterior");
+
+    if (paginaAnterior && !paginaAnterior.includes("login.html") && !paginaAnterior.includes("cadastro.html")) {
+        window.location.href = paginaAnterior;
+    } else {
+        window.location.href = "../index.html";
+    }
+}
+
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
@@ -25,8 +37,11 @@ form.addEventListener("submit", async (e) => {
 
     try {
         await createUserWithEmailAndPassword(auth, email, senha);
+
         alert("Conta criada com sucesso!");
-        window.location.href = "login.html";
+
+        voltarParaPaginaAnterior();
+
     } catch (error) {
         tratarErros(error);
     }
@@ -35,8 +50,11 @@ form.addEventListener("submit", async (e) => {
 btnGoogle.addEventListener("click", async () => {
     try {
         await signInWithPopup(auth, googleProvider);
+
         alert("Autenticado com o Google com sucesso!");
-        window.location.href = "../index.html";
+
+        voltarParaPaginaAnterior();
+
     } catch (error) {
         tratarErros(error);
     }
@@ -44,6 +62,7 @@ btnGoogle.addEventListener("click", async () => {
 
 function tratarErros(error) {
     console.error(error);
+
     if (error.code === "auth/email-already-in-use") {
         alert("Este email já está cadastrado.");
     } else if (error.code === "auth/invalid-email") {

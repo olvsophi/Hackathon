@@ -9,13 +9,17 @@ const botoesRedesSociais = document.querySelectorAll('.contas button');
 const btnGoogle = botoesRedesSociais[0];
 
 function voltarParaPaginaAnterior() {
+    // Pega a página que foi salva na memória
     const paginaAnterior = sessionStorage.getItem("paginaAnterior");
 
+    // Limpa a memória para não bugar futuros logins
     sessionStorage.removeItem("paginaAnterior");
 
+    // Se existir uma página salva e não for a própria página de login, volta pra lá
     if (paginaAnterior && !paginaAnterior.includes("login.html")) {
         window.location.href = paginaAnterior;
     } else {
+        // Se não tiver nada salvo, vai para a home
         window.location.href = "../index.html";
     }
 }

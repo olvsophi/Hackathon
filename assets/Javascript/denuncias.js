@@ -8,6 +8,8 @@ onAuthStateChanged(auth, (usuario) => {
         idUsuario = usuario.uid;
     } else {
         idUsuario = null;
+        sessionStorage.setItem("paginaAnterior", window.location.href);
+        window.location.href = "../pages/login.html"; 
     }
 });
 
@@ -24,6 +26,66 @@ form.addEventListener('submit', (e) => {
 });
 
 const comentarios = document.querySelector(".comentarios");
+
+const ITENS_POR_PAGINA = 5;
+let paginaAtual = 1;
+
+const containerPaginacao = document.createElement("div");
+containerPaginacao.classList.add("paginacao");
+comentarios.insertAdjacentElement("afterend", containerPaginacao);
+
+function aplicarPaginacao() {
+    const artigos = Array.from(comentarios.querySelectorAll("article"));
+    const totalPaginas = Math.ceil(artigos.length / ITENS_POR_PAGINA) || 1;
+
+    if (paginaAtual > totalPaginas) paginaAtual = totalPaginas;
+
+    artigos.forEach((artigo, index) => {
+        const paginaDoItem = Math.floor(index / ITENS_POR_PAGINA) + 1;
+        artigo.style.display = paginaDoItem === paginaAtual ? "" : "none";
+    });
+
+    renderizarBotoesPaginacao(totalPaginas, artigos.length);
+}
+
+function renderizarBotoesPaginacao(totalPaginas, totalItens) {
+    containerPaginacao.innerHTML = "";
+
+    if (totalItens === 0 || totalPaginas <= 1) return;
+
+    const btnAnterior = document.createElement("button");
+    btnAnterior.type = "button";
+    btnAnterior.textContent = "Anterior";
+    btnAnterior.disabled = paginaAtual === 1;
+    btnAnterior.addEventListener("click", () => {
+        paginaAtual--;
+        aplicarPaginacao();
+    });
+
+    const infoPagina = document.createElement("span");
+    infoPagina.classList.add("info-pagina");
+    infoPagina.textContent = `Página ${paginaAtual} de ${totalPaginas}`;
+
+    const btnProxima = document.createElement("button");
+    btnProxima.type = "button";
+    btnProxima.textContent = "Próxima";
+    btnProxima.disabled = paginaAtual === totalPaginas;
+    btnProxima.addEventListener("click", () => {
+        paginaAtual++;
+        aplicarPaginacao();
+    });
+
+    containerPaginacao.appendChild(btnAnterior);
+    containerPaginacao.appendChild(infoPagina);
+    containerPaginacao.appendChild(btnProxima);
+}
+
+const observerComentarios = new MutationObserver(() => {
+    paginaAtual = 1;
+    aplicarPaginacao();
+});
+
+observerComentarios.observe(comentarios, { childList: true });
 
 async function carregarHTML() {
     comentarios.innerHTML = "";
@@ -121,7 +183,6 @@ async function buscarDenunciaFeita(termo) {
         }
     });
 }
-
 // Coisas a fazer aqui
 /*
 Barra de pesquisa

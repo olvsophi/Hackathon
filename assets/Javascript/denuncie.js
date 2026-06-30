@@ -4,9 +4,12 @@ let idUsuario = null
 
 onAuthStateChanged(auth, (usuario) =>{
     if(!usuario) {
+        // Salva a URL atual na memória antes de ir para o login
+        sessionStorage.setItem("paginaAnterior", window.location.href);
         window.location.href = "../pages/login.html";
+    } else {
+        idUsuario = usuario.uid
     }
-    idUsuario = usuario.uid
 });
 
 let resolvido = false;

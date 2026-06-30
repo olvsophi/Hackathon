@@ -73,6 +73,14 @@ main h3 {
     padding-bottom: 10px;
 }
 
+.paginacao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 16px;
+}
+
 @media (max-width: 1041px) {
     .secure-search h2 {
         display: none;
