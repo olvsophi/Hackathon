@@ -111,7 +111,7 @@ async function carregarHTML() {
 
                     });
 
-                            document.querySelectorAll(".lixeira").forEach(botao => {
+                document.querySelectorAll(".lixeira").forEach(botao => {
                 botao.addEventListener("click", async () => {
                     if (!confirm("Deseja apagar esta denúncia?")) return;
 
