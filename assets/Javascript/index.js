@@ -142,41 +142,40 @@ renderizarSlides()
 // JS das Dicas
 const dicas = [
   { titulo: "Senhas fortes", texto: "Use no mínimo 12 caracteres misturando letras, números e símbolos." },
+  { titulo: "Respeito nas Redes", texto: "Trate as pessoas na internet com educação e empatia." },
   { titulo: "Gerenciador de senhas", texto: "Guarde senhas em um cofre confiável em vez de anotá-las soltas." },
-  { titulo: "Autenticação em 2 fatores", texto: "Ative o 2FA sempre que possível, de preferência por app, não SMS." },
+  { titulo: "Verifique a informação", texto: "Confirme a fonte antes de compartilhar qualquer notícia." },
+  { titulo: "Autenticação em 2 fatores", texto: "Ative o 2FA sempre que possível, de preferência por aplicativo." },
+  { titulo: "Combata Fake News", texto: "Não compartilhe conteúdos sem verificar se são verdadeiros." },
   { titulo: "Cuidado com phishing", texto: "Desconfie de e-mails urgentes pedindo login ou dados pessoais." },
+  { titulo: "Privacidade Digital", texto: "Respeite sua privacidade e a das outras pessoas." },
   { titulo: "Verifique o remetente", texto: "Confira o domínio do e-mail antes de clicar em qualquer link." },
-  { titulo: "Atualize seus apps", texto: "Updates corrigem falhas que invasores já estão tentando explorar." },
-  { titulo: "Sistema operacional em dia", texto: "Mantenha o SO atualizado para receber correções de segurança." },
-  { titulo: "Wi-Fi público", texto: "Evite acessar contas sensíveis em redes abertas sem uma VPN." },
-  { titulo: "Use VPN confiável", texto: "Prefira serviços pagos e auditados a opções gratuitas duvidosas." },
-  { titulo: "Backups regulares", texto: "Mantenha cópias em nuvem e em um disco externo desconectado." },
-  { titulo: "Cuidado com USBs", texto: "Não conecte pendrives desconhecidos ao seu computador." },
-  { titulo: "Bloqueio de tela", texto: "Configure bloqueio automático em celular e notebook." },
-  { titulo: "Permissões de apps", texto: "Revise quais apps acessam câmera, microfone e localização." },
-  { titulo: "Antivírus ativo", texto: "Mantenha um antivírus reputável rodando e atualizado." },
-  { titulo: "HTTPS sempre", texto: "Confira o cadeado e o https:// antes de digitar dados em um site." },
-  { titulo: "Links encurtados", texto: "Passe o mouse para ver o destino real antes de clicar." },
-  { titulo: "Downloads seguros", texto: "Baixe softwares apenas das páginas oficiais dos fabricantes." },
-  { titulo: "Cuidado com extensões", texto: "Instale extensões de navegador só quando realmente precisar." },
-  { titulo: "Revogue acessos antigos", texto: "Remova apps de terceiros conectados às suas contas que não usa mais." },
-  { titulo: "E-mail secundário", texto: "Use um e-mail separado para cadastros pouco confiáveis." },
-  { titulo: "Não reutilize senhas", texto: "Uma senha vazada não pode abrir todas as suas outras contas." },
-  { titulo: "Verifique vazamentos", texto: "Cheque seu e-mail em sites como Have I Been Pwned periodicamente." },
-  { titulo: "Cuidado com QR Codes", texto: "Códigos colados sobre os originais podem levar a sites falsos." },
-  { titulo: "Suporte falso", texto: "Empresas reais não pedem senha por telefone ou WhatsApp." },
-  { titulo: "Pix com calma", texto: "Confira nome, banco e CPF/CNPJ antes de confirmar transferências." },
-  { titulo: "Compras online", texto: "Prefira cartões virtuais com limite ajustável para sites novos." },
-  { titulo: "Redes sociais", texto: "Limite o que aparece publicamente no seu perfil e nas fotos." },
-  { titulo: "Geolocalização", texto: "Evite postar em tempo real sua localização exata." },
-  { titulo: "Dados em fotos", texto: "Cuidado com cartões, documentos e telas visíveis ao tirar fotos." },
-  { titulo: "Logout em dispositivos", texto: "Saia das contas em computadores compartilhados ou emprestados." },
-  { titulo: "Privacidade do navegador", texto: "Limpe cookies de sites em que não confia e bloqueie rastreadores." },
-  { titulo: "Pense antes de clicar", texto: "Na dúvida, não clique. Confirme pelo canal oficial da empresa." }
-];
+  { titulo: "Empatia Online", texto: "Lembre-se de que existe uma pessoa por trás de cada perfil." },
+  { titulo: "Atualize seus apps", texto: "As atualizações corrigem falhas de segurança importantes." },
+  { titulo: "Direitos Autorais", texto: "Valorize o trabalho dos criadores e dê os devidos créditos." },
+  { titulo: "Sistema em dia", texto: "Mantenha seu sistema operacional sempre atualizado." },
+  { titulo: "Pense Antes de Postar", texto: "Tudo o que você publica pode permanecer na internet." },
+  { titulo: "Wi-Fi público", texto: "Evite acessar contas importantes em redes abertas." },
+  { titulo: "Boa Convivência", texto: "Respeite opiniões diferentes sem recorrer a ofensas." },
+  { titulo: "Use VPN confiável", texto: "Prefira serviços confiáveis ao acessar redes públicas." },
+  { titulo: "Proteja seus Dados", texto: "Evite divulgar informações pessoais sem necessidade." },
+  { titulo: "Backups regulares", texto: "Mantenha cópias de segurança dos seus arquivos." },
+  { titulo: "Denuncie Abusos", texto: "Denuncie casos de cyberbullying e conteúdos ofensivos." },
+  { titulo: "Cuidado com USBs", texto: "Não conecte dispositivos desconhecidos ao computador." },
+  { titulo: "Inclusão Digital", texto: "Use a tecnologia para colaborar e ajudar outras pessoas." },
+  { titulo: "Permissões de apps", texto: "Revise o acesso à câmera, localização e microfone." },
+  { titulo: "Antivírus ativo", texto: "Mantenha um antivírus confiável sempre atualizado." },
+  { titulo: "Uso Responsável", texto: "Utilize a internet de forma ética e consciente." },
+  { titulo: "HTTPS sempre", texto: "Confira o cadeado antes de inserir dados em um site." },
+  { titulo: "Cuidado com Links", texto: "Desconfie de links recebidos por mensagens inesperadas." },
+  { titulo: "Downloads seguros", texto: "Baixe programas apenas de sites oficiais." },
+  { titulo: "Respeito à Diversidade", texto: "Valorize as diferenças e combata o preconceito online." },
+  { titulo: "Revogue acessos", texto: "Remova aplicativos que você não utiliza mais." }
+]
 
 const gradeDicas = document.getElementById("gradeDicas");
 const btn = document.getElementById("botaoSortear");
+
 
 function sortear(lista, n) {
   const copia = lista.slice();
