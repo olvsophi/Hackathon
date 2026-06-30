@@ -41,7 +41,7 @@ nav {
 .direita a {
     text-decoration: none;
     color: #ffffff;
-    font-family: "inter";
+    font-family: "Inter";
     padding: 0px 0px 0px 30px;
 }
 
@@ -68,11 +68,8 @@ section h2 {
     margin: 0 auto 50px auto;
     color: #AEAEAE;
     font-size: 18px;
-    margin-bottom: 40px;
     font-family: 'Radio Canada', sans-serif;
     text-align: center;
-    font-weight: 400;
-    letter-spacing: 1px;
     font-weight: 400;
 }
 
@@ -88,21 +85,21 @@ section h2 {
     height: 55px;
     padding: 12px 20px;
     border-radius: 30px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(163, 162, 162, 0.116);
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     outline: none;
     background: url("../icones/icone-pesquisar.svg") no-repeat;
     background-position: 23px center;
     padding-left: 55px;
     background-size: 20px;
     margin-bottom: 40px;
-    background-color: #c4c4c4;
+    background-color: #c4c4c448;
 }
 
 .pesquisa input::placeholder {
-    color: rgba(0, 0, 0, 0.7);
+    color: rgba(41, 40, 40, 0.7);
     font-size: 16px;
 }
 
@@ -118,7 +115,7 @@ section h2 {
     overflow: hidden;
 }
 
-.brilho-lg {
+.brilho-slider {
     position: absolute;
     width: 60vmax;
     height: 60vmax;
@@ -128,47 +125,45 @@ section h2 {
     animation: lg-float 12s ease-in-out infinite;
 }
 
-.cobertura-lg {
+.cobertura-slider {
     width: min(960px, 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 16px;
     position: relative;
     z-index: 1;
 }
 
-.titulo-lg {
+.titulo-slider {
     margin: 80px auto 30px auto;
-    font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+    font-size: 26px;
     font-weight: 500;
     color: rgba(220, 235, 255, 0.95);
-    letter-spacing: 0.01em;
     text-shadow: 0 2px 20px rgba(80, 150, 255, 0.4);
+    font-family: 'Radio Canada Big', sans-serif;
+    letter-spacing: 2px;
 }
 
-.container-lg {
+.conteiner-slider {
     position: relative;
     width: 100%;
     border-radius: 25px;
-    padding: 1rem 3.5rem;
-    background: linear-gradient(135deg,
-            rgba(255, 255, 255, 0.10) 0%,
-            rgba(255, 255, 255, 0.04) 100%);
+    padding: 16px 50px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.04) 100%);
     backdrop-filter: blur(24px) saturate(140%);
     -webkit-backdrop-filter: blur(24px) saturate(140%);
     border: 1px solid rgba(255, 255, 255, 0.18);
     box-shadow: 0 0 60px rgba(60, 130, 255, 0.30), 0 20px 50px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.22), inset 0 -1px 0 rgba(255, 255, 255, 0.05);
 }
 
-.container-lg::before {
+.conteiner-slider::before {
     content: "";
     position: absolute;
     inset: 0;
     border-radius: 25px;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.10) 0%, transparent 30%);
     pointer-events: none;
-
 }
 
 .janela-slider {
@@ -184,44 +179,39 @@ section h2 {
     transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
-.slide {
+.slides {
     flex: 0 0 100%;
     min-width: 100%;
     display: flex;
     align-items: stretch;
-    gap: 1.25rem;
-    padding: 1.25rem 0.5rem;
+    gap: 20px;
+    padding: 20px 10px;
     filter: blur(4px);
     opacity: 0.4;
     transform: scale(0.97);
-    transition:
-        filter 0.8s cubic-bezier(0.77, 0, 0.175, 1),
-        opacity 0.8s cubic-bezier(0.77, 0, 0.175, 1),
-        transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+    transition: filter 0.8s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.8s cubic-bezier(0.77, 0, 0.175, 1), transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
-.slide.active {
+.ativo {
     filter: blur(0);
     opacity: 1;
     transform: scale(1);
 }
 
-.texto-slide {
+.textos-slide {
     flex: 0 0 38%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 0.65rem;
+    gap: 10px;
     color: #fff;
     text-align: center;
 }
 
-/* dicas */
-
-.text-card {
+.texto {
     border-radius: 22px;
-    padding: 0.85rem 1.25rem;
+    padding: 10px 20px;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(120, 170, 255, 0.05));
     border: 1px solid rgba(255, 255, 255, 0.18);
     backdrop-filter: blur(10px);
@@ -229,58 +219,54 @@ section h2 {
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22), 0 4px 16px rgba(0, 0, 0, 0.18);
 }
 
-.desc-card {
+.texto-noticia {
     min-height: 90px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.card-label {
+.topico-da-noticia {
     display: inline-block;
-    font-size: 0.65rem;
+    font-size: 10px;
     font-weight: 600;
-    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: #cfe1ff;
     background: linear-gradient(135deg, rgba(80, 140, 255, 0.35), rgba(80, 140, 255, 0.1));
-    padding: 0.2rem 0.6rem;
+    padding: 3px 10px;
     border-radius: 999px;
-    margin-bottom: 0.4rem;
+    margin-bottom: 6px;
     border: 1px solid rgba(150, 190, 255, 0.3);
     font-family: "Inter";
 }
 
-.card-title {
+.titulo {
     margin: 0;
-    font-size: clamp(0.78rem, 1vw, 0.92rem);
-    font-weight: 600;
-    color: #fff;
-    letter-spacing: -0.01em;
+    font-size: 14px;
+    color: #ffffff;
     line-height: 1.25;
 }
 
-.card-desc {
+.noticia {
     margin: 0;
-    font-size: 0.82rem;
+    font-size: 12px;
     line-height: 1.45;
     color: rgba(230, 240, 255, 0.85);
     font-family: "Inter";
 }
 
-.see-more-btn {
+.veja-mais-botao {
     font-family: "Inter";
     align-self: center;
     display: inline-flex;
     align-items: center;
-    gap: 0.4rem;
-    margin-top: 0.15rem;
-    padding: 0.5rem 1.05rem;
+    gap: 5px;
+    margin-top: 5px;
+    padding: 8px 16px;
     border-radius: 999px;
-    font-size: 0.8rem;
+    font-size: 12px;
     font-weight: 500;
-    letter-spacing: 0.02em;
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
     background: linear-gradient(135deg, rgba(120, 170, 255, 0.35), rgba(50, 110, 230, 0.25));
     border: 1px solid rgba(180, 210, 255, 0.4);
@@ -290,28 +276,28 @@ section h2 {
     transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
 }
 
-.see-more-btn:hover {
+.veja-mais-botao:hover {
     transform: translateY(-2px);
-    background: linear-gradient(135deg, rgba(140, 185, 255, 0.5), rgba(70, 130, 250, 0.35));
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 10px 26px rgba(70, 150, 255, 0.55);
+    background: linear-gradient(135deg, rgba(66, 88, 124, 0.5), rgba(10, 51, 133, 0.35));
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 10px 26px rgba(4, 52, 114, 0.55);
 }
 
-.see-more-btn svg {
+.veja-mais-botao svg {
     transition: transform 0.25s ease;
 }
 
-.see-more-btn:hover svg {
+.veja-mais-botao:hover svg {
     transform: translateX(3px);
 }
 
-.slide-media {
+.imagem-slide {
     flex: 1 1 auto;
     display: flex;
     align-items: center;
     justify-content: flex-end;
 }
 
-.media-frame {
+.imagem-noticia {
     width: 100%;
     aspect-ratio: 16 / 10;
     max-height: 220px;
@@ -323,14 +309,14 @@ section h2 {
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), 0 0 30px rgba(60, 140, 255, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.18);
 }
 
-.media-frame img {
+.imagem-noticia img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
 }
 
-.nav-btn {
+.nav-botao {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -351,26 +337,26 @@ section h2 {
     z-index: 5;
 }
 
-.nav-btn:hover {
+.nav-botao:hover {
     transform: translateY(-50%) scale(1.06);
     box-shadow: 0 10px 26px rgba(0, 0, 0, 0.45), 0 0 24px rgba(80, 160, 255, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
-.nav-prev {
-    left: 0.6rem;
+.nav-previa {
+    left: 10px;
 }
 
-.nav-next {
-    right: 0.6rem;
+.nav-proximo {
+    right: 10px;
 }
 
-.glass-panel *,
-.glass-panel *::before,
-.glass-panel *::after {
+.painel-vidro *,
+.painel-vidro *::before,
+.painel-vidro *::after {
     box-sizing: border-box;
 }
 
-.glass-panel {
+.painel-vidro {
     max-width: 1100px;
     margin: 150px auto;
     font-family: "Inter";
@@ -384,30 +370,29 @@ section h2 {
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 18px 50px rgba(0, 0, 0, 0.35);
 }
 
-.tips-header {
+.header-dicas {
     text-align: center;
     margin-bottom: 22px;
 }
 
-.tips-header h1 {
-    font-size: clamp(1.4rem, 2vw, 1.8rem);
+.header-dicas h1 {
+    font-size: 26px;
     margin: 0 0 4px;
-    letter-spacing: 0.3px;
 }
 
-.tips-header p {
+.header-dicas p {
     margin: 0;
     opacity: 0.78;
-    font-size: 0.9rem;
+    font-size: 14px;
 }
 
-.tips-grid {
+.grade-dicas {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 12px;
 }
 
-.tip-card {
+.dica {
     position: relative;
     padding: 14px 14px 14px 16px;
     min-height: 110px;
@@ -418,7 +403,7 @@ section h2 {
     transition: transform 240ms ease, background 240ms ease, border-color 240ms ease;
 }
 
-.tip-card::after {
+.dica::after {
     content: "";
     position: absolute;
     left: var(--mx, 50%);
@@ -426,49 +411,46 @@ section h2 {
     width: 180px;
     height: 180px;
     transform: translate(-50%, -50%);
-    background: radial-gradient(circle,
-            rgba(110, 170, 255, 0.45) 0%,
-            rgba(110, 170, 255, 0) 70%);
+    background: radial-gradient(circle, rgba(110, 170, 255, 0.45) 0%, rgba(110, 170, 255, 0) 70%);
     opacity: 0;
     transition: opacity 220ms ease;
     pointer-events: none;
     filter: blur(6px);
 }
 
-.tip-card:hover {
+.dica:hover {
     transform: translateY(-2px);
     background: rgba(255, 255, 255, 0.11);
     border-color: rgba(255, 255, 255, 0.22);
 }
 
-.tip-card:hover::after {
+.dica:hover::after {
     opacity: 1;
 }
 
-.tip-card h3 {
+.dica h3 {
     position: relative;
     margin: 0 0 6px;
-    font-size: 0.92rem;
-    letter-spacing: 0.2px;
+    font-size: 14px;
 }
 
-.tip-card p {
+.dica p {
     position: relative;
     margin: 0;
-    font-size: 0.8rem;
+    font-size: 12px;
     line-height: 1.4;
     opacity: 0.85;
 }
 
-.tip-card .tip-num {
+.dica .numero-dica {
     position: absolute;
     top: 8px;
     right: 10px;
-    font-size: 0.7rem;
+    font-size: 10px;
     opacity: 0.45;
 }
 
-.tip-card.fade-in {
+.card-dicas .fade-in {
     animation: tipIn 360ms ease both;
 }
 
@@ -478,37 +460,36 @@ section h2 {
     margin-top: 22px;
 }
 
-.shuffle-btn {
+.botao-sortear {
     font: inherit;
     color: #fff;
     padding: 10px 24px;
-    font-size: 0.88rem;
+    font-size: 14px;
     border-radius: 999px;
     border: 1px solid rgba(255, 255, 255, 0.28);
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     cursor: pointer;
-    letter-spacing: 0.4px;
     transition: transform 200ms ease, background 200ms ease, box-shadow 200ms ease;
 }
 
-.shuffle-btn:hover {
+.botao-sortear:hover {
     background: rgba(110, 170, 255, 0.25);
     transform: translateY(-1px);
     box-shadow: 0 8px 22px rgba(110, 170, 255, 0.35);
 }
 
-.shuffle-btn:active {
+.botao-sortear:active {
     transform: translateY(0);
 }
 
-.glass-panel *,
-.glass-panel *::before,
-.glass-panel *::after {
+.painel-vidro *,
+.painel-vidro *::before,
+.painel-vidro *::after {
     box-sizing: border-box;
 }
 
-.glass-panel {
+.painel-vidro {
     max-width: 1100px;
     margin: 100px auto;
     padding: 28px 28px 24px;
@@ -520,30 +501,29 @@ section h2 {
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 18px 50px rgba(0, 0, 0, 0.35);
 }
 
-.tips-header {
+.header-dicas {
     text-align: center;
     margin-bottom: 22px;
 }
 
-.tips-header h1 {
-    font-size: clamp(1.4rem, 2vw, 1.8rem);
+.header-dicas h1 {
+    font-size: 26px;
     margin: 0 0 4px;
-    letter-spacing: 0.3px;
 }
 
-.tips-header p {
+.header-dicas p {
     margin: 0;
     opacity: 0.78;
-    font-size: 0.9rem;
+    font-size: 14px;
 }
 
-.tips-grid {
+.grade-dicas {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 12px;
 }
 
-.tip-card {
+.card-dicas {
     position: relative;
     padding: 14px 14px 14px 16px;
     min-height: 110px;
@@ -554,7 +534,7 @@ section h2 {
     transition: transform 240ms ease, background 240ms ease, border-color 240ms ease;
 }
 
-.tip-card::after {
+.card-dicas::after {
     content: "";
     position: absolute;
     left: var(--mx, 50%);
@@ -562,80 +542,76 @@ section h2 {
     width: 180px;
     height: 180px;
     transform: translate(-50%, -50%);
-    background: radial-gradient(circle,
-            rgba(110, 170, 255, 0.45) 0%,
-            rgba(110, 170, 255, 0) 70%);
+    background: radial-gradient(circle, rgba(110, 170, 255, 0.45) 0%, rgba(110, 170, 255, 0) 70%);
     opacity: 0;
     transition: opacity 220ms ease;
     pointer-events: none;
     filter: blur(6px);
 }
 
-.tip-card:hover {
+.card-dicas:hover {
     transform: translateY(-2px);
     background: rgba(255, 255, 255, 0.11);
     border-color: rgba(255, 255, 255, 0.22);
 }
 
-.tip-card:hover::after {
+.card-dicas:hover::after {
     opacity: 1;
 }
 
-.tip-card h3 {
+.card-dicas h3 {
     position: relative;
     margin: 0 0 6px;
-    font-size: 0.92rem;
-    letter-spacing: 0.2px;
+    font-size: 14px;
 }
 
-.tip-card p {
+.card-dicas p {
     position: relative;
     margin: 0;
-    font-size: 0.8rem;
+    font-size: 12px;
     line-height: 1.4;
     opacity: 0.85;
 }
 
-.tip-card .tip-num {
+.card-dicas .numero-dica{
     position: absolute;
     top: 8px;
     right: 10px;
-    font-size: 0.7rem;
+    font-size: 10px;
     opacity: 0.45;
 }
 
-.tip-card.fade-in {
+.card-dicas .fade-in {
     animation: tipIn 360ms ease both;
 }
 
-.tips-actions {
+.acoes-dicas {
     display: flex;
     justify-content: center;
     margin-top: 22px;
 }
 
-.shuffle-btn {
-    font: inherit;
+.botao-sortear {
+    font: "Inter";
     color: #fff;
     padding: 10px 24px;
-    font-size: 0.88rem;
+    font-size: 14px;
     border-radius: 999px;
     border: 1px solid rgba(255, 255, 255, 0.28);
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     cursor: pointer;
-    letter-spacing: 0.4px;
     transition: transform 200ms ease, background 200ms ease, box-shadow 200ms ease;
 }
 
-.shuffle-btn:hover {
+.botao-sortear:hover {
     background: rgba(110, 170, 255, 0.25);
     transform: translateY(-1px);
     box-shadow: 0 8px 22px rgba(110, 170, 255, 0.35);
 }
 
-.shuffle-btn:active {
+.botao-sortear:active {
     transform: translateY(0);
 }
 
@@ -677,7 +653,7 @@ li {
     margin-bottom: 10px;
 }
 
-.links-participantes{
+.links-participantes {
     font-family: "Inter";
 }
 
@@ -710,28 +686,28 @@ li {
         font-size: 14px;
     }
 
-    .titulo-lg{
+    .titulo-slider {
         margin-top: 50px;
     }
-    
-    .card-label{
+
+    .topico-da-noticia {
         font-size: 10px;
     }
 
-    .card-title {
+    .titulo {
         font-size: 12px;
     }
 
-    .card-desc{
+    .texto-noticia {
         font-size: 10px;
     }
 
-    .see-more-btn{
+    .veja-mais-botao {
         font-size: 10px;
     }
 
-    .lg-container {
-        padding: 1rem 2.75rem;
+    .conteiner-slider {
+        padding: 16px 45px;
     }
 
     .conteiner-superior {
@@ -745,59 +721,54 @@ li {
 
     }
 
-    .slide {
+    .slides {
         flex-direction: column;
-        gap: 0.85rem;
-        padding: 0.75rem 0.25rem;
+        gap: 13px;
+        padding: 12px 4px;
     }
 
-    .slide-text {
+    .textos-slide {
         flex: 1 1 auto;
     }
 
-    .slide-media {
+    .imagem-slide {
         justify-content: center;
     }
 
-    .media-frame {
-        max-height: 180px;
-        aspect-ratio: 16 / 9;
-    }
-
-    .shuffle-btn {
+    .botao-sortear {
         font-size: 10px;
     }
 
-    .tip-card h3 {
+    .card-dicas h3 {
         margin: 10px 0 5px 0;
         font-size: 14px;
     }
 
-    .tip-card p {
+    .card-dicas p {
         font-size: 12px;
     }
 
-    .tips-header h1 {
+    .header-dicas h1 {
         font-size: 14px;
     }
 
-    .tips-header p {
+    .header-dicas p {
         font-family: "Inter";
         font-size: 10px;
         margin-top: 10px;
     }
 
-    .nav-btn {
+    .nav-botao {
         width: 32px;
         height: 48px;
     }
 
-    .nav-prev {
-        left: 0.4rem;
+    .nav-previa {
+        left: 10px;
     }
 
-    .nav-next {
-        right: 0.4rem;
+    .nav-proximo {
+        right: 10px;
     }
 
     #footer-principal {
@@ -848,14 +819,14 @@ li {
 }
 
 @media (max-width: 900px) {
-    .tips-grid {
+    .grade-dicas {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 
 @media (max-width: 530px) {
-    .tips-grid {
+    .grade-dicas{
         grid-template-columns: 1fr;
     }
 

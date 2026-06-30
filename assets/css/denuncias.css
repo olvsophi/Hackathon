@@ -14,17 +14,17 @@ body {
     height: 55px;
     padding: 12px 20px;
     border-radius: 30px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(163, 162, 162, 0.116);
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
-    color: white;
+    color: rgb(0, 0, 0);
     outline: none;
     background: url("../icones/icone-pesquisar.svg") no-repeat;
     background-position: 23px center;
     padding-left: 55px;
     background-size: 20px;
     margin-bottom: 40px;
-    background-color: #c4c4c4;
+    background-color: #c4c4c448;
 }
 
 .pesquisa input::placeholder {
@@ -41,9 +41,8 @@ body {
 }
 
 .direita a {
-    text-decoration: none;
     color: #ffffff;
-    font-family: "inter";
+    font-family: "Inter";
     padding: 0px 0px 0px 30px;
 }
 
@@ -52,7 +51,7 @@ body {
 }
 
 
-.respostas{
+.respostas {
     justify-content: center;
     color: white;
 }
@@ -81,19 +80,18 @@ main h3 {
 }
 
 .comentarios {
-width: 100%;
-max-width: 1000px;
-margin: 0 auto;
-display: flex;
-margin-bottom: 20px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    margin-bottom: 20px;
 }
 
 
 article {
     background: rgba(112, 110, 110, 0.4);
-    border: 0.2px solid rgba(30, 30, 30, 0.4);
+    border: 0.2px solid rgba(30, 30, 30, 0.13);
     backdrop-filter: blur(40px);
-    box-shadow: 0 16px 20px rgba(0, 0, 0, 0.6);
     box-shadow: inset 0 0 60px rgba(150, 176, 255, 0.4);
     border-radius: 40px;
     padding: 30px;
@@ -102,7 +100,7 @@ article {
 
 .comentario {
     width: 100%;
-    background-color: #7575758a;
+    background-color: #83838313;
     padding: 10px;
     border-radius: 10px;
     word-break: break-word;
@@ -118,14 +116,20 @@ article {
     display: flex;
     justify-content: space-between;
 }
- .like,.dislike,.report,.respostas{
+
+.like,
+.dislike,
+.denunciar,
+.respostas {
     cursor: pointer;
     transition: all .3s ease;
 }
 
- .like:hover,.dislike:hover,.report:hover{
+.like:hover,
+.dislike:hover,
+.denunciar:hover {
     transform: translateY(-5px);
-    
+
 }
 
 .container-comentarios {
@@ -164,7 +168,7 @@ nav {
     transform: translate(-50%, -50%);
 }
 
-.celular{
+.celular {
     display: none;
     flex-direction: column;
     position: absolute;
@@ -177,16 +181,17 @@ nav {
     gap: 10px;
     background: rgba(10, 40, 70, 0.95);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .3);
     z-index: 999;
     opacity: 0;
     visibility: hidden;
     transition: all .25s ease;
 }
 
-.celular a,.celular button{
+.celular a,
+.celular button {
     color: white;
     font-family: 'Inter', sans-serif;
     font-size: 18px;
@@ -199,69 +204,89 @@ nav {
     transition: .2s;
 }
 
-.celular a:hover,.celular button:hover{
-    background: rgba(255,255,255,0.1);
+.celular a:hover,
+.celular button:hover {
+    background: rgba(255, 255, 255, 0.1);
 }
 
-.celular.ativo{
+.celular.ativo {
     display: flex;
     opacity: 1;
     visibility: visible;
 }
 
-.celular a{
+.celular a {
     margin-right: 0 !important;
 }
- 
 
-@media (max-width: 1041px){
-    .secure-search h2{
+
+@media (max-width: 1041px) {
+    .secure-search h2 {
         display: none;
     }
 }
 
-@media (max-width: 630px){
-    .computador{
+@media (max-width: 630px) {
+    .computador {
         display: none;
     }
-    .sair{
+
+    .subtitulo {
+        font-size: 12px;
+        margin: 20px 50px 40px 50px;
+    }
+
+    .sair {
         display: none;
     }
-    .header-geral{
-        padding: 0 10px !important; 
+
+    .header-geral {
+        padding: 0 10px !important;
     }
-    .container-comentario{
+
+    .container-comentario {
         margin: 0px 25px;
     }
-    .perfis{
+
+    .perfis {
         font-size: 16px;
         padding: 0px 30px;
     }
 
-    .pesquisa{
-        margin: 0px 20px ;
+    .pesquisa {
+        margin: 0px 20px;
     }
-    .comentario{
+
+    .pesquisa input {
+        height: 40px;
+        width: 300px;
+    }
+
+    .pesquisa input::placeholder {
         font-size: 12px;
     }
-    article{
+
+    .comentario {
+        font-size: 12px;
+    }
+
+    article {
         margin: 0px 10px;
         padding: 10px;
     }
-    .like img,.dislike img{
+
+    .like img,
+    .dislike img {
         width: 100%;
         max-width: 25px;
     }
-    .respostas{
+
+    .respostas {
         font-size: 10px;
     }
-    .report img{
+
+    .denunciar img {
         width: 100%;
         max-width: 20px;
     }
 }
-
-
-
-
-

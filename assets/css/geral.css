@@ -109,7 +109,6 @@ li {
 nav a {
     font-family: 'Inter', sans-serif;
     font-size: 20px;
-    text-decoration: none;
     color: #ffffff;
 }
 
@@ -245,6 +244,9 @@ nav a {
     }
     .direita a{
         padding: 0px 0px 0px 0px;
+    }
+    .footer-geral p {
+        font-size: 10px;
     }
 }
 

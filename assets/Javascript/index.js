@@ -52,28 +52,28 @@ function renderizarSlides() {
     let classeAtiva = ""
 
     if (index === 0) {
-      classeAtiva = "active"
+      classeAtiva = "ativo"
     }
 
     const estruturaSlide = `
-      <article class="slide ${classeAtiva}">
-        <div class="texto-slide">
-          <div class="text-card title-card">
-            <span class="card-label">${slide.categoria}</span>
-            <h2 class="card-title">${slide.titulo}</h2>
+      <article class="slides ${classeAtiva}">
+        <div class="textos-slide">
+          <div class="texto titulo-slide">
+            <span class="topico-da-noticia">${slide.categoria}</span>
+            <h2 class="titulo">${slide.titulo}</h2>
           </div>
-          <div class="text-card desc-card">
-            <p class="card-desc">${slide.descricao}</p>
+          <div class="texto texto-noticia">
+            <p class="noticia">${slide.descricao}</p>
           </div>
-          <a href="${slide.link}" class="see-more-btn">
+          <a href="${slide.link}" class="veja-mais-botao">
             Veja mais
             <svg viewBox="0 0 24 24" width="14" height="14">
               <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </a>
         </div>
-        <div class="slide-media">
-          <div class="media-frame">
+        <div class="imagem-slide">
+          <div class="imagem-noticia">
             <img src="${slide.imagem}" alt="${slide.titulo}" />
           </div>
         </div>
@@ -85,14 +85,14 @@ function renderizarSlides() {
 
 function atualizarSlider() {
   trilho.style.transform = "translate3d(-" + (posicaoAtual * 100) + "%, 0, 0)"
-  
-  const todosOsSlides = trilho.querySelectorAll(".slide")
-  
+
+  const todosOsSlides = trilho.querySelectorAll(".slides")
+
   todosOsSlides.forEach((slide, index) => {
     if (index === posicaoAtual) {
-      slide.classList.add("active")
+      slide.classList.add("ativo")
     } else {
-      slide.classList.remove("active")
+      slide.classList.remove("ativo")
     }
   })
 }
@@ -115,20 +115,20 @@ function mudarSlide(direcao) {
 
   atualizarSlider()
 
-  setTimeout(function() {
+  setTimeout(function () {
     carregandoAnimacao = false
   }, TEMPO_ANIMACAO)
 }
 
-voltar.addEventListener("click", function() {
+voltar.addEventListener("click", function () {
   mudarSlide(-1)
 })
 
-avancar.addEventListener("click", function() {
+avancar.addEventListener("click", function () {
   mudarSlide(1)
 })
 
-document.addEventListener("keydown", function(evento) {
+document.addEventListener("keydown", function (evento) {
   if (evento.key === "ArrowRight") {
     mudarSlide(1)
   }
@@ -140,76 +140,76 @@ document.addEventListener("keydown", function(evento) {
 renderizarSlides()
 
 // JS das Dicas
-const tips = [
-    { titulo: "Senhas fortes", texto: "Use no mínimo 12 caracteres misturando letras, números e símbolos." },
-    { titulo: "Gerenciador de senhas", texto: "Guarde senhas em um cofre confiável em vez de anotá-las soltas." },
-    { titulo: "Autenticação em 2 fatores", texto: "Ative o 2FA sempre que possível, de preferência por app, não SMS." },
-    { titulo: "Cuidado com phishing", texto: "Desconfie de e-mails urgentes pedindo login ou dados pessoais." },
-    { titulo: "Verifique o remetente", texto: "Confira o domínio do e-mail antes de clicar em qualquer link." },
-    { titulo: "Atualize seus apps", texto: "Updates corrigem falhas que invasores já estão tentando explorar." },
-    { titulo: "Sistema operacional em dia", texto: "Mantenha o SO atualizado para receber correções de segurança." },
-    { titulo: "Wi-Fi público", texto: "Evite acessar contas sensíveis em redes abertas sem uma VPN." },
-    { titulo: "Use VPN confiável", texto: "Prefira serviços pagos e auditados a opções gratuitas duvidosas." },
-    { titulo: "Backups regulares", texto: "Mantenha cópias em nuvem e em um disco externo desconectado." },
-    { titulo: "Cuidado com USBs", texto: "Não conecte pendrives desconhecidos ao seu computador." },
-    { titulo: "Bloqueio de tela", texto: "Configure bloqueio automático em celular e notebook." },
-    { titulo: "Permissões de apps", texto: "Revise quais apps acessam câmera, microfone e localização." },
-    { titulo: "Antivírus ativo", texto: "Mantenha um antivírus reputável rodando e atualizado." },
-    { titulo: "HTTPS sempre", texto: "Confira o cadeado e o https:// antes de digitar dados em um site." },
-    { titulo: "Links encurtados", texto: "Passe o mouse para ver o destino real antes de clicar." },
-    { titulo: "Downloads seguros", texto: "Baixe softwares apenas das páginas oficiais dos fabricantes." },
-    { titulo: "Cuidado com extensões", texto: "Instale extensões de navegador só quando realmente precisar." },
-    { titulo: "Revogue acessos antigos", texto: "Remova apps de terceiros conectados às suas contas que não usa mais." },
-    { titulo: "E-mail secundário", texto: "Use um e-mail separado para cadastros pouco confiáveis." },
-    { titulo: "Não reutilize senhas", texto: "Uma senha vazada não pode abrir todas as suas outras contas." },
-    { titulo: "Verifique vazamentos", texto: "Cheque seu e-mail em sites como Have I Been Pwned periodicamente." },
-    { titulo: "Cuidado com QR Codes", texto: "Códigos colados sobre os originais podem levar a sites falsos." },
-    { titulo: "Suporte falso", texto: "Empresas reais não pedem senha por telefone ou WhatsApp." },
-    { titulo: "Pix com calma", texto: "Confira nome, banco e CPF/CNPJ antes de confirmar transferências." },
-    { titulo: "Compras online", texto: "Prefira cartões virtuais com limite ajustável para sites novos." },
-    { titulo: "Redes sociais", texto: "Limite o que aparece publicamente no seu perfil e nas fotos." },
-    { titulo: "Geolocalização", texto: "Evite postar em tempo real sua localização exata." },
-    { titulo: "Dados em fotos", texto: "Cuidado com cartões, documentos e telas visíveis ao tirar fotos." },
-    { titulo: "Logout em dispositivos", texto: "Saia das contas em computadores compartilhados ou emprestados." },
-    { titulo: "Privacidade do navegador", texto: "Limpe cookies de sites em que não confia e bloqueie rastreadores." },
-    { titulo: "Pense antes de clicar", texto: "Na dúvida, não clique. Confirme pelo canal oficial da empresa." }
+const dicas = [
+  { titulo: "Senhas fortes", texto: "Use no mínimo 12 caracteres misturando letras, números e símbolos." },
+  { titulo: "Gerenciador de senhas", texto: "Guarde senhas em um cofre confiável em vez de anotá-las soltas." },
+  { titulo: "Autenticação em 2 fatores", texto: "Ative o 2FA sempre que possível, de preferência por app, não SMS." },
+  { titulo: "Cuidado com phishing", texto: "Desconfie de e-mails urgentes pedindo login ou dados pessoais." },
+  { titulo: "Verifique o remetente", texto: "Confira o domínio do e-mail antes de clicar em qualquer link." },
+  { titulo: "Atualize seus apps", texto: "Updates corrigem falhas que invasores já estão tentando explorar." },
+  { titulo: "Sistema operacional em dia", texto: "Mantenha o SO atualizado para receber correções de segurança." },
+  { titulo: "Wi-Fi público", texto: "Evite acessar contas sensíveis em redes abertas sem uma VPN." },
+  { titulo: "Use VPN confiável", texto: "Prefira serviços pagos e auditados a opções gratuitas duvidosas." },
+  { titulo: "Backups regulares", texto: "Mantenha cópias em nuvem e em um disco externo desconectado." },
+  { titulo: "Cuidado com USBs", texto: "Não conecte pendrives desconhecidos ao seu computador." },
+  { titulo: "Bloqueio de tela", texto: "Configure bloqueio automático em celular e notebook." },
+  { titulo: "Permissões de apps", texto: "Revise quais apps acessam câmera, microfone e localização." },
+  { titulo: "Antivírus ativo", texto: "Mantenha um antivírus reputável rodando e atualizado." },
+  { titulo: "HTTPS sempre", texto: "Confira o cadeado e o https:// antes de digitar dados em um site." },
+  { titulo: "Links encurtados", texto: "Passe o mouse para ver o destino real antes de clicar." },
+  { titulo: "Downloads seguros", texto: "Baixe softwares apenas das páginas oficiais dos fabricantes." },
+  { titulo: "Cuidado com extensões", texto: "Instale extensões de navegador só quando realmente precisar." },
+  { titulo: "Revogue acessos antigos", texto: "Remova apps de terceiros conectados às suas contas que não usa mais." },
+  { titulo: "E-mail secundário", texto: "Use um e-mail separado para cadastros pouco confiáveis." },
+  { titulo: "Não reutilize senhas", texto: "Uma senha vazada não pode abrir todas as suas outras contas." },
+  { titulo: "Verifique vazamentos", texto: "Cheque seu e-mail em sites como Have I Been Pwned periodicamente." },
+  { titulo: "Cuidado com QR Codes", texto: "Códigos colados sobre os originais podem levar a sites falsos." },
+  { titulo: "Suporte falso", texto: "Empresas reais não pedem senha por telefone ou WhatsApp." },
+  { titulo: "Pix com calma", texto: "Confira nome, banco e CPF/CNPJ antes de confirmar transferências." },
+  { titulo: "Compras online", texto: "Prefira cartões virtuais com limite ajustável para sites novos." },
+  { titulo: "Redes sociais", texto: "Limite o que aparece publicamente no seu perfil e nas fotos." },
+  { titulo: "Geolocalização", texto: "Evite postar em tempo real sua localização exata." },
+  { titulo: "Dados em fotos", texto: "Cuidado com cartões, documentos e telas visíveis ao tirar fotos." },
+  { titulo: "Logout em dispositivos", texto: "Saia das contas em computadores compartilhados ou emprestados." },
+  { titulo: "Privacidade do navegador", texto: "Limpe cookies de sites em que não confia e bloqueie rastreadores." },
+  { titulo: "Pense antes de clicar", texto: "Na dúvida, não clique. Confirme pelo canal oficial da empresa." }
 ];
 
-const grid = document.getElementById("tipsGrid");
-const btn = document.getElementById("shuffleBtn");
+const gradeDicas = document.getElementById("gradeDicas");
+const btn = document.getElementById("botaoSortear");
 
 function sortear(lista, n) {
-    const copia = lista.slice();
-    for (let i = copia.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [copia[i], copia[j]] = [copia[j], copia[i]];
-    }
-    return copia.slice(0, n);
+  const copia = lista.slice();
+  for (let i = copia.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copia[i], copia[j]] = [copia[j], copia[i]];
+  }
+  return copia.slice(0, n);
 }
 
 function renderizar() {
-    const escolhidas = sortear(tips, 4);
-    grid.innerHTML = "";
+  const escolhidas = sortear(dicas, 4);
+  gradeDicas.innerHTML = "";
 
-    escolhidas.forEach((dica, i) => {
-        const card = document.createElement("article");
-        card.className = "tip-card fade-in";
-        card.style.animationDelay = `${i * 40}ms`;
+  escolhidas.forEach((dica, i) => {
+    const card = document.createElement("article");
+    card.className = "card-dicas fade-in";
+    card.style.animationDelay = `${i * 40}ms`;
 
-        card.innerHTML = `
-      <span class="tip-num">${String(i + 1).padStart(2, "0")}</span>
+    card.innerHTML = `
+      <span class="numero-dica">${String(i + 1).padStart(2, "0")}</span>
       <h3>${dica.titulo}</h3>
       <p>${dica.texto}</p>
     `;
 
-        card.addEventListener("mousemove", (e) => {
-            const r = card.getBoundingClientRect();
-            card.style.setProperty("--mx", `${e.clientX - r.left}px`);
-            card.style.setProperty("--my", `${e.clientY - r.top}px`);
-        });
-
-        grid.appendChild(card);
+    card.addEventListener("mousemove", (e) => {
+      const r = card.getBoundingClientRect();
+      card.style.setProperty("--mx", `${e.clientX - r.left}px`);
+      card.style.setProperty("--my", `${e.clientY - r.top}px`);
     });
+
+    gradeDicas.appendChild(card); 
+  });
 }
 
 btn.addEventListener("click", renderizar);
@@ -219,17 +219,17 @@ const formularioPesquisa = document.getElementById("pesquisa");
 const campoPesquisa = document.getElementById("pesquisaUsuario");
 
 if (formularioPesquisa) {
-    formularioPesquisa.addEventListener("submit", function (evento) {
-        evento.preventDefault();
+  formularioPesquisa.addEventListener("submit", function (evento) {
+    evento.preventDefault();
 
-        const pesquisa = campoPesquisa.value.trim();
+    const pesquisa = campoPesquisa.value.trim();
 
-        if (pesquisa === "") {
-            return;
-        }
+    if (pesquisa === "") {
+      return;
+    }
 
-        localStorage.setItem("pesquisaDenuncia", pesquisa);
+    localStorage.setItem("pesquisaDenuncia", pesquisa);
 
-        window.location.href = "./pages/denuncias.html";
-    });
+    window.location.href = "./pages/denuncias.html";
+  });
 }
