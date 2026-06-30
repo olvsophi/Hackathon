@@ -92,7 +92,7 @@ body {
     height: 40px;
     margin: 10px 0 65px 0;
     font-size: 20px;
-    color: #b5c3cc;
+    color: #eeebeb;
     display: block;
     margin: 0 auto;
     margin-top: 50px;
@@ -104,6 +104,10 @@ body {
     transform: translateY(-5px);
     color: black;
     
+}
+
+span {
+    color: #d1cccc;
 }
 
 main {
@@ -211,6 +215,10 @@ h2 {
     margin-bottom: 20px;
 }
 
+a{
+    color: #b5c3cc;
+}
+
 
 @media (max-width: 405px){
     .login-cadastro{
@@ -225,7 +233,3 @@ h2 {
     }
 
 }
-
-
-
-
