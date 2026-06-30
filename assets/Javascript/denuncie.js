@@ -1,4 +1,10 @@
-import { db, collection, addDoc } from './firebaseconfig.js'
+import { db, collection, addDoc, onAuthStateChanged, auth } from './firebaseconfig.js'
+
+onAuthStateChanged(auth, (usuario) =>{
+    if(!usuario) {
+        window.location.href = "../pages/login.html";
+    }
+});
 
 let resolvido = false;
 let naoResolvido = false;
@@ -58,3 +64,5 @@ btnEnviarDenuncia.addEventListener('click', async () => {
         console.error(e)
     }
 })
+
+

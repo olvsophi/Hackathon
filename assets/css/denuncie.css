@@ -116,6 +116,10 @@ button {
     color: red;
 }
 
+.computador{
+    display: block !important;
+}
+
 .botao-envio {
     display: flex;
     margin: 20px auto 0 auto;
