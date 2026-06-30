@@ -1,9 +1,12 @@
-import { db, collection, addDoc, onAuthStateChanged, auth } from './firebaseconfig.js'
+import { db, collection, addDoc, onAuthStateChanged, auth} from './firebaseconfig.js'
+import { query, where, getDocs } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+let idUsuario = null
 
 onAuthStateChanged(auth, (usuario) =>{
     if(!usuario) {
         window.location.href = "../pages/login.html";
     }
+    idUsuario = usuario.uid
 });
 
 let resolvido = false;
@@ -50,10 +53,12 @@ btnEnviarDenuncia.addEventListener('click', async () => {
     try {
         const denunciaRef = collection(db, "denuncias");
 
+
         await addDoc((denunciaRef), {
             topico: topico,
             problema: problema,
             resolvido: resolvido,
+            idUsuario: idUsuario
         })
 
         document.getElementById("topico").value = "";
@@ -66,4 +71,59 @@ btnEnviarDenuncia.addEventListener('click', async () => {
     }
 })
 
+const comentarios = document.querySelector(".comentarios")
 
+async function carregarHTML() {
+    comentarios.innerHTML = ""
+    const resultado = await pegarDenunciasDoFirebase()
+    if(!resultado) return
+    resultado.forEach((dados) =>  {
+        let url = ''
+        if(dados.resolvido){
+            url = '../assets/icones/botao-like.svg'
+        } else {
+            url = '../assets/icones/botao-dislike.svg'
+        }
+
+            comentarios.innerHTML += `<article>
+                <div class="perfis">
+                    <img src="../assets/icones/icone-de-perfil.svg" alt="Foto de perfil">
+
+                    <p>Anônimo</p>
+                </div>
+                <div class="container-comentario">
+                    <div class="comentario">
+                        <h3>${dados.topico}</h3>
+
+                        <p>${dados.problema}</p>
+                    </div>
+                    <div class="botoes">
+                        <div>
+                            <p class="resultado">A denúncia foi resolvida?<p>
+                                <img src="${url}" alt="like">
+                        </div>
+
+                        <button class="denunciar">
+                            <img src="../assets/icones/icone-denunciar-primario.svg" alt="denunciar">
+                        </button>`
+        });
+}
+carregarHTML()
+
+async function pegarDenunciasDoFirebase(){
+    try {
+    
+        const resultado = []
+        const denuncias = await getDocs(collection(db, "denuncias"));
+        for(let denuncia of denuncias.docs){
+            if (denuncia.data().idUsuario == idUsuario){
+                resultado.push(denuncia.data())
+            }
+        } 
+        return resultado 
+    }catch(e){
+        alert("erro ao buscar denuncias")
+        console.error(e)
+    }
+           
+}

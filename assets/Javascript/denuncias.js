@@ -1,5 +1,12 @@
-import { db, collection } from './firebaseconfig.js';
+import { db, collection, auth, onAuthStateChanged } from './firebaseconfig.js';
 import { query, where, getDocs } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+
+let idUsuario = null
+
+onAuthStateChanged(auth, (usuario) =>{
+    idUsuario = usuario.uid
+});
+
 
 const form = document.getElementById('pesquisa');
 const pesquisa = document.getElementById('pesquisaUsuario');
