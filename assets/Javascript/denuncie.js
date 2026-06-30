@@ -7,23 +7,28 @@ onAuthStateChanged(auth, (usuario) =>{
 });
 
 let resolvido = false;
-let naoResolvido = false;
 const regex = /www|http|https/i;
 
 const btnEnviarDenuncia = document.querySelector('.botao-envio')
-const btnLike = document.querySelector('like')
-const btnDislike = document.querySelector('dislike')
+const btnLike = document.querySelector('.like')
+const btnDislike = document.querySelector('.dislike')
+const imgLike = document.querySelector("#like img");
+const imgDislike = document.querySelector("#dislike img");
 
 btnLike.addEventListener('click', () => {
-    resolvido = false;
-    naoResolvido = false;
+    resolvido = true;
+    imgLike.src = "../assets/icones/botao-like.svg";
+    imgDislike.src = "../assets/icones/botao-dislike-neutro.svg";
+
     console.log("ta dando like")
     // animation on pliss
 });
 
 btnDislike.addEventListener('click', () => {
     resolvido = false;
-    naoResolvido = true;
+    imgLike.src = "../assets/icones/botao-like-neutro.svg";
+    imgDislike.src = "../assets/icones/botao-dislike.svg";
+
     console.log("ta dando dislike")
     // Coloquem uma animação ae plis
 });
@@ -40,10 +45,7 @@ btnEnviarDenuncia.addEventListener('click', async () => {
         alert("Não é permtido enviar links!")
         return;
     }
-    if (resolvido === false && NaoResolvido === false) {
-        alert("Marque se o problema foi resolvido ou não!")
-        return;
-    }
+
     // Não mexer
     try {
         const denunciaRef = collection(db, "denuncias");
@@ -57,7 +59,6 @@ btnEnviarDenuncia.addEventListener('click', async () => {
         document.getElementById("topico").value = "";
         document.getElementById("problema").value = "";
         resolvido = false;
-        naoResolvido = false;
 
         alert('Denuncia enviada')
     } catch (e) {
