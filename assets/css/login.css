@@ -40,7 +40,6 @@ body {
     background: rgba(153, 152, 152, 0.4);
     border: 2px solid rgba(30, 30, 30, 0.4);
     backdrop-filter: blur(40px);
-    box-shadow: 0 16px 20px rgba(0, 0, 0, 0.10);
     box-shadow: inset 0 0 60px rgba(122, 146, 217, 0.4);
     display: flex;
     flex-direction: column;
@@ -60,18 +59,19 @@ body {
 }
 
 .botao {
-    border-radius: 10px;
-    background: rgba(0, 0, 0, 0.4);
-    border: 3px solid rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    background: rgba(153, 152, 152, 0.4);
+    border: 1px solid rgba(30, 30, 30, 0.4);
     backdrop-filter: blur(40px);
-    box-shadow: 0 16px 20px rgba(0, 0, 0, 0.1);
-    box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.4);
-    width: 70%;
+    box-shadow: inset 0 0 60px rgba(122, 146, 217, 0.4);
+    width: 100%;
+    max-width: 200px;
     height: 40px;
-    margin: 10px 0 65px 0;
     font-size: 20px;
-    color: #fff;
-    transition:  all .3s ease;
+    color: #eeebeb;
+    display: block;
+    margin: 50px auto 50px auto;
+    transition: all .3s ease;
     cursor: pointer;
 }
 
@@ -85,18 +85,14 @@ body {
     background: rgba(153, 152, 152, 0.4);
     border: 1px solid rgba(30, 30, 30, 0.4);
     backdrop-filter: blur(40px);
-    box-shadow: 0 16px 20px rgba(0, 0, 0, 0.10);
     box-shadow: inset 0 0 60px rgba(122, 146, 217, 0.4);
     width: 100%;
     max-width: 200px;
     height: 40px;
-    margin: 10px 0 65px 0;
     font-size: 20px;
     color: #eeebeb;
     display: block;
-    margin: 0 auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin: 50px auto 50px auto;
     transition: all .3s ease;
     cursor: pointer;
 }
@@ -197,7 +193,6 @@ h3 {
     display: flex;
     align-items: center;
     gap: 10px;
-    color: rgb(255, 255, 255);
     white-space: nowrap;
     font-size: 16px;
 }
