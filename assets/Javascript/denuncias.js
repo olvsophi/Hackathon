@@ -1,121 +1,126 @@
 import { db, collection, auth, onAuthStateChanged } from './firebaseconfig.js';
 import { query, where, getDocs } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 
-let idUsuario = null
+let idUsuario = null;
 
-onAuthStateChanged(auth, (usuario) =>{
-    idUsuario = usuario.uid
+onAuthStateChanged(auth, (usuario) => {
+    if (usuario) {
+        idUsuario = usuario.uid;
+    } else {
+        idUsuario = null;
+    }
 });
-
 
 const form = document.getElementById('pesquisa');
 const pesquisa = document.getElementById('pesquisaUsuario');
 
-form.addEventListener('submit', (evento) => {
-    evento.preventDefault();
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
 
-    const termoPesquisa =  pesquisa.value.trim();
-    
-    if(termoPesquisa === ''){
-        // alert("Digite algo para pesquisar!")
-        return;
-    }
+    const termo = pesquisa.value.trim();
+    if (!termo) return;
 
-    buscarDenunciaFeita(termoPesquisa);
+    buscarDenunciaFeita(termo);
 });
 
-
-
-const comentarios = document.querySelector(".comentarios")
+const comentarios = document.querySelector(".comentarios");
 
 async function carregarHTML() {
-    comentarios.innerHTML = ""
-    const resultado = await pegarDenunciasDoFirebase()
-    resultado.forEach((denuncia) => {
-        const dados = denuncia.data();
-        let url = ''
-        if(dados.resolvido){
-            url = '../assets/icones/botao-like.svg'
-        } else {
-            url = '../assets/icones/botao-dislike.svg'
-        }
+    comentarios.innerHTML = "";
 
-            comentarios.innerHTML += `<article>
-                <div class="perfis">
-                    <img src="../assets/icones/icone-de-perfil.svg" alt="Foto de perfil">
+    const resultado = await pegarDenuncias();
 
-                    <p>Anônimo</p>
+    if (!resultado) return;
+
+    resultado.forEach((doc) => {
+        const dados = doc.data();
+
+        const url = dados.resolvido
+            ? "../assets/icones/botao-like.svg"
+            : "../assets/icones/botao-dislike.svg";
+
+        comentarios.innerHTML += `
+        <article>
+            <div class="perfis">
+                <img src="../assets/icones/icone-de-perfil.svg">
+                <p>Anônimo</p>
+            </div>
+
+            <div class="container-comentario">
+                <div class="comentario">
+                    <h3>${dados.topico}</h3>
+                    <p>${dados.problema}</p>
                 </div>
-                <div class="container-comentario">
-                    <div class="comentario">
-                        <h3>${dados.topico}</h3>
 
-                        <p>${dados.problema}</p>
+                <div class="botoes">
+                    <div>
+                        <p class="resultado">A denúncia foi resolvida?</p>
+                        <img src="${url}">
                     </div>
-                    <div class="botoes">
-                        <div>
-                            <p class="resultado">A denúncia foi resolvida?<p>
-                                <img src="${url}" alt="like">
-                        </div>
 
-                        <button class="denunciar">
-                            <img src="../assets/icones/icone-denunciar-primario.svg" alt="denunciar">
-                        </button>`
-        });
+                    <button class="denunciar">
+                        <img src="../assets/icones/icone-denunciar-primario.svg">
+                    </button>
+                </div>
+            </div>
+        </article>`;
+    });
 }
-carregarHTML()
 
-async function pegarDenunciasDoFirebase(){
+carregarHTML();
+
+async function pegarDenuncias() {
     try {
-    
-        const resultado = await getDocs(collection(db, "denuncias")); 
-        return resultado 
-    }catch(e){
-        alert("erro ao buscar denuncias")
+        return await getDocs(collection(db, "denuncias"));
+    } catch (e) {
+        console.error(e);
     }
-           
 }
 
-async function buscarDenunciaFeita(termoPesquisa){
+async function buscarDenunciaFeita(termo) {
+    comentarios.innerHTML = "";
 
-    comentarios.innerHTML = ""    
-    const resultado = await pegarDenunciasDoFirebase()
+    const resultado = await pegarDenuncias();
 
-    resultado.forEach((denuncia) => {
-        const dados = denuncia.data();
-        if (dados.topico === termoPesquisa) {
-            
-            comentarios.innerHTML += `<article>
+    if (!resultado) return;
+
+    resultado.forEach((doc) => {
+        const dados = doc.data();
+
+        if (dados.topico === termo) {
+            comentarios.innerHTML += `
+            <article>
                 <div class="perfis">
-                    <img src="../assets/icones/icone-de-perfil.svg" alt="Foto de perfil">
-
+                    <img src="../assets/icones/icone-de-perfil.svg">
                     <p>Anônimo</p>
                 </div>
+
                 <div class="container-comentario">
                     <div class="comentario">
                         <h3>${dados.topico}</h3>
-
                         <p>${dados.problema}</p>
                     </div>
+
                     <div class="botoes">
                         <div>
                             <button class="like">
-                                <img src="../assets/icones/botao-like-neutro.svg" alt="like">
+                                <img src="../assets/icones/botao-like-neutro.svg">
                             </button>
+
                             <button class="dislike">
-                                <img src="../assets/icones/botao-dislike-neutro.svg" alt="dislike">
+                                <img src="../assets/icones/botao-dislike-neutro.svg">
                             </button>
                         </div>
+
                         <button class="denunciar">
-                            <img src="../assets/icones/icone-denunciar-primario.svg" alt="denunciar">
+                            <img src="../assets/icones/icone-denunciar-primario.svg">
                         </button>
                     </div>
                 </div>
-            </article>`
-
+            </article>`;
         }
     });
-};
+}
 
 // Coisas a fazer aqui
 /*

@@ -232,3 +232,11 @@ if (formularioPesquisa) {
     window.location.href = "./pages/denuncias.html";
   });
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll('a[href*="login.html"]').forEach(link => {
+    link.addEventListener("click", () => {
+      sessionStorage.setItem("paginaAnterior", window.location.href);
+    });
+  });
+});
