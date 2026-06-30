@@ -8,6 +8,14 @@ body {
     margin-top: 50px;
 }
 
+.resultado{
+    color: #ffffff;
+    font-family:'Inter', sans-serif;
+    margin-bottom: 10px;
+    margin-left: 3px;
+    font-weight: bold;
+}
+
 .pesquisa input {
     width: 100%;
     max-width: 670px;

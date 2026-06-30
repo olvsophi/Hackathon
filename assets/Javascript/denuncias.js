@@ -17,14 +17,21 @@ form.addEventListener('submit', (evento) => {
     buscarDenunciaFeita(termoPesquisa);
 });
 
+
+
 const comentarios = document.querySelector(".comentarios")
 
 async function carregarHTML() {
     comentarios.innerHTML = ""
     const resultado = await pegarDenunciasDoFirebase()
-        resultado.forEach((denuncia) => {
-            const dados = denuncia.data();
-
+    resultado.forEach((denuncia) => {
+        const dados = denuncia.data();
+        let url = ''
+        if(dados.resolvido){
+            url = '../assets/icones/botao-like.svg'
+        } else {
+            url = '../assets/icones/botao-dislike.svg'
+        }
 
             comentarios.innerHTML += `<article>
                 <div class="perfis">
@@ -40,13 +47,10 @@ async function carregarHTML() {
                     </div>
                     <div class="botoes">
                         <div>
-                            <button class="like">
-                                <img src="../assets/icones/botao-like-neutro.svg" alt="like">
-                            </button>
-                            <button class="dislike">
-                                <img src="../assets/icones/botao-dislike-neutro.svg" alt="dislike">
-                            </button>
+                            <p class="resultado">A denúncia foi resolvida?<p>
+                                <img src="${url}" alt="like">
                         </div>
+
                         <button class="denunciar">
                             <img src="../assets/icones/icone-denunciar-primario.svg" alt="denunciar">
                         </button>`
