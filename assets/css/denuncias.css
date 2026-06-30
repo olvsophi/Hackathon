@@ -18,7 +18,6 @@ body {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     color: rgb(0, 0, 0);
-    outline: none;
     background: url("../icones/icone-pesquisar.svg") no-repeat;
     background-position: 23px center;
     padding-left: 55px;
@@ -43,7 +42,7 @@ body {
 .direita a {
     color: #ffffff;
     font-family: "Inter";
-    padding: 0px 0px 0px 30px;
+    padding-left: 30px;
 }
 
 .perfil-principal {

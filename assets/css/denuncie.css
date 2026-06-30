@@ -99,7 +99,6 @@ button:hover {
 
 button {
     background-color: transparent;
-    border: none;
     transition: all 0.3s ease;
     cursor: pointer;
 }

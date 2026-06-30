@@ -42,14 +42,13 @@ nav {
     text-decoration: none;
     color: #ffffff;
     font-family: "Inter";
-    padding: 0px 0px 0px 30px;
+    padding-left: 30px;
 }
 
 .bt-header {
     width: 100px;
     height: 20px;
     background: none;
-    border: 0;
     color: #ffffff;
     font-size: 14px;
 }
@@ -89,7 +88,6 @@ section h2 {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     color: rgb(255, 255, 255);
-    outline: none;
     background: url("../icones/icone-pesquisar.svg") no-repeat;
     background-position: 23px center;
     padding-left: 55px;
@@ -326,8 +324,7 @@ section h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
-    color: #fff;
+    color: #ffffff;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.05));
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
@@ -350,19 +347,13 @@ section h2 {
     right: 10px;
 }
 
-.painel-vidro *,
-.painel-vidro *::before,
-.painel-vidro *::after {
-    box-sizing: border-box;
-}
-
 .painel-vidro {
     max-width: 1100px;
     margin: 150px auto;
     font-family: "Inter";
     padding: 28px 28px 24px;
     border-radius: 22px;
-    color: #fff;
+    color: #ffffff;
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(22px) saturate(150%);
     -webkit-backdrop-filter: blur(22px) saturate(150%);
@@ -469,7 +460,6 @@ section h2 {
     border: 1px solid rgba(255, 255, 255, 0.28);
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
-    cursor: pointer;
     transition: transform 200ms ease, background 200ms ease, box-shadow 200ms ease;
 }
 
@@ -483,18 +473,12 @@ section h2 {
     transform: translateY(0);
 }
 
-.painel-vidro *,
-.painel-vidro *::before,
-.painel-vidro *::after {
-    box-sizing: border-box;
-}
-
 .painel-vidro {
     max-width: 1100px;
     margin: 100px auto;
     padding: 28px 28px 24px;
     border-radius: 22px;
-    color: #fff;
+    color: #ffffff;
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(22px) saturate(150%);
     border: 1px solid rgba(255, 255, 255, 0.18);
@@ -508,7 +492,7 @@ section h2 {
 
 .header-dicas h1 {
     font-size: 26px;
-    margin: 0 0 4px;
+    margin-bottom: 4px;
 }
 
 .header-dicas p {
@@ -601,7 +585,6 @@ section h2 {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    cursor: pointer;
     transition: transform 200ms ease, background 200ms ease, box-shadow 200ms ease;
 }
 
