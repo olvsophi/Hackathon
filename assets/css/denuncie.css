@@ -133,6 +133,11 @@ button {
     
 }
 
+.lixeira img{
+    width: 100%;
+    width: 30px;
+}
+
 @media (max-width: 465px) {
     main .container {
         border-radius: 0;

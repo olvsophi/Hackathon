@@ -1,5 +1,5 @@
 import { db, collection, addDoc, onAuthStateChanged, auth} from './firebaseconfig.js'
-import { query, where, getDocs } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+import { query, where, getDocs, deleteDoc ,doc } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 let idUsuario = null
 
 onAuthStateChanged(auth, (usuario) =>{
@@ -103,10 +103,27 @@ async function carregarHTML() {
                                 <img src="${url}" alt="like">
                         </div>
 
-                        <button class="denunciar">
-                            <img src="../assets/icones/icone-denunciar-primario.svg" alt="denunciar">
-                        </button>`
-        });
+                        <button class="lixeira" data-id="${dados.id}">
+                            <img src="../assets/icones/lixeira.png" alt="deletar">
+                            </button>`
+
+
+
+                    });
+
+                            document.querySelectorAll(".lixeira").forEach(botao => {
+                botao.addEventListener("click", async () => {
+                    if (!confirm("Deseja apagar esta denúncia?")) return;
+
+                    try {
+                    await deleteDoc(doc(db, "denuncias", botao.dataset.id));
+                    carregarHTML();
+                } catch (e) {
+                    console.error(e);
+                    alert("Erro ao apagar denúncia.");
+                }
+            });
+});
 }
 carregarHTML()
 
@@ -118,6 +135,7 @@ async function pegarDenunciasDoFirebase(){
         for(let denuncia of denuncias.docs){
             if (denuncia.data().idUsuario == idUsuario){
                 resultado.push(denuncia.data())
+                resultado[resultado.length - 1].id = denuncia.id;
             }
         } 
         return resultado 
