@@ -178,6 +178,7 @@ const dicas = [
 const gradeDicas = document.getElementById("gradeDicas");
 const btn = document.getElementById("botaoSortear");
 
+
 function sortear(lista, n) {
   const copia = lista.slice();
   for (let i = copia.length - 1; i > 0; i--) {
@@ -189,23 +190,24 @@ function sortear(lista, n) {
 
 function renderizar() {
   const escolhidas = sortear(dicas, 4);
-  
   gradeDicas.innerHTML = "";
 
   escolhidas.forEach((dica, i) => {
-    const numeroFormatado = String(i + 1).padStart(2, "0");
+    const card = document.createElement("article");
+    card.className = "card-dicas fade-in";
 
-    gradeDicas.innerHTML += `
-      <article class="card-dicas fade-in">
-        <span class="numero-dica">${numeroFormatado}</span>
-        <h3>${dica.titulo}</h3>
-        <p>${dica.texto}</p>
-      </article>
+    card.innerHTML = `
+      <span class="numero-dica">${String(i + 1).padStart(2, "0")}</span>
+      <h3>${dica.titulo}</h3>
+      <p>${dica.texto}</p>
     `;
+
+    gradeDicas.appendChild(card); 
   });
 }
 
 btn.addEventListener("click", renderizar);
+renderizar();
 
 const formularioPesquisa = document.getElementById("pesquisa");
 const campoPesquisa = document.getElementById("pesquisaUsuario");
