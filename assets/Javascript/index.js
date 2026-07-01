@@ -194,7 +194,7 @@ function renderizar() {
 
   escolhidas.forEach((dica, i) => {
     const card = document.createElement("article");
-    card.className = "card-dicas fade-in";
+    card.className = "card-dicas";
 
     card.innerHTML = `
       <span class="numero-dica">${String(i + 1).padStart(2, "0")}</span>

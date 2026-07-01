@@ -150,7 +150,6 @@ section h2 {
     padding: 16px 50px;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.04) 100%);
     backdrop-filter: blur(24px) saturate(140%);
-    -webkit-backdrop-filter: blur(24px) saturate(140%);
     border: 1px solid rgba(255, 255, 255, 0.18);
     box-shadow: 0 0 60px rgba(60, 130, 255, 0.30), 0 20px 50px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.22), inset 0 -1px 0 rgba(255, 255, 255, 0.05);
 }
@@ -213,7 +212,6 @@ section h2 {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(120, 170, 255, 0.05));
     border: 1px solid rgba(255, 255, 255, 0.18);
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22), 0 4px 16px rgba(0, 0, 0, 0.18);
 }
 
@@ -268,7 +266,6 @@ section h2 {
     text-decoration: none;
     background: linear-gradient(135deg, rgba(120, 170, 255, 0.35), rgba(50, 110, 230, 0.25));
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 6px 18px rgba(40, 100, 220, 0.35);
     transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
 }
@@ -412,10 +409,6 @@ section h2 {
     border-color: rgba(255, 255, 255, 0.22);
 }
 
-.dica:hover::after {
-    opacity: 1;
-}
-
 .dica h3 {
     position: relative;
     margin: 0 0 6px;
@@ -436,10 +429,6 @@ section h2 {
     right: 10px;
     font-size: 10px;
     opacity: 0.45;
-}
-
-.card-dicas .fade-in {
-    animation: tipIn 360ms ease both;
 }
 
 .tips-actions {
@@ -515,21 +504,6 @@ section h2 {
     transition: transform 240ms ease, background 240ms ease, border-color 240ms ease;
 }
 
-.card-dicas::after {
-    content: "";
-    position: absolute;
-    left: var(--mx, 50%);
-    top: var(--my, 50%);
-    width: 180px;
-    height: 180px;
-    transform: translate(-50%, -50%);
-    background: radial-gradient(circle, rgba(110, 170, 255, 0.45) 0%, rgba(110, 170, 255, 0) 70%);
-    opacity: 0;
-    transition: opacity 220ms ease;
-    pointer-events: none;
-    filter: blur(6px);
-}
-
 .card-dicas:hover {
     transform: translateY(-2px);
     background: rgba(255, 255, 255, 0.11);
@@ -562,10 +536,6 @@ section h2 {
     opacity: 0.45;
 }
 
-.card-dicas .fade-in {
-    animation: tipIn 360ms ease both;
-}
-
 .acoes-dicas {
     display: flex;
     justify-content: center;
@@ -595,8 +565,7 @@ section h2 {
     transform: translateY(0);
 }
 
-footer a,
-li {
+footer a, li {
     color: #b8b8b8;
     font-size: 16px;
     margin-top: 10px;
