@@ -146,32 +146,34 @@ const dicas = [
   { titulo: "Gerenciador de senhas", texto: "Guarde senhas em um cofre confiável em vez de anotá-las soltas." },
   { titulo: "Verifique a informação", texto: "Confirme a fonte antes de compartilhar qualquer notícia." },
   { titulo: "Autenticação em 2 fatores", texto: "Ative o 2FA sempre que possível, de preferência por aplicativo." },
-  { titulo: "Combata Fake News", texto: "Não compartilhe conteúdos sem verificar se são verdadeiros." },
-  { titulo: "Cuidado com phishing", texto: "Desconfie de e-mails urgentes pedindo login ou dados pessoais." },
-  { titulo: "Privacidade Digital", texto: "Respeite sua privacidade e a das outras pessoas." },
-  { titulo: "Verifique o remetente", texto: "Confira o domínio do e-mail antes de clicar em qualquer link." },
-  { titulo: "Empatia Online", texto: "Lembre-se de que existe uma pessoa por trás de cada perfil." },
-  { titulo: "Atualize seus apps", texto: "As atualizações corrigem falhas de segurança importantes." },
-  { titulo: "Direitos Autorais", texto: "Valorize o trabalho dos criadores e dê os devidos créditos." },
-  { titulo: "Sistema em dia", texto: "Mantenha seu sistema operacional sempre atualizado." },
-  { titulo: "Pense Antes de Postar", texto: "Tudo o que você publica pode permanecer na internet." },
-  { titulo: "Wi-Fi público", texto: "Evite acessar contas importantes em redes abertas." },
-  { titulo: "Boa Convivência", texto: "Respeite opiniões diferentes sem recorrer a ofensas." },
-  { titulo: "Use VPN confiável", texto: "Prefira serviços confiáveis ao acessar redes públicas." },
-  { titulo: "Proteja seus Dados", texto: "Evite divulgar informações pessoais sem necessidade." },
-  { titulo: "Backups regulares", texto: "Mantenha cópias de segurança dos seus arquivos." },
-  { titulo: "Denuncie Abusos", texto: "Denuncie casos de cyberbullying e conteúdos ofensivos." },
-  { titulo: "Cuidado com USBs", texto: "Não conecte dispositivos desconhecidos ao computador." },
-  { titulo: "Inclusão Digital", texto: "Use a tecnologia para colaborar e ajudar outras pessoas." },
-  { titulo: "Permissões de apps", texto: "Revise o acesso à câmera, localização e microfone." },
-  { titulo: "Antivírus ativo", texto: "Mantenha um antivírus confiável sempre atualizado." },
-  { titulo: "Uso Responsável", texto: "Utilize a internet de forma ética e consciente." },
-  { titulo: "HTTPS sempre", texto: "Confira o cadeado antes de inserir dados em um site." },
-  { titulo: "Cuidado com Links", texto: "Desconfie de links recebidos por mensagens inesperadas." },
-  { titulo: "Downloads seguros", texto: "Baixe programas apenas de sites oficiais." },
-  { titulo: "Respeito à Diversidade", texto: "Valorize as diferenças e combata o preconceito online." },
-  { titulo: "Revogue acessos", texto: "Remova aplicativos que você não utiliza mais." }
-]
+  { titulo: "Cuidado com Links", texto: "Não clique em links suspeitos recebidos por mensagem ou e-mail." },
+  { titulo: "Atualize o Sistema", texto: "Mantenha o sistema operacional e aplicativos sempre atualizados." },
+  { titulo: "Privacidade Perfil", texto: "Deixe suas redes sociais privadas para pessoas que você não conhece." },
+  { titulo: "Cuidado com Wi-Fi Público", texto: "Evite acessar contas bancárias ou dados sensíveis em redes públicas." },
+  { titulo: "Antivírus Ativo", texto: "Tenha um bom antivírus instalado no computador e no celular." },
+  { titulo: "Pense antes de postar", texto: "O que entra na internet pode ficar registrado para sempre." },
+  { titulo: "Não fale com estranhos", texto: "Evite adicionar ou conversar com perfis desconhecidos." },
+  { titulo: "Dispositivos bloqueados", texto: "Use biometria, PIN ou senha para bloquear a tela do seu celular." },
+  { titulo: "Downloads seguros", texto: "Baixe aplicativos apenas de lojas oficiais como Play Store ou App Store." },
+  { titulo: "Webcam protegida", texto: "Cubra a câmera do seu computador quando não estiver usando." },
+  { titulo: "Sair das contas", texto: "Sempre faça 'Logoff' ou 'Sair' ao usar um computador público." },
+  { titulo: "Backups frequentes", texto: "Guarde seus arquivos importantes na nuvem ou em um HD externo." },
+  { titulo: "Combate ao Cyberbullying", texto: "Não participe de linchamentos virtuais e denuncie agressões." },
+  { titulo: "Dados bancários", texto: "Nunca envie fotos do seu cartão de crédito para ninguém." },
+  { titulo: "Termos de Uso", texto: "Fique atento às permissões que os aplicativos pedem ao instalar." },
+  { titulo: "Phishing", texto: "Desconfie de promoções boas demais ou mensagens urgentes de bancos." },
+  { titulo: "Pegada Digital", texto: "Monitore o que dizem sobre você pesquisando seu nome no Google." },
+  { titulo: "Sites Seguros", texto: "Verifique se o site tem o cadeado e começa com 'https://' na barra de endereço." },
+  { titulo: "Denuncie perfis falsos", texto: "Se encontrar alguém se passando por você ou por um amigo, denuncie." },
+  { titulo: "Mensagens temporárias", texto: "Use recursos de mensagens que somem para conversas muito privadas." },
+  { titulo: "Localização desligada", texto: "Não compartilhe sua localização em tempo real com desconhecidos." },
+  { titulo: "Golpes por telefone", texto: "Não passe códigos que chegarem por SMS para ninguém." },
+  { titulo: "Direitos autorais", texto: "Dê os créditos ao usar imagens, textos ou músicas de outras pessoas." },
+  { titulo: "Evite superexposição", texto: "Não poste fotos que mostrem a fachada da sua casa ou uniforme da escola." },
+  { titulo: "Equilíbrio de tempo", texto: "Desconecte um pouco das telas para cuidar da sua saúde mental." },
+  { titulo: "Fake News de Saúde", texto: "Nunca siga dicas médicas da internet sem consultar um profissional." },
+  { titulo: "Ajude quem precisa", texto: "Se vir um amigo sofrendo exposição na internet, ofereça apoio e ajuda." }
+];
 
 const gradeDicas = document.getElementById("gradeDicas");
 const btn = document.getElementById("botaoSortear");
@@ -193,19 +195,12 @@ function renderizar() {
   escolhidas.forEach((dica, i) => {
     const card = document.createElement("article");
     card.className = "card-dicas fade-in";
-    card.style.animationDelay = `${i * 40}ms`;
 
     card.innerHTML = `
       <span class="numero-dica">${String(i + 1).padStart(2, "0")}</span>
       <h3>${dica.titulo}</h3>
       <p>${dica.texto}</p>
     `;
-
-    card.addEventListener("mousemove", (e) => {
-      const r = card.getBoundingClientRect();
-      card.style.setProperty("--mx", `${e.clientX - r.left}px`);
-      card.style.setProperty("--my", `${e.clientY - r.top}px`);
-    });
 
     gradeDicas.appendChild(card); 
   });
@@ -218,8 +213,8 @@ const formularioPesquisa = document.getElementById("pesquisa");
 const campoPesquisa = document.getElementById("pesquisaUsuario");
 
 if (formularioPesquisa) {
-  formularioPesquisa.addEventListener("submit", function (evento) {
-    evento.preventDefault();
+  formularioPesquisa.addEventListener("submit", function (e) {
+    e.preventDefault();
 
     const pesquisa = campoPesquisa.value.trim();
 
