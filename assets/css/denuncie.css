@@ -68,7 +68,7 @@ input {
     max-width: 450px;
 }
 
-textarea {
+#problema {
     height: 180px;
     width: 100%;
     max-width: 450px;
@@ -83,6 +83,8 @@ textarea {
     font-size: 14px;
     font-weight: 200;
     resize: none;
+    font-family: "Inter";
+    font-size: 14px;
 }
 
 .box p {

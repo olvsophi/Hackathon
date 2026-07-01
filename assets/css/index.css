@@ -26,10 +26,6 @@ nav {
     margin-left: auto;
 }
 
-.perfil-principal img {
-    width: 35px;
-}
-
 .direita {
     display: flex;
     gap: 15px;
