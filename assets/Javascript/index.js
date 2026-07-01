@@ -1,42 +1,40 @@
-// JS do Slider
 const slides = [
   {
-    categoria: "Tecnologia",
-    titulo: "IA brasileira atinge marco inédito em redes neurais",
-    descricao: "Pesquisadores de São Paulo apresentaram um modelo capaz de processar informações 40% mais rápido que os concorrentes globais, abrindo caminho para nova geração de assistentes.",
-    imagem: "assets/images/slide-1.jpg",
-    link: "#noticia-1"
+    categoria: "Segurança Digital",
+    titulo: "A importância da Segurança Digital no dia a dia",
+    descricao: "Com bilhões de dados circulando na internet, proteger confidencialidade, integridade e disponibilidade das informações é essencial para evitar ataques e vazamentos.",
+    imagem: "./assets/images/slide-1.png",
+    link: "https://www.hostgator.com.br/blog/seguranca-digital/"
   },
   {
-    categoria: "Ciência",
-    titulo: "Material líquido autorreparável surpreende cientistas",
-    descricao: "Substância desenvolvida em laboratório reconstrói sua própria estrutura em segundos após ser danificada — promessa para telas, próteses e dispositivos vestíveis.",
-    imagem: "assets/images/slide-2.jpg",
-    link: "#noticia-2"
+    categoria: "Cidadania Digital",
+    titulo: "O que é Cidadania Digital e por que ela importa?",
+    descricao: "Ser um bom cidadão digital vai além de segurança: envolve respeito, pensamento crítico, combate à desinformação e construção de um ambiente online mais saudável.",
+    imagem: "./assets/images/slide-2.png",
+    link: "https://www.malwarebytes.com/pt-br/cybersecurity/basics/digital-citizenship"
   },
   {
-    categoria: "Inovação",
-    titulo: "Cubo de cristal armazena 500 anos de dados",
-    descricao: "Nova tecnologia óptica grava informações dentro de cristais de quartzo com durabilidade estimada em séculos. Empresas já correm para adotar o método.",
-    imagem: "assets/images/slide-3.jpg",
-    link: "#noticia-3"
+    categoria: "Ética Digital",
+    titulo: "Ética Digital: desafios e responsabilidades legais",
+    descricao: "Aplicar princípios éticos no uso da tecnologia protege privacidade, combate fake news e evita riscos legais, especialmente com a LGPD.",
+    imagem: "./assets/images/slide-3.png",
+    link: "https://www.aurum.com.br/blog/etica-digital/"
   },
   {
-    categoria: "Design",
-    titulo: 'Tendência "Liquid Glass" domina interfaces em 2026',
-    descricao: "Apple, Google e startups de design adotam o estilo translúcido com profundidade. Veja por que o glassmorphism voltou com força — e desta vez fluido.",
-    imagem: "assets/images/slide-4.jpg",
-    link: "#noticia-4"
+    categoria: "Proteção de Dados",
+    titulo: "5 Dicas para Proteger seus Dados Pessoais na Internet",
+    descricao: "Use senhas fortes, autenticação em dois fatores, evite links suspeitos, mantenha softwares atualizados e revise configurações de privacidade.",
+    imagem: "./assets/images/slide-4.png",
+    link: "https://axa.com.br/central-de-conteudo/detalhes/5-dicas-para-proteger-seus-dados-pessoais-na-internet"
   },
   {
-    imagem: "assets/images/slide-5.jpg",
-    categoria: "Energia",
-    titulo: "Anel magnético gera energia limpa sem combustível",
-    descricao: 'Protótipo desenvolvido na Europa usa indução contínua para produzir eletricidade silenciosa. Cientistas chamam o invento de "loop infinito energético".',
-    link: "#noticia-5"
+    categoria: "LGPD",
+    titulo: "Cuidados ao Compartilhar Dados com Terceiros",
+    descricao: "Compartilhar dados exige transparência, justificativa e contrato. Envie apenas o mínimo necessário e sempre avalie a real necessidade.",
+    imagem: "./assets/images/slide-5.png",
+    link: "https://www.fsa.br/lgpd-compartilhar-dados-com-terceiros/"
   }
-]
-
+];
 const TEMPO_ANIMACAO = 800
 const trilho = document.getElementById("trilhoSlider")
 const voltar = document.getElementById("voltar")
