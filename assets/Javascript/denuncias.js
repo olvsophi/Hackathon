@@ -55,7 +55,7 @@ function criarHtmlDenuncia(dados, ehResultadoDeBusca) {
         : "../assets/icones/botao-dislike.svg";
 
     return `
-        <article>
+        <article class="denuncias-comentarios">
             <div class="perfis">
                 <img src="../assets/icones/icone-de-perfil.svg">
                 <p>Anônimo</p>
@@ -69,7 +69,7 @@ function criarHtmlDenuncia(dados, ehResultadoDeBusca) {
 
                 <div class="botoes">
                     <div>
-                        <p class="resultado">A denúncia foi resolvida?</p>
+                        <p class="resultado">O problema foi resolvido?</p>
                         <img src="${icone}">
                     </div>
 
@@ -175,7 +175,6 @@ function renderizarBotoesPaginacao(totalPaginas, totalItens) {
         aplicarPaginacao();
     });
 }
-
 
 carregarHTML();
 

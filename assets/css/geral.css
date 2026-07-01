@@ -164,6 +164,10 @@ article {
     width: 100%;
 }
 
+.denuncias-comentarios{
+    box-shadow: inset 0 0 60px rgba(150, 176, 255, 0.4);
+    background: rgba(112, 110, 110, 0.4);
+}
 .comentario {
     width: 100%;
     background-color: #83838313;
