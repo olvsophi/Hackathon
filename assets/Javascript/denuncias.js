@@ -1,30 +1,10 @@
 import { db, collection, auth, onAuthStateChanged } from './firebaseconfig.js';
-import { query, where, getDocs } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+import { getDocs } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 
 let idUsuario = null;
 
-onAuthStateChanged(auth, (usuario) => {
-    if (usuario) {
-        idUsuario = usuario.uid;
-    } else {
-        idUsuario = null;
-        sessionStorage.setItem("paginaAnterior", window.location.href);
-        window.location.href = "../pages/login.html"; 
-    }
-});
-
 const form = document.getElementById('pesquisa');
 const pesquisa = document.getElementById('pesquisaUsuario');
-
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const termo = pesquisa.value.trim();
-    if (!termo) return;
-
-    buscarDenunciaFeita(termo);
-});
-
 const comentarios = document.querySelector(".comentarios");
 
 const ITENS_POR_PAGINA = 5;
@@ -34,74 +14,47 @@ const containerPaginacao = document.createElement("div");
 containerPaginacao.classList.add("paginacao");
 comentarios.insertAdjacentElement("afterend", containerPaginacao);
 
-function aplicarPaginacao() {
-    const artigos = Array.from(comentarios.querySelectorAll("article"));
-    const totalPaginas = Math.ceil(artigos.length / ITENS_POR_PAGINA) || 1;
 
-    if (paginaAtual > totalPaginas) paginaAtual = totalPaginas;
-
-    artigos.forEach((artigo, index) => {
-        const paginaDoItem = Math.floor(index / ITENS_POR_PAGINA) + 1;
-        artigo.style.display = paginaDoItem === paginaAtual ? "" : "none";
-    });
-
-    renderizarBotoesPaginacao(totalPaginas, artigos.length);
-}
-
-function renderizarBotoesPaginacao(totalPaginas, totalItens) {
-    containerPaginacao.innerHTML = "";
-
-    if (totalItens === 0 || totalPaginas <= 1) return;
-
-    const btnAnterior = document.createElement("button");
-    btnAnterior.type = "button";
-    btnAnterior.textContent = "Anterior";
-    btnAnterior.disabled = paginaAtual === 1;
-    btnAnterior.addEventListener("click", () => {
-        paginaAtual--;
-        aplicarPaginacao();
-    });
-
-    const infoPagina = document.createElement("span");
-    infoPagina.classList.add("info-pagina");
-    infoPagina.textContent = `Página ${paginaAtual} de ${totalPaginas}`;
-
-    const btnProxima = document.createElement("button");
-    btnProxima.type = "button";
-    btnProxima.textContent = "Próxima";
-    btnProxima.disabled = paginaAtual === totalPaginas;
-    btnProxima.addEventListener("click", () => {
-        paginaAtual++;
-        aplicarPaginacao();
-    });
-
-    containerPaginacao.appendChild(btnAnterior);
-    containerPaginacao.appendChild(infoPagina);
-    containerPaginacao.appendChild(btnProxima);
-}
-
-const observerComentarios = new MutationObserver(() => {
-    paginaAtual = 1;
-    aplicarPaginacao();
+onAuthStateChanged(auth, (usuario) => {
+    if (usuario) {
+        idUsuario = usuario.uid;
+    } else {
+        idUsuario = null;
+        sessionStorage.setItem("paginaAnterior", window.location.href);
+        window.location.href = "../pages/login.html";
+    }
 });
 
-observerComentarios.observe(comentarios, { childList: true });
 
-async function carregarHTML() {
-    comentarios.innerHTML = "";
+form.addEventListener('submit', (evento) => {
+    evento.preventDefault();
 
-    const resultado = await pegarDenuncias();
+    const termo = pesquisa.value.trim();
 
-    if (!resultado) return;
+    if (termo === "") {
+        return;
+    }
 
-    resultado.forEach((doc) => {
-        const dados = doc.data();
+    buscarDenunciaFeita(termo);
+});
 
-        const url = dados.resolvido
-            ? "../assets/icones/botao-like.svg"
-            : "../assets/icones/botao-dislike.svg";
 
-        comentarios.innerHTML += `
+async function pegarDenuncias() {
+    try {
+        const resultado = await getDocs(collection(db, "denuncias"));
+        return resultado;
+    } catch (erro) {
+        console.error(erro);
+    }
+}
+
+
+function criarHtmlDenuncia(dados, ehResultadoDeBusca) {
+    const icone = dados.resolvido
+        ? "../assets/icones/botao-like.svg"
+        : "../assets/icones/botao-dislike.svg";
+
+    return `
         <article>
             <div class="perfis">
                 <img src="../assets/icones/icone-de-perfil.svg">
@@ -117,7 +70,7 @@ async function carregarHTML() {
                 <div class="botoes">
                     <div>
                         <p class="resultado">A denúncia foi resolvida?</p>
-                        <img src="${url}">
+                        <img src="${icone}">
                     </div>
 
                     <button class="denunciar">
@@ -125,67 +78,131 @@ async function carregarHTML() {
                     </button>
                 </div>
             </div>
-        </article>`;
-    });
+        </article>
+    `;
 }
 
-carregarHTML();
 
-async function pegarDenuncias() {
-    try {
-        return await getDocs(collection(db, "denuncias"));
-    } catch (e) {
-        console.error(e);
+async function carregarHTML() {
+    comentarios.innerHTML = "";
+
+    const resultado = await pegarDenuncias();
+
+    if (!resultado) {
+        return;
     }
+
+    resultado.forEach((doc) => {
+        const dados = doc.data();
+        const htmlDoCard = criarHtmlDenuncia(dados, false);
+        comentarios.innerHTML += htmlDoCard;
+    });
+
+    paginaAtual = 1;
+    aplicarPaginacao();
 }
+
 
 async function buscarDenunciaFeita(termo) {
     comentarios.innerHTML = "";
 
     const resultado = await pegarDenuncias();
 
-    if (!resultado) return;
+    if (!resultado) {
+        return;
+    }
 
     resultado.forEach((doc) => {
         const dados = doc.data();
 
         if (dados.topico === termo) {
-            comentarios.innerHTML += `
-            <article>
-                <div class="perfis">
-                    <img src="../assets/icones/icone-de-perfil.svg">
-                    <p>Anônimo</p>
-                </div>
-
-                <div class="container-comentario">
-                    <div class="comentario">
-                        <h3>${dados.topico}</h3>
-                        <p>${dados.problema}</p>
-                    </div>
-
-                    <div class="botoes">
-                        <div>
-                            <button class="like">
-                                <img src="../assets/icones/botao-like-neutro.svg">
-                            </button>
-
-                            <button class="dislike">
-                                <img src="../assets/icones/botao-dislike-neutro.svg">
-                            </button>
-                        </div>
-
-                        <button class="denunciar">
-                            <img src="../assets/icones/icone-denunciar-primario.svg">
-                        </button>
-                    </div>
-                </div>
-            </article>`;
+            const htmlDoCard = criarHtmlDenuncia(dados, true);
+            comentarios.innerHTML += htmlDoCard;
         }
     });
+
+    paginaAtual = 1;
+    aplicarPaginacao();
 }
-// Coisas a fazer aqui
-/*
-Barra de pesquisa
-innerHTML - pras denuncias
-mostrar oq o usuario pesquisou na barra de pesquisa
-*/
+
+
+function aplicarPaginacao() {
+    const artigos = comentarios.querySelectorAll("article");
+    const totalDeArtigos = artigos.length;
+    const totalPaginas = Math.ceil(totalDeArtigos / ITENS_POR_PAGINA) || 1;
+
+    if (paginaAtual > totalPaginas) {
+        paginaAtual = totalPaginas;
+    }
+
+    artigos.forEach((artigo, index) => {
+        const paginaDesseItem = Math.floor(index / ITENS_POR_PAGINA) + 1;
+
+        if (paginaDesseItem === paginaAtual) {
+            artigo.style.display = "";
+        } else {
+            artigo.style.display = "none";
+        }
+    });
+
+    renderizarBotoesPaginacao(totalPaginas, totalDeArtigos);
+}
+
+
+function renderizarBotoesPaginacao(totalPaginas, totalItens) {
+    containerPaginacao.innerHTML = "";
+
+    if (totalItens === 0 || totalPaginas <= 1) {
+        return;
+    }
+
+    const anteriorDesativado = paginaAtual === 1 ? "disabled" : "";
+    const proximaDesativada = paginaAtual === totalPaginas ? "disabled" : "";
+
+    containerPaginacao.innerHTML = `
+        <button type="button" id="btnAnterior" ${anteriorDesativado}>Anterior</button>
+        <span class="info-pagina">Página ${paginaAtual} de ${totalPaginas}</span>
+        <button type="button" id="btnProxima" ${proximaDesativada}>Próxima</button>
+    `;
+
+    document.getElementById("btnAnterior").addEventListener("click", () => {
+        paginaAtual = paginaAtual - 1;
+        aplicarPaginacao();
+    });
+
+    document.getElementById("btnProxima").addEventListener("click", () => {
+        paginaAtual = paginaAtual + 1;
+        aplicarPaginacao();
+    });
+}
+
+
+carregarHTML();
+
+
+
+// async function buscarSimplificado(termoDigitado) {
+//     if (!termoDigitado) return [];
+
+//     // 1. Transforma o que foi digitado em um array de palavras minúsculas
+//     // Ex: "camisa azul" vira ["camisa", "azul"]
+//     const palavrasBuscadas = termoDigitado.toLowerCase().trim().split(/\s+/);
+
+//     // Busca os dados no Firebase
+//     const querySnapshot = await getDocs(collection(db, "produtos"));
+//     const resultados = [];
+
+//     querySnapshot.forEach((doc) => {
+//         const produto = doc.data();
+//         const nomeProduto = produto.nome.toLowerCase();
+
+//         // 2. Verifica se pelo menos uma das palavras buscadas está no nome do produto
+//         const encontrou = palavrasBuscadas.some(palavra => nomeProduto.includes(palavra));
+
+//         if (encontrou) {
+//             resultados.push(produto);
+//         }
+//     });
+
+//     return resultados;
+// }
