@@ -178,17 +178,31 @@ const dicas = [
 const gradeDicas = document.getElementById("gradeDicas");
 const btn = document.getElementById("botaoSortear");
 
-function renderizar() {
-  let indiceAleatorio = Math.floor(Math.random() * dicas.length);
-  let dicaEscolhida = dicas[indiceAleatorio];
+function sortear(lista, n) {
+  const copia = lista.slice();
+  for (let i = copia.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copia[i], copia[j]] = [copia[j], copia[i]];
+  }
+  return copia.slice(0, n);
+}
 
-  gradeDicas.innerHTML = `
-    <article class="card-dicas fade-in">
-      <span class="numero-dica">01</span>
-      <h3>${dicaEscolhida.titulo}</h3>
-      <p>${dicaEscolhida.texto}</p>
-    </article>
-  `;
+function renderizar() {
+  const escolhidas = sortear(dicas, 4);
+  
+  gradeDicas.innerHTML = "";
+
+  escolhidas.forEach((dica, i) => {
+    const numeroFormatado = String(i + 1).padStart(2, "0");
+
+    gradeDicas.innerHTML += `
+      <article class="card-dicas fade-in">
+        <span class="numero-dica">${numeroFormatado}</span>
+        <h3>${dica.titulo}</h3>
+        <p>${dica.texto}</p>
+      </article>
+    `;
+  });
 }
 
 btn.addEventListener("click", renderizar);
