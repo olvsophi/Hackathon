@@ -50,10 +50,6 @@ async function pegarDenuncias() {
 
 
 function criarHtmlDenuncia(dados, ehResultadoDeBusca) {
-    const icone = dados.resolvido
-        ? "../assets/icones/botao-like.svg"
-        : "../assets/icones/botao-dislike.svg";
-
     return `
         <article class="denuncias-comentarios">
             <div class="perfis">
@@ -65,17 +61,6 @@ function criarHtmlDenuncia(dados, ehResultadoDeBusca) {
                 <div class="comentario">
                     <h3>${dados.topico}</h3>
                     <p>${dados.problema}</p>
-                </div>
-
-                <div class="botoes">
-                    <div>
-                        <p class="resultado">O problema foi resolvido?</p>
-                        <img src="${icone}">
-                    </div>
-
-                    <button class="denunciar">
-                        <img src="../assets/icones/icone-denunciar-primario.svg">
-                    </button>
                 </div>
             </div>
         </article>
@@ -177,31 +162,3 @@ function renderizarBotoesPaginacao(totalPaginas, totalItens) {
 }
 
 carregarHTML();
-
-
-
-// async function buscarSimplificado(termoDigitado) {
-//     if (!termoDigitado) return [];
-
-//     // 1. Transforma o que foi digitado em um array de palavras minúsculas
-//     // Ex: "camisa azul" vira ["camisa", "azul"]
-//     const palavrasBuscadas = termoDigitado.toLowerCase().trim().split(/\s+/);
-
-//     // Busca os dados no Firebase
-//     const querySnapshot = await getDocs(collection(db, "produtos"));
-//     const resultados = [];
-
-//     querySnapshot.forEach((doc) => {
-//         const produto = doc.data();
-//         const nomeProduto = produto.nome.toLowerCase();
-
-//         // 2. Verifica se pelo menos uma das palavras buscadas está no nome do produto
-//         const encontrou = palavrasBuscadas.some(palavra => nomeProduto.includes(palavra));
-
-//         if (encontrou) {
-//             resultados.push(produto);
-//         }
-//     });
-
-//     return resultados;
-// }

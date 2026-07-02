@@ -11,7 +11,7 @@ import { signOut, auth, onAuthStateChanged } from "./firebaseconfig.js";
 
 let estaLogado = false;
 
-const divsComputador = document.querySelectorAll(".computador");
+const divsComputador = document.querySelectorAll(".computador, .somente-deslogado");
 const btnsSair = document.querySelectorAll(".sair");
 const navGeral = document.querySelector(".nav-geral");
 
