@@ -11,8 +11,8 @@ import { signOut, auth, onAuthStateChanged } from "./firebaseconfig.js";
 
 let estaLogado = false;
 
-const divComputador = document.querySelector(".computador");
-const btnSair = document.querySelector(".sair");
+const divsComputador = document.querySelectorAll(".computador");
+const btnsSair = document.querySelectorAll(".sair");
 const navGeral = document.querySelector(".nav-geral");
 
 onAuthStateChanged(auth, (usuario) => {
@@ -27,27 +27,26 @@ onAuthStateChanged(auth, (usuario) => {
 
 function alternarClasseLogado() {
     if (estaLogado) {
-        if (btnSair) {
-            btnSair.classList.add("mostrar-botao-sair");
-        }
+        btnsSair.forEach((btn) => btn.classList.add("mostrar-botao-sair"));
 
-        // Só esconde a .computador se ela NÃO for o menu de navegação
-        if (divComputador && divComputador !== navGeral) {
-            divComputador.classList.add("logado");
-        }
+        divsComputador.forEach((div) => {
+            if (div !== navGeral) {
+                div.classList.add("logado");
+            }
+        });
     } else {
-        if (btnSair) {
-            btnSair.classList.remove("mostrar-botao-sair");
-        }
+        btnsSair.forEach((btn) => btn.classList.remove("mostrar-botao-sair"));
 
-        if (divComputador && divComputador !== navGeral) {
-            divComputador.classList.remove("logado");
-        }
+        divsComputador.forEach((div) => {
+            if (div !== navGeral) {
+                div.classList.remove("logado");
+            }
+        });
     }
 }
 
-if (btnSair) {
-    btnSair.addEventListener("click", async () => {
+btnsSair.forEach((btn) => {
+    btn.addEventListener("click", async () => {
         try {
             await signOut(auth);
             estaLogado = false;
@@ -56,7 +55,7 @@ if (btnSair) {
             alert("Não foi possível sair da conta");
         }
     });
-}
+});
 
 document.addEventListener("click", (e) => {
   const link = e.target.closest('a[href*="login.html"]');
