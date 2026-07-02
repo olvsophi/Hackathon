@@ -111,7 +111,7 @@ function criarHtmlDenuncia(dados) {
         : "../assets/icones/botao-dislike.svg";
 
     return `
-        <article>
+        <article class="denuncia-denuncie">
             <div class="perfis">
                 <img src="../assets/icones/icone-de-perfil.svg" alt="Foto de perfil">
                 <p>Anônimo</p>
