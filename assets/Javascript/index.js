@@ -3,35 +3,35 @@ const slides = [
     categoria: "Segurança Digital",
     titulo: "A importância da Segurança Digital no dia a dia",
     descricao: "Com bilhões de dados circulando na internet, proteger confidencialidade, integridade e disponibilidade das informações é essencial para evitar ataques e vazamentos.",
-    imagem: "./assets/images/slide-1.png",
+    imagem: "./assets/imagens/slide-1.png",
     link: "https://www.hostgator.com.br/blog/seguranca-digital/"
   },
   {
     categoria: "Cidadania Digital",
     titulo: "O que é Cidadania Digital e por que ela importa?",
     descricao: "Ser um bom cidadão digital vai além de segurança: envolve respeito, pensamento crítico, combate à desinformação e construção de um ambiente online mais saudável.",
-    imagem: "./assets/images/slide-2.png",
+    imagem: "./assets/imagens/slide-2.png",
     link: "https://www.malwarebytes.com/pt-br/cybersecurity/basics/digital-citizenship"
   },
   {
     categoria: "Ética Digital",
     titulo: "Ética Digital: desafios e responsabilidades legais",
     descricao: "Aplicar princípios éticos no uso da tecnologia protege privacidade, combate fake news e evita riscos legais, especialmente com a LGPD.",
-    imagem: "./assets/images/slide-3.png",
+    imagem: "./assets/imagens/slide-3.png",
     link: "https://www.aurum.com.br/blog/etica-digital/"
   },
   {
     categoria: "Proteção de Dados",
     titulo: "5 Dicas para Proteger seus Dados Pessoais na Internet",
     descricao: "Use senhas fortes, autenticação em dois fatores, evite links suspeitos, mantenha softwares atualizados e revise configurações de privacidade.",
-    imagem: "./assets/images/slide-4.png",
+    imagem: "./assets/imagens/slide-4.png",
     link: "https://axa.com.br/central-de-conteudo/detalhes/5-dicas-para-proteger-seus-dados-pessoais-na-internet"
   },
   {
     categoria: "LGPD",
     titulo: "Cuidados ao Compartilhar Dados com Terceiros",
     descricao: "Compartilhar dados exige transparência, justificativa e contrato. Envie apenas o mínimo necessário e sempre avalie a real necessidade.",
-    imagem: "./assets/images/slide-5.png",
+    imagem: "./assets/imagens/slide-5.png",
     link: "https://www.fsa.br/lgpd-compartilhar-dados-com-terceiros/"
   }
 ];
