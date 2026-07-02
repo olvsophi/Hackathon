@@ -137,6 +137,7 @@ function criarHtmlDenuncia(dados) {
 
 
 async function carregarHTML() {
+    const mensagemVazia = document.getElementById("semDenuncia");
     comentarios.innerHTML = "";
 
     const resultado = await pegarDenunciasDoFirebase();
@@ -146,14 +147,13 @@ async function carregarHTML() {
     }
 
     if (resultado.length === 0) {
-        comentarios.innerHTML = `
-        <p class="sem-noticias">
-        Você ainda não possui denúncias cadastradas.
-        </p>`;
-        
+        if (mensagemVazia) mensagemVazia.style.display = "block";
         containerPaginacao.innerHTML = "";
-        return;
-    }
+        return; 
+    } 
+    
+    if (mensagemVazia) {
+        mensagemVazia.style.display = "none";
 
     resultado.forEach((dados) => {
         comentarios.innerHTML += criarHtmlDenuncia(dados);
@@ -228,5 +228,5 @@ function renderizarBotoesPaginacao(totalPaginas, totalItens) {
     });
 }
 
-
+}
 carregarHTML();
