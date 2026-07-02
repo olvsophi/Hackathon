@@ -4,6 +4,13 @@ import { getDocs, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/10.1
 let idUsuario = null;
 let resolvido = false;
 
+// const btnEntendi = document.getElementById("btnFecharPopup");
+// const popUp = document.getElementById("popUpDenuncie");
+
+// btnEntendi.addEventListener('click' , (e) => {
+//     popUp.remove();
+// });
+
 const regex = /www|http|https/i;
 
 const btnEnviarDenuncia = document.querySelector('.botao-envio');

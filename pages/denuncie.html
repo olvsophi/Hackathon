@@ -10,7 +10,9 @@
     <link href="https://fonts.googleapis.com/css2">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Radio+Canada:ital,wght@0,300..700;1,300..700&family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Radio+Canada:ital,wght@0,300..700;1,300..700&family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Text+Me+One&display=swap" rel="stylesheet">
 </head>
 
@@ -62,8 +64,8 @@
                     O seu problema foi solucionado?
                 </p>
                 <div class="botoes2">
-                    <button type="button" id="like" class="like"><img
-                            src="../assets/icones/botao-like-neutro.svg" alt="Botão de like">
+                    <button type="button" id="like" class="like"><img src="../assets/icones/botao-like-neutro.svg"
+                            alt="Botão de like">
                     </button>
                     <button type="button" id="dislike" class="dislike"><img
                             src="../assets/icones/botao-dislike-neutro.svg" alt="Botão de deslike">
@@ -74,6 +76,21 @@
                 </button>
             </form>
 
+            <div class="popup-denuncie" id="popUpDenuncie">
+                <h3 class="titulo-regras">Regras para fazer uma denúncia:</h3>
+                <ul class="regras">
+                    <li>Não utilize nomes de apps/sites!</li>
+                    <li>Não coloque links!</li>
+                    <li>Apenas golpes ou problemas!</li>
+                    <li>Não exponha dados pessoais!</li>
+                    <li>Proibido qualquer tipo de ofensa ou palavrão!</li>
+                </ul>
+                <p class="aviso"><b>Aviso de moderação: </b>Posts que descumprirem essas regras
+                    serão editados ou removidos sem aviso prévio. A reincidência causará o banimento da conta.
+                </p>
+                <button class="botao-envio" id="btnFecharPopup" type="button">Entendi</button>
+            </div>
+        </div>
 
         </div>
         <h2 class="titulo-comentarios">Suas Denúncias</h2>
@@ -85,6 +102,7 @@
         <img src="../assets/images/logo.png" alt="Logo">
         <p>Secure Search &copy; 2026 | Todos os direitos reservados</p>
     </footer>
+    <script src="../assets/Javascript/popup.js"></script>
     <script type="module" src="../assets/Javascript/geral.js"></script>
     <script type="module" src="../assets/Javascript/denuncie.js"></script>
     <script type="module" src="../assets/Javascript/firebaseconfig.js"></script>

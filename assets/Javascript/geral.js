@@ -64,3 +64,4 @@ document.addEventListener("click", (e) => {
     sessionStorage.setItem("paginaAnterior", window.location.href);
   }
 });
+
