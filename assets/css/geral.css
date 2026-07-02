@@ -160,7 +160,6 @@ article {
     border: 0.2px solid rgba(30, 30, 30, 0.13);
     backdrop-filter: blur(40px);
     border-radius: 40px;
-    padding: 30px;
     width: 100%;
 }
 
