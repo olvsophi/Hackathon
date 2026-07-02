@@ -145,8 +145,11 @@ async function carregarHTML() {
         return;
     }
 
-       if (resultado.length === 0) {
-        comentarios.innerHTML = `<p class="sem-noticias">Você ainda não possui denúncias cadastradas.</p>`;
+    if (resultado.length === 0) {
+        comentarios.innerHTML = `
+        <p class="sem-noticias">
+        Você ainda não possui denúncias cadastradas.
+        </p>`;
         
         containerPaginacao.innerHTML = "";
         return;
