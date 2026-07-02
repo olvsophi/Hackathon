@@ -110,21 +110,6 @@ function criarHtmlDenuncia(dados) {
         ? "../assets/icones/botao-like.svg"
         : "../assets/icones/botao-dislike.svg";
 
-    comentarios.innerHTML = "";
-
-    const resultado = await pegarDenunciasDoFirebase();
-
-    if (!resultado) {
-        return;
-    }
-
-    if (resultado.length === 0) {
-        comentarios.innerHTML = `<p class="sem-noticias">Você ainda não possui denúncias cadastradas.</p>`;
-        
-        containerPaginacao.innerHTML = "";
-        return;
-    }
-
     return `
         <article>
             <div class="perfis">
@@ -157,6 +142,13 @@ async function carregarHTML() {
     const resultado = await pegarDenunciasDoFirebase();
 
     if (!resultado) {
+        return;
+    }
+
+       if (resultado.length === 0) {
+        comentarios.innerHTML = `<p class="sem-noticias">Você ainda não possui denúncias cadastradas.</p>`;
+        
+        containerPaginacao.innerHTML = "";
         return;
     }
 
