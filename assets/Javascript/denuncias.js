@@ -108,10 +108,15 @@ async function buscarDenunciaFeita(termo) {
         return;
     }
 
+    const palavrasBuscadas = termo.toLowerCase().trim().split(/\s+/);
+
     resultado.forEach((doc) => {
         const dados = doc.data();
+        const topicoMinusculo = dados.topico.toLowerCase();
 
-        if (dados.topico === termo) {
+        const encontrou = palavrasBuscadas.some((palavra) => topicoMinusculo.includes(palavra));
+
+        if (encontrou) {
             const htmlDoCard = criarHtmlDenuncia(dados, true);
             comentarios.innerHTML += htmlDoCard;
         }
@@ -172,32 +177,13 @@ function renderizarBotoesPaginacao(totalPaginas, totalItens) {
     });
 }
 
-carregarHTML();
 
+const termoSalvo = localStorage.getItem("pesquisaDenuncia");
 
-
-// async function buscarSimplificado(termoDigitado) {
-//     if (!termoDigitado) return [];
-
-//     // 1. Transforma o que foi digitado em um array de palavras minúsculas
-//     // Ex: "camisa azul" vira ["camisa", "azul"]
-//     const palavrasBuscadas = termoDigitado.toLowerCase().trim().split(/\s+/);
-
-//     // Busca os dados no Firebase
-//     const querySnapshot = await getDocs(collection(db, "produtos"));
-//     const resultados = [];
-
-//     querySnapshot.forEach((doc) => {
-//         const produto = doc.data();
-//         const nomeProduto = produto.nome.toLowerCase();
-
-//         // 2. Verifica se pelo menos uma das palavras buscadas está no nome do produto
-//         const encontrou = palavrasBuscadas.some(palavra => nomeProduto.includes(palavra));
-
-//         if (encontrou) {
-//             resultados.push(produto);
-//         }
-//     });
-
-//     return resultados;
-// }
+if (termoSalvo) {
+    pesquisa.value = termoSalvo;
+    localStorage.removeItem("pesquisaDenuncia");
+    buscarDenunciaFeita(termoSalvo);
+} else {
+    carregarHTML();
+}
