@@ -11,7 +11,7 @@ header {
     position: relative;
 }
 
-nav {
+.link-central {
     position: absolute;
     top: 17px;
     left: 50%;

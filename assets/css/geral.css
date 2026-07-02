@@ -27,7 +27,7 @@ button {
     transition: all .3s ease;
 }
 
-.mostrar-botao-sair {
+.sair.mostrar-botao-sair {
     display: block;
 }
 
@@ -329,6 +329,11 @@ article {
     }
 
     .sair {
+        display: none;
+    }
+
+    .header-perfil .sair.mostrar-botao-sair,
+    .direita .sair.mostrar-botao-sair {
         display: none;
     }
 
