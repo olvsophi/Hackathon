@@ -136,7 +136,7 @@ function criarHtmlDenuncia(dados) {
 }
 
 async function carregarHTML() {
-    const mensagemVazia = document.getElementById("semDenuncia");
+    const mensagemVazia = document.getElementById("semDenuncias");
     
     comentarios.innerHTML = "";
 
