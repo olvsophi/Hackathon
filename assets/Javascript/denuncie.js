@@ -147,9 +147,9 @@ async function carregarHTML() {
 
     if (mensagemVazia) {
         if (resultado.length === 0) {
-            mensagemVazia.style.display = "block";
+            mensagemVazia.style.setProperty("display", "block", "important");
         } else {
-            mensagemVazia.style.display = "none";
+            mensagemVazia.style.setProperty("display", "none", "important");
         }
     }
 
