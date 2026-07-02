@@ -102,7 +102,7 @@ input {
 }
 
 button:hover {
-    transform: translateY(-5px);
+    transform: scale(1.3px);
 }
 
 button {
@@ -159,13 +159,6 @@ button {
     justify-content: center;
     align-items: center;
     padding: 70px;
-}
-
-.popup-escondido {
-    display: none !important;
-    opacity: 0 !important;
-    visibility: hidden !important;
-    pointer-events: none !important;
 }
 
 .titulo-regras {
