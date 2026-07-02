@@ -135,7 +135,6 @@ function criarHtmlDenuncia(dados) {
     `;
 }
 
-
 async function carregarHTML() {
     const mensagemVazia = document.getElementById("semDenuncia");
     comentarios.innerHTML = "";
@@ -146,14 +145,13 @@ async function carregarHTML() {
         return;
     }
 
-    if (resultado.length === 0) {
-        if (mensagemVazia) mensagemVazia.style.display = "block";
-        containerPaginacao.innerHTML = "";
-        return; 
-    } 
-    
     if (mensagemVazia) {
-        mensagemVazia.style.display = "none";
+        if (resultado.length === 0) {
+            mensagemVazia.style.display = "block";
+        } else {
+            mensagemVazia.style.display = "none";
+        }
+    }
 
     resultado.forEach((dados) => {
         comentarios.innerHTML += criarHtmlDenuncia(dados);
@@ -228,5 +226,4 @@ function renderizarBotoesPaginacao(totalPaginas, totalItens) {
     });
 }
 
-}
 carregarHTML();
