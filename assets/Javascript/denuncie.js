@@ -82,6 +82,7 @@ btnEnviarDenuncia.addEventListener('click', async () => {
 
 
 async function pegarDenunciasDoFirebase() {
+
     try {
         const denuncias = await getDocs(collection(db, "denuncias"));
         const resultado = [];
@@ -108,6 +109,21 @@ function criarHtmlDenuncia(dados) {
     const icone = dados.resolvido
         ? "../assets/icones/botao-like.svg"
         : "../assets/icones/botao-dislike.svg";
+
+    comentarios.innerHTML = "";
+
+    const resultado = await pegarDenunciasDoFirebase();
+
+    if (!resultado) {
+        return;
+    }
+
+    if (resultado.length === 0) {
+        comentarios.innerHTML = `<p class="sem-noticias">Você ainda não possui denúncias cadastradas.</p>`;
+        
+        containerPaginacao.innerHTML = "";
+        return;
+    }
 
     return `
         <article>
