@@ -137,6 +137,7 @@ function criarHtmlDenuncia(dados) {
 
 async function carregarHTML() {
     const mensagemVazia = document.getElementById("semDenuncia");
+    
     comentarios.innerHTML = "";
 
     const resultado = await pegarDenunciasDoFirebase();
@@ -147,9 +148,9 @@ async function carregarHTML() {
 
     if (mensagemVazia) {
         if (resultado.length === 0) {
-            mensagemVazia.style.setProperty("display", "block", "important");
+            mensagemVazia.style.display = "block";
         } else {
-            mensagemVazia.style.setProperty("display", "none", "important");
+            mensagemVazia.style.display = "none";
         }
     }
 
