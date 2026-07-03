@@ -3,7 +3,7 @@ import { signInWithEmailAndPassword, signInWithPopup } from "https://www.gstatic
 
 const email = document.querySelector('#email');
 const senha = document.querySelector('#senha');
-const formulario = document.querySelector('.login-cadastro');
+const formulario = document.getElementById('formLogin');
 
 const botoesRedesSociais = document.querySelectorAll('.contas button');
 const btnGoogle = botoesRedesSociais[0];
@@ -24,6 +24,7 @@ function voltarParaPaginaAnterior() {
     }
 }
 
+console.log(formulario)
 formulario.addEventListener("submit", async (e) => {
     e.preventDefault();
 

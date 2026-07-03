@@ -155,18 +155,19 @@ nav a {
     gap: 40px;
 }
 
-
 article {
     border: 0.2px solid rgba(30, 30, 30, 0.13);
     backdrop-filter: blur(40px);
-    border-radius: 40px;
+    border-radius: 60px;
     width: 100%;
+    padding: 30px;
 }
 
-.denuncias-comentarios{
+.denuncias-comentarios {
     box-shadow: inset 0 0 60px rgba(150, 176, 255, 0.4);
     background: rgba(112, 110, 110, 0.4);
 }
+
 .comentario {
     width: 100%;
     background-color: #83838313;
@@ -184,6 +185,10 @@ article {
 .botoes {
     display: flex;
     justify-content: space-between;
+}
+
+.botoes img {
+    width: 40px;
 }
 
 .denunciar {
@@ -246,7 +251,7 @@ article {
 }
 
 .container-comentario {
-    margin-left: 60px;
+    margin: 0 40px 0 20px;
 }
 
 .footer-geral p {
@@ -358,7 +363,7 @@ article {
     }
 
     .perfis {
-        margin-left: 50px;
+        margin: 10px 0 10px 30px;
         padding: 0;
     }
 
@@ -369,6 +374,11 @@ article {
     article {
         padding: 10px 0;
         margin: 0 auto;
+        border-radius: 40px;
+    }
+
+    .comentarios {
+        max-width: 380px;
     }
 
     .comentario h3 {
@@ -377,11 +387,32 @@ article {
 
     .comentario p {
         font-size: 12px;
+        margin-top: 10px;
+    }
+
+    .container-comentario {
+        margin: 0 20px;
     }
 
     .resultado {
         font-size: 14px;
         font-weight: 600;
+    }
+
+    .botoes {
+        margin-left: 10px;
+    }
+
+    .botoes img {
+        width: 30px;
+    }
+
+    .comentarios button {
+        margin: 20px 20px 0 0;
+    }
+
+    .comentarios button img {
+        width: 25px;
     }
 
     .direita a {

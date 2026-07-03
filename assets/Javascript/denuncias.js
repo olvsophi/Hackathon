@@ -1,7 +1,5 @@
-import { db, collection, auth, onAuthStateChanged } from './firebaseconfig.js';
+import { db, collection, auth } from './firebaseconfig.js';
 import { getDocs } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
-
-let idUsuario = null;
 
 const form = document.getElementById('pesquisa');
 const pesquisa = document.getElementById('pesquisaUsuario');
@@ -13,18 +11,6 @@ let paginaAtual = 1;
 const containerPaginacao = document.createElement("div");
 containerPaginacao.classList.add("paginacao");
 comentarios.insertAdjacentElement("afterend", containerPaginacao);
-
-
-onAuthStateChanged(auth, (usuario) => {
-    if (usuario) {
-        idUsuario = usuario.uid;
-    } else {
-        idUsuario = null;
-        sessionStorage.setItem("paginaAnterior", window.location.href);
-        window.location.href = "../pages/login.html";
-    }
-});
-
 
 form.addEventListener('submit', (evento) => {
     evento.preventDefault();
