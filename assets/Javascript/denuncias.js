@@ -8,6 +8,8 @@ const comentarios = document.querySelector(".comentarios");
 const ITENS_POR_PAGINA = 5;
 let paginaAtual = 1;
 
+let carregamento = false
+
 const containerPaginacao = document.createElement("div");
 containerPaginacao.classList.add("paginacao");
 comentarios.insertAdjacentElement("afterend", containerPaginacao);
@@ -26,11 +28,14 @@ form.addEventListener('submit', (evento) => {
 
 
 async function pegarDenuncias() {
+    carregamento = true
     try {
         const resultado = await getDocs(collection(db, "denuncias"));
         return resultado;
     } catch (erro) {
         console.error(erro);
+    } finally {
+        carregamento = false
     }
 }
 
@@ -173,3 +178,4 @@ if (termoSalvo) {
 } else {
     carregarHTML();
 }
+
