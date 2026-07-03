@@ -22,8 +22,8 @@ const slides = [
   },
   {
     categoria: "Proteção de Dados",
-    titulo: "5 Dicas para Proteger seus Dados Pessoais na Internet",
-    descricao: "Use senhas fortes, autenticação em dois fatores, evite links suspeitos, mantenha softwares atualizados e revise configurações de privacidade.",
+    titulo: "Por que blindar seus dados pessoais na internet?",
+    descricao: "A exposição excessiva na rede é a porta de entrada para golpes. Entenda os riscos de deixar suas informações vulneráveis e assuma o controle da sua privacidade.",
     imagem: "./assets/imagens/slide-4.png",
     link: "https://axa.com.br/central-de-conteudo/detalhes/5-dicas-para-proteger-seus-dados-pessoais-na-internet"
   },
@@ -200,7 +200,7 @@ function renderizar() {
       <p>${dica.texto}</p>
     `;
 
-    gradeDicas.appendChild(card); 
+    gradeDicas.appendChild(card);
   });
 }
 
