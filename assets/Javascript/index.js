@@ -3,38 +3,39 @@ const slides = [
     categoria: "Segurança Digital",
     titulo: "A importância da Segurança Digital no dia a dia",
     descricao: "Com bilhões de dados circulando na internet, proteger confidencialidade, integridade e disponibilidade das informações é essencial para evitar ataques e vazamentos.",
-    imagem: "./assets/imagens/slide-1.png",
-    link: "sobre.html#artigo1"
+    imagem: "./assets/imagens/slide-1.jpg",
+    link: "../Hackathon/pages/sobre.html#artigo1"
   },
   {
     categoria: "Cidadania Digital",
     titulo: "O que é Cidadania Digital e por que ela importa?",
     descricao: "Ser um bom cidadão digital vai além de segurança: envolve respeito, pensamento crítico, combate à desinformação e construção de um ambiente online mais saudável.",
-    imagem: "./assets/imagens/slide-2.png",
-    link: "sobre.html#artigo2"
+    imagem: "./assets/imagens/slide-2.jpg",
+    link: "../Hackathon/pages/sobre.html#artigo2"
   },
   {
     categoria: "Ética Digital",
     titulo: "Ética Digital: desafios e responsabilidades legais",
     descricao: "Aplicar princípios éticos no uso da tecnologia protege privacidade, combate fake news e evita riscos legais, especialmente com a LGPD.",
     imagem: "./assets/imagens/slide-3.png",
-    link: "sobre.html#artigo3"
+    link: "../Hackathon/pages/sobre.html#artigo3"
   },
   {
     categoria: "Proteção de Dados",
     titulo: "Por que blindar seus dados pessoais na internet?",
     descricao: "A exposição excessiva na rede é a porta de entrada para golpes. Entenda os riscos de deixar suas informações vulneráveis e assuma o controle da sua privacidade.",
     imagem: "./assets/imagens/slide-4.png",
-    link: "sobre.html#artigo4"
+    link: "../Hackathon/pages/sobre.html#artigo4"
   },
   {
     categoria: "LGPD",
     titulo: "Cuidados ao Compartilhar Dados com Terceiros",
     descricao: "Compartilhar dados exige transparência, justificativa e contrato. Envie apenas o mínimo necessário e sempre avalie a real necessidade.",
     imagem: "./assets/imagens/slide-5.png",
-    link: "sobre.html#artigo5"
+    link: "../Hackathon/pages/sobre.html#artigo5"
   }
 ];
+
 const TEMPO_ANIMACAO = 800
 const trilho = document.getElementById("trilhoSlider")
 const voltar = document.getElementById("voltar")
@@ -63,7 +64,7 @@ function renderizarSlides() {
           <div class="texto texto-noticia">
             <p class="noticia">${slide.descricao}</p>
           </div>
-          <a target="_blank" href="${slide.link}" class="veja-mais-botao">
+          <a href="${slide.link}" class="veja-mais-botao">
             Veja mais
             <svg viewBox="0 0 24 24" width="14" height="14">
               <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
