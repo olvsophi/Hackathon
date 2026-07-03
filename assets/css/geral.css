@@ -158,12 +158,8 @@ nav a {
 article {
     border: 0.2px solid rgba(30, 30, 30, 0.13);
     backdrop-filter: blur(40px);
-<<<<<<< HEAD
-    border-radius: 60px;
-=======
     padding: 30px;
     border-radius: 40px;
->>>>>>> d05937c0bf07f562d809f09c856f32702e91cf90
     width: 100%;
     padding: 30px;
 }

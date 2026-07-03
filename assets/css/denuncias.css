@@ -49,6 +49,9 @@ body {
     width: 35px;
 }
 
+.deslogado.logado{
+    display: none;
+}
 
 main h1 {
     font-size: 34px;
