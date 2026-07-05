@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+.deslogado.logado{
+    display: none;
+}
+
 .popup {
     height: 80px;
     width: 100%;
