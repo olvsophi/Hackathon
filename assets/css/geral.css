@@ -4,6 +4,26 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+.carregamento-girando {
+  display: none;
+  width: 250px;
+  margin: 0 auto;
+  animation: girar 1s linear infinite;
+}
+
+.carregamento-girando.ativo {
+  display: block;
+}
+
+@keyframes girar {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
 .deslogado.logado{
     display: none;
 }

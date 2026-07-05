@@ -1,5 +1,6 @@
 import { db, collection, addDoc, onAuthStateChanged, auth } from './firebaseconfig.js';
 import { getDocs, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+import { mostrarCarregamento, esconderCarregamento } from "./geral.js";
 
 let idUsuario = null;
 let resolvido = false;
@@ -137,10 +138,11 @@ function criarHtmlDenuncia(dados) {
 
 async function carregarHTML() {
     const mensagemVazia = document.getElementById("semDenuncias");
-
+    mostrarCarregamento ();
     comentarios.innerHTML = "";
 
     const resultado = await pegarDenunciasDoFirebase();
+    esconderCarregamento();
 
     if (!resultado) {
         return;

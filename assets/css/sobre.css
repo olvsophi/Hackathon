@@ -1,7 +1,3 @@
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     margin: 0;
     background: linear-gradient(rgb(8, 36, 54), rgba(33, 90, 126, 1));
@@ -10,7 +6,7 @@ body {
 main {
     width: 100%;
     max-width: 1100px;
-    margin: 0 auto;
+    margin: 30px auto;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -18,17 +14,12 @@ main {
 }
 
 .inicio-sobre {
+    display: flex;
     width: 100%;
     min-height: 500px;
     margin-bottom: 20px;
     border-radius: 30px;
-    background:
-        linear-gradient(rgba(5, 25, 40, .75), rgba(10, 45, 70, .85)),
-        url("../imagens/sobre-img.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
+    background: linear-gradient(rgba(5, 25, 40, .75), rgba(10, 45, 70, .85)), url("../imagens/sobre-img.png") center / cover no-repeat;
     justify-content: center;
     align-items: center;
     overflow: hidden;
@@ -97,7 +88,7 @@ article p {
     color: rgba(235, 242, 255, .85);
     font-size: 16px;
     line-height: 1.9;
-    text-align: justify;
+    font-family: "Inter";
 }
 
 article p:last-child {

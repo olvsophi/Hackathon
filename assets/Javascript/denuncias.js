@@ -1,5 +1,6 @@
 import { db, collection, auth } from './firebaseconfig.js';
 import { getDocs } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+import { mostrarCarregamento, esconderCarregamento } from "./geral.js";
 
 const form = document.getElementById('pesquisa');
 const pesquisa = document.getElementById('pesquisaUsuario');
@@ -7,8 +8,6 @@ const comentarios = document.querySelector(".comentarios");
 
 const ITENS_POR_PAGINA = 5;
 let paginaAtual = 1;
-
-let carregamento = false
 
 const containerPaginacao = document.createElement("div");
 containerPaginacao.classList.add("paginacao");
@@ -26,16 +25,15 @@ form.addEventListener('submit', (evento) => {
     buscarDenunciaFeita(termo);
 });
 
-
 async function pegarDenuncias() {
-    carregamento = true
+    mostrarCarregamento();
     try {
         const resultado = await getDocs(collection(db, "denuncias"));
         return resultado;
     } catch (erro) {
         console.error(erro);
     } finally {
-        carregamento = false
+        esconderCarregamento();
     }
 }
 
