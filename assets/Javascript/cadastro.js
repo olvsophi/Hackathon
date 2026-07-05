@@ -26,21 +26,20 @@ form.addEventListener("submit", async (e) => {
     const senha = senhaInput.value.trim();
 
     if (!email) {
-        alert("Digite o email");
+        mostrarPopup("Digite o email");
         return;
     }
 
     if (senha.length < 8) {
-        alert("Senha precisa ter no mínimo 8 caracteres");
+        mostrarPopup("Senha precisa ter no mínimo 8 caracteres");
         return;
     }
 
     try {
         await createUserWithEmailAndPassword(auth, email, senha);
 
-        alert("Conta criada com sucesso!");
-
-        voltarParaPaginaAnterior();
+        mostrarPopup("Conta criada com sucesso!");
+        setTimeout(voltarParaPaginaAnterior, 1200);
 
     } catch (error) {
         tratarErros(error);
@@ -51,9 +50,8 @@ btnGoogle.addEventListener("click", async () => {
     try {
         await signInWithPopup(auth, googleProvider);
 
-        alert("Autenticado com o Google com sucesso!");
-
-        voltarParaPaginaAnterior();
+        mostrarPopup("Autenticado com o Google com sucesso!");
+        setTimeout(voltarParaPaginaAnterior, 1200);
 
     } catch (error) {
         tratarErros(error);
@@ -64,10 +62,10 @@ function tratarErros(error) {
     console.error(error);
 
     if (error.code === "auth/email-already-in-use") {
-        alert("Este email já está cadastrado.");
+        mostrarPopup("Este email já está cadastrado.");
     } else if (error.code === "auth/invalid-email") {
-        alert("Formato de email inválido.");
+        mostrarPopup("Formato de email inválido.");
     } else {
-        alert("Ocorreu um erro: " + error.message);
+        mostrarPopup("Ocorreu um erro: " + error.message);
     }
 }

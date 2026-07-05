@@ -9,17 +9,15 @@ const botoesRedesSociais = document.querySelectorAll('.contas button');
 const btnGoogle = botoesRedesSociais[0];
 
 function voltarParaPaginaAnterior() {
-    // Pega a página que foi salva na memória
+
     const paginaAnterior = sessionStorage.getItem("paginaAnterior");
 
-    // Limpa a memória para não bugar futuros logins
     sessionStorage.removeItem("paginaAnterior");
 
-    // Se existir uma página salva e não for a própria página de login, volta pra lá
     if (paginaAnterior && !paginaAnterior.includes("login.html")) {
         window.location.href = paginaAnterior;
     } else {
-        // Se não tiver nada salvo, vai para a home
+
         window.location.href = "../index.html";
     }
 }
@@ -36,15 +34,28 @@ formulario.addEventListener("submit", async (e) => {
                 senha.value.trim()
             );
 
-            alert("Login realizado com sucesso!");
-            voltarParaPaginaAnterior();
+            mostrarPopup("Login realizado com sucesso!");
+            setTimeout(voltarParaPaginaAnterior, 1200);
 
         } catch (error) {
             console.error(error);
-            alert("Erro ao fazer login.");
+
+            if (
+                error.code === "auth/invalid-credential" ||
+                error.code === "auth/wrong-password" ||
+                error.code === "auth/user-not-found"
+            ) {
+                mostrarPopup("Email ou senha incorretos.");
+            } else if (error.code === "auth/invalid-email") {
+                mostrarPopup("Email inválido.");
+            } else if (error.code === "auth/too-many-requests") {
+                mostrarPopup("Muitas tentativas. Tente novamente mais tarde.");
+            } else {
+                mostrarPopup("Erro ao fazer login.");
+            }
         }
     } else {
-        alert("Preencha email e senha.");
+        mostrarPopup("Preencha email e senha.");
     }
 });
 
@@ -54,10 +65,10 @@ btnGoogle.addEventListener("click", async (e) => {
     try {
         await signInWithPopup(auth, googleProvider);
 
-        alert("Login com Google realizado!");
-        voltarParaPaginaAnterior();
+        mostrarPopup("Login com Google realizado!");
+        setTimeout(voltarParaPaginaAnterior, 1200);
 
     } catch (error) {
-        alert("Erro no login Google.");
+        mostrarPopup("Erro no login Google.");
     }
 });

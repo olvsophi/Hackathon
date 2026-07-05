@@ -4,13 +4,6 @@ import { getDocs, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/10.1
 let idUsuario = null;
 let resolvido = false;
 
-// const btnEntendi = document.getElementById("btnFecharPopup");
-// const popUp = document.getElementById("popUpDenuncie");
-
-// btnEntendi.addEventListener('click' , (e) => {
-//     popUp.remove();
-// });
-
 const regex = /www|http|https/i;
 
 const btnEnviarDenuncia = document.querySelector('.botao-envio');
@@ -57,12 +50,12 @@ btnEnviarDenuncia.addEventListener('click', async () => {
     const problema = document.getElementById("problema").value.trim();
 
     if (topico === "" || problema === "") {
-        alert("Preencha todos os campos!");
+        mostrarPopup("Preencha todos os campos!");
         return;
     }
 
     if (regex.test(topico) || regex.test(problema)) {
-        alert("Não é permitido enviar links!");
+        mostrarPopup("Não é permitido enviar links!");
         return;
     }
 
@@ -80,7 +73,7 @@ btnEnviarDenuncia.addEventListener('click', async () => {
         document.getElementById("problema").value = "";
         resolvido = false;
 
-        alert('Denuncia enviada');
+        mostrarPopup("Denúncia enviada com sucesso!");
         carregarHTML();
     } catch (e) {
         console.error(e);
@@ -105,7 +98,7 @@ async function pegarDenunciasDoFirebase() {
 
         return resultado;
     } catch (e) {
-        alert("erro ao buscar denuncias");
+        mostrarPopup("Erro ao buscar denúncias.");
         console.error(e);
         return null;
     }
@@ -144,7 +137,7 @@ function criarHtmlDenuncia(dados) {
 
 async function carregarHTML() {
     const mensagemVazia = document.getElementById("semDenuncias");
-    
+
     comentarios.innerHTML = "";
 
     const resultado = await pegarDenunciasDoFirebase();
@@ -167,14 +160,15 @@ async function carregarHTML() {
 
     document.querySelectorAll(".lixeira").forEach((botao) => {
         botao.addEventListener("click", async () => {
-            if (!confirm("Deseja apagar esta denúncia?")) return;
+            const confirmar = await confirmarAcao("Deseja apagar esta denúncia?");
+            if (!confirmar) return;
 
             try {
                 await deleteDoc(doc(db, "denuncias", botao.dataset.id));
                 carregarHTML();
             } catch (e) {
                 console.error(e);
-                alert("Erro ao apagar denúncia.");
+                mostrarPopup("Erro ao apagar denúncia.");
             }
         });
     });
