@@ -1,6 +1,6 @@
 import { db, collection, addDoc, onAuthStateChanged, auth } from './firebaseconfig.js';
 import { getDocs, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
-import { mostrarCarregamento, esconderCarregamento, mostrarPopup } from "./geral.js";
+import { mostrarCarregamento, esconderCarregamento, mostrarPopup, confirmarAcao } from "./geral.js";
 
 let idUsuario = null;
 let resolvido = false;
