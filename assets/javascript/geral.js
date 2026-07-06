@@ -73,7 +73,7 @@ function esconderCarregamento() {
   document.querySelector(".carregamento-girando").classList.remove("ativo");
 }
 
-export { mostrarCarregamento, esconderCarregamento };
+export { mostrarCarregamento, esconderCarregamento, mostrarPopup, confirmarAcao };
 
 
 const btnEntendi = document.getElementById("btnFecharPopup");

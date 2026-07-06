@@ -1,3 +1,4 @@
+import { mostrarPopup } from "./geral.js";
 import { auth, googleProvider} from "./firebaseconfig.js";
 import { signInWithEmailAndPassword, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
 
