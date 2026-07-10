@@ -88,7 +88,18 @@ async function carregarHTML() {
 }
 
 
+form.addEventListener('submit', (evento) => {
+    evento.preventDefault();
+    buscarDenunciaFeita(pesquisa.value);
+});
+
 async function buscarDenunciaFeita(termo) {
+
+    if (termo.trim() === "") {
+        carregarHTML();
+        return;
+    }
+
     comentarios.innerHTML = "";
 
     const resultado = await pegarDenuncias();
@@ -98,18 +109,35 @@ async function buscarDenunciaFeita(termo) {
     }
 
     const palavrasBuscadas = termo.toLowerCase().trim().split(/\s+/);
+    let encontrou = false;
 
     resultado.forEach((doc) => {
         const dados = doc.data();
         const topicoMinusculo = dados.topico.toLowerCase();
 
-        const encontrou = palavrasBuscadas.some((palavra) => topicoMinusculo.includes(palavra));
+        const encontrouPalavra = palavrasBuscadas.some((palavra) =>
+            topicoMinusculo.includes(palavra)
+        );
 
-        if (encontrou) {
-            const htmlDoCard = criarHtmlDenuncia(dados, true);
-            comentarios.innerHTML += htmlDoCard;
+        if (encontrouPalavra) {
+            encontrou = true;
+            comentarios.innerHTML += criarHtmlDenuncia(dados, true);
         }
     });
+
+    let mensagem = document.getElementById("nao-encontrado");
+
+    if (!mensagem) {
+        mensagem = document.createElement("p");
+        mensagem.id = "nao-encontrado";
+        comentarios.parentNode.insertBefore(mensagem, comentarios);
+    }
+
+    if (!encontrou) {
+        mensagem.textContent = `Nenhuma denúncia encontrada para "${termo}".`;
+    } else {
+        mensagem.textContent = "";
+    }
 
     paginaAtual = 1;
     aplicarPaginacao();
