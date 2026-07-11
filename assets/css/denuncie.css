@@ -227,11 +227,11 @@ button {
 .regras {
     font-size: 16px;
     margin: 10px;
-    text-align: center;
     color: black;
 }
 
 li {
+    list-style-type: disc !important;
     margin: 5px;
 }
 
@@ -257,5 +257,6 @@ li {
 
     .popup-denuncie {
         border-radius: 0;
+        padding: 0 30px;
     }
 }
