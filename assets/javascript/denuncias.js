@@ -19,6 +19,7 @@ form.addEventListener('submit', (evento) => {
     const termo = pesquisa.value.trim();
 
     if (termo === "") {
+        carregarHTML()
         return;
     }
 
@@ -76,7 +77,10 @@ async function carregarHTML() {
     if (!resultado) {
         return;
     }
-
+    let mensagem = document.getElementById("nao-encontrado");
+    if (mensagem) {
+        mensagem.textContent = ""
+    }
     resultado.forEach((doc) => {
         const dados = doc.data();
         const htmlDoCard = criarHtmlDenuncia(dados, false);
@@ -87,19 +91,7 @@ async function carregarHTML() {
     aplicarPaginacao();
 }
 
-
-form.addEventListener('submit', (evento) => {
-    evento.preventDefault();
-    buscarDenunciaFeita(pesquisa.value);
-});
-
 async function buscarDenunciaFeita(termo) {
-
-    if (termo.trim() === "") {
-        carregarHTML();
-        return;
-    }
-
     comentarios.innerHTML = "";
 
     const resultado = await pegarDenuncias();
@@ -109,6 +101,15 @@ async function buscarDenunciaFeita(termo) {
     }
 
     const palavrasBuscadas = termo.toLowerCase().trim().split(/\s+/);
+
+    let mensagem = document.getElementById("nao-encontrado");
+
+    if (!mensagem) {
+        mensagem = document.createElement("p");
+        mensagem.id = "nao-encontrado";
+        comentarios.parentNode.insertBefore(mensagem, comentarios);
+    }
+
     let encontrou = false;
 
     resultado.forEach((doc) => {
@@ -125,14 +126,6 @@ async function buscarDenunciaFeita(termo) {
         }
     });
 
-    let mensagem = document.getElementById("nao-encontrado");
-
-    if (!mensagem) {
-        mensagem = document.createElement("p");
-        mensagem.id = "nao-encontrado";
-        comentarios.parentNode.insertBefore(mensagem, comentarios);
-    }
-
     if (!encontrou) {
         mensagem.textContent = `Nenhuma denúncia encontrada para "${termo}".`;
     } else {
@@ -142,7 +135,6 @@ async function buscarDenunciaFeita(termo) {
     paginaAtual = 1;
     aplicarPaginacao();
 }
-
 
 function aplicarPaginacao() {
     const artigos = comentarios.querySelectorAll("article");
